@@ -75,7 +75,7 @@ public class Company {
   public static final String SERIALIZED_NAME_CHECK_DIGIT = "check_digit";
   @SerializedName(SERIALIZED_NAME_CHECK_DIGIT)
   @javax.annotation.Nullable
-  private String checkDigit;
+  private Integer checkDigit;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -172,7 +172,7 @@ public class Company {
   }
 
 
-  public Company checkDigit(@javax.annotation.Nullable String checkDigit) {
+  public Company checkDigit(@javax.annotation.Nullable Integer checkDigit) {
     this.checkDigit = checkDigit;
     return this;
   }
@@ -182,11 +182,11 @@ public class Company {
    * @return checkDigit
    */
   @javax.annotation.Nullable
-  public String getCheckDigit() {
+  public Integer getCheckDigit() {
     return checkDigit;
   }
 
-  public void setCheckDigit(@javax.annotation.Nullable String checkDigit) {
+  public void setCheckDigit(@javax.annotation.Nullable Integer checkDigit) {
     this.checkDigit = checkDigit;
   }
 
@@ -474,9 +474,6 @@ public class Company {
       }
       if ((jsonObj.get("nit") != null && !jsonObj.get("nit").isJsonNull()) && !jsonObj.get("nit").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nit").toString()));
-      }
-      if ((jsonObj.get("check_digit") != null && !jsonObj.get("check_digit").isJsonNull()) && !jsonObj.get("check_digit").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `check_digit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("check_digit").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
