@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: ['17', '21']   # el SDK compila con release 11; las pruebas y los fragmentos usan bloques de texto (Java 15+)
+        java: ['21']   # el SDK compila con release 11; las pruebas y los fragmentos se compilan con release 21 (maven.compiler.testRelease), así que el JDK debe ser 21 o superior
     env:
       TREVOL_API_KEY: tvl_test_a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1
     steps:
@@ -41,5 +41,5 @@ jobs:
           distribution: temurin
           java-version: '11'
           cache: maven
-      - name: El SDK (sin las pruebas, que usan bloques de texto) compila y empaqueta con Java 11
-        run: mvn -B -DskipTests package
+      - name: El SDK (sin compilar ni correr las pruebas, que exigen release 21) compila y empaqueta con Java 11
+        run: mvn -B -Dmaven.test.skip=true package

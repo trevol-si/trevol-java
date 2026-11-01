@@ -133,7 +133,7 @@ pasa a `2026-10-22` (el encabezado manda): recibe `202 processing` donde antes r
 Webhook wh = new Webhook(System.getenv("TREVOL_WEBHOOK_SECRET")); // whsec_…
 
 @PostMapping("/webhooks/trevol") // Spring MVC
-ResponseEntity<Void> recibir(@RequestBody byte[] cuerpo, @RequestHeader HttpHeaders cabeceras) {
+ResponseEntity<Void> recibir(@RequestBody byte[] cuerpo, @RequestHeader Map<String, String> cabeceras) {
     try {
         Event evento = wh.verify(cuerpo, cabeceras); // el cuerpo CRUDO (byte[] o String), no un objeto ya parseado
         // Deduplica por evento.getId() (también llega en la cabecera webhook-id): la verificación no evita repeticiones.
@@ -145,7 +145,7 @@ ResponseEntity<Void> recibir(@RequestBody byte[] cuerpo, @RequestHeader HttpHead
 }
 ```
 
-En un Servlet: `request.getInputStream().readAllBytes()` y un `Map<String, List<String>>` con las cabeceras. La firma se calcula sobre los
+`@RequestHeader Map<String, String>` sirve igual en Spring Framework 6 y 7 (desde la 7, `HttpHeaders` ya no es un `Map`). En un Servlet: `request.getInputStream().readAllBytes()` y un `Map<String, List<String>>` con las cabeceras. La firma se calcula sobre los
 **bytes exactos**. `verify` acepta `Map<String, List<String>>` o `Map<String, String>` en cualquier caja; la firma esperada la calcula la
 biblioteca de Standard Webhooks, y el SDK tolera 5 minutos hacia atrás y hacia adelante en `webhook-timestamp` y compara en tiempo constante.
 

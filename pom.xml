@@ -27,9 +27,9 @@
     </developer>
   </developers>
   <scm>
-    <connection>scm:git:https://github.com/trevol/trevol-java.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/trevol/trevol-java.git</developerConnection>
-    <url>https://github.com/trevol/trevol-java</url>
+    <connection>scm:git:https://github.com/trevol-si/trevol-java.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/trevol-si/trevol-java.git</developerConnection>
+    <url>https://github.com/trevol-si/trevol-java</url>
   </scm>
 
   <properties>
