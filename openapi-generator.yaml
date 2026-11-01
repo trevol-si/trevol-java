@@ -1,0 +1,27 @@
+# Configuración de OpenAPI Generator para el SDK de Java (docs/api/43-sdks-y-documentacion.md §2.5).
+# La corre sdks/generar.sh sobre sdks/especificacion/openapi.sdk.enums-abiertos.json (piloto: sin enum en lo que la API devuelve, un valor
+# nuevo no se vuelve «UNKNOWN_DEFAULT_OPEN_API»). Lo generado va a src/main/java/si/trevol/generado/ (paquete si.trevol.generado); la capa
+# propia (paquete si.trevol) lo usa. Del generador solo se conserva ese directorio: generar.sh descarta pom.xml, build.gradle, build.sbt,
+# gradle/, README, docs/, api/openapi.yaml, .github/, .travis.yml, git_push.sh.
+generatorName: java
+library: okhttp-gson
+inputSpec: especificacion/openapi.sdk.enums-abiertos.json
+additionalProperties:
+  invokerPackage: si.trevol.generado
+  apiPackage: si.trevol.generado.api
+  modelPackage: si.trevol.generado.model
+  groupId: si.trevol
+  artifactId: trevol-java-generado
+  artifactVersion: 0.1.0
+  dateLibrary: java8
+  openApiNullable: false
+  useBeanValidation: false
+  hideGenerationTimestamp: true
+  sortParamsByRequiredFlag: true
+  disallowAdditionalPropertiesIfNotPresent: false
+  # Pedido por petición, con un método por parámetro opcional (listInvoices().limit(100).startingAfter(c).execute()): no depende del orden
+  # posicional que el generador decide (C13 de docs/api/43: sumar un filtro opcional no rompe la compilación de quien integra).
+  useSingleRequestParameter: true
+  # Piloto: sin esto los modelos inician cada lista en `new ArrayList<>()` y se serializan como `"events": []`, `"taxes": []`…: una lista vacía
+  # que la persona no escribió y que la API rechaza (422) o interpreta distinto de un campo ausente.
+  containerDefaultToNull: true

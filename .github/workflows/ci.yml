@@ -1,0 +1,45 @@
+# CI del SDK de Java (docs/api/43 §2.13). Escrita, NO activa: se activa sola cuando este directorio sea su propio repo (trevol-java).
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: ['17', '21']   # el SDK compila con release 11; las pruebas y los fragmentos usan bloques de texto (Java 15+)
+    env:
+      TREVOL_API_KEY: tvl_test_a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Compilar (release 11) y pruebas unitarias
+        run: mvn -B verify
+      - name: Contra Prism (servidor simulado desde la especificación pública) y los fragmentos de la documentación
+        run: |
+          npx --yes @stoplight/prism-cli@5.16.0 mock pruebas/datos/openapi.json -p 4010 -h 127.0.0.1 > /tmp/prism.log 2>&1 &
+          for i in $(seq 1 60); do curl -s -o /dev/null http://127.0.0.1:4010/health && break; sleep 1; done
+          TREVOL_PRISM_URL=http://127.0.0.1:4010 mvn -B test -Dtest='PrismTest,FragmentosTest'
+  java11:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+          cache: maven
+      - name: El SDK (sin las pruebas, que usan bloques de texto) compila y empaqueta con Java 11
+        run: mvn -B -DskipTests package
