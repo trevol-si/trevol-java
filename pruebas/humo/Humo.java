@@ -4,10 +4,12 @@
  *   mvn -q compile dependency:build-classpath -Dmdep.outputFile=target/cp.txt
  *   TREVOL_API_KEY=tvl_test_… java -cp "target/classes:$(cat target/cp.txt)" pruebas/humo/Humo.java
  *
- * Solo lecturas y un preview (el SDK de Java NO emite). Se NIEGA a correr si la llave no es tvl_test_. TREVOL_BASE_URL (opcional) apunta a otro
+ * Lecturas, un preview y un error tipado (validation_error); con TREVOL_HUMO_EMITIR=1 además EMITE una factura en habilitación, espera a que
+ * quede final y descarga el PDF. Se NIEGA a correr si la llave no es tvl_test_. TREVOL_BASE_URL (opcional) apunta a otro
  * servidor, p. ej. un Prism local.
  */
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.time.Instant;
 import java.util.Base64;
 import java.util.Map;
@@ -16,11 +18,18 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import si.trevol.NotFoundException;
 import si.trevol.Trevol;
+import si.trevol.ValidationException;
 import si.trevol.Webhook;
 import si.trevol.generado.model.InvoiceInput;
 import si.trevol.generado.model.InvoiceList;
 
 public class Humo {
+    static String factura(String externo, boolean conLineas) {
+        return "{\"external_id\": \"" + externo + "\", \"customer\": {\"final_consumer\": true}, \"items\": "
+            + (conLineas ? "[{\"description\": \"Prueba de humo del SDK de Trevol\", \"quantity\": \"1\", \"unit_price\": \"1000\", \"taxes\": [{\"code\": \"01\", \"rate\": \"19\"}]}]" : "[]")
+            + ", \"payment\": {\"form\": \"cash\", \"methods\": [{\"code\": \"10\"}]}}";
+    }
+
     static int total = 0;
     static int fallas = 0;
 
@@ -52,12 +61,17 @@ public class Humo {
             return c.getName() + " (" + c.getNit() + ")";
         });
         paso("previewInvoice", () -> {
-            var p = trevol.invoices().previewInvoice(InvoiceInput.fromJson("""
-                {"external_id": "HUMO-PREVIEW", "customer": {"final_consumer": true},
-                 "items": [{"description": "Prueba de humo del SDK de Trevol", "quantity": "1", "unit_price": "1000", "taxes": [{"code": "01", "rate": "19"}]}],
-                 "payment": {"form": "cash", "methods": [{"code": "10"}]}}
-                """)).execute();
+            var p = trevol.invoices().previewInvoice(InvoiceInput.fromJson(factura("HUMO-PREVIEW", true))).execute();
             return "total " + (p.getTotals() == null ? "?" : p.getTotals().get("total"));
+        });
+        paso("previewInvoice sin líneas → ValidationException (code validation_error)", () -> {
+            try {
+                trevol.invoices().previewInvoice(InvoiceInput.fromJson(factura("HUMO-INVALIDA", false))).execute();
+            } catch (ValidationException e) {
+                if (!"validation_error".equals(e.getCode())) throw new IllegalStateException("code = " + e.getCode());
+                return e.getStatus() + " " + e.getCode() + " " + (e.getErrors().isEmpty() ? "" : e.getErrors().get(0).getPointer());
+            }
+            throw new IllegalStateException("no lanzó ValidationException");
         });
         paso("listInvoices + paginate (3)", () -> {
             trevol.invoices().listInvoices().limit(3).execute();
@@ -86,6 +100,36 @@ public class Humo {
             String firma = "v1," + Base64.getEncoder().encodeToString(mac.doFinal((id + "." + ts + "." + cuerpo).getBytes(StandardCharsets.UTF_8)));
             return new Webhook("whsec_" + Base64.getEncoder().encodeToString(clave)).verify(cuerpo, Map.of("webhook-id", id, "webhook-timestamp", Long.toString(ts), "webhook-signature", firma)).getType();
         });
+
+        if ("1".equals(System.getenv("TREVOL_HUMO_EMITIR"))) {
+            String[] id = {null};
+            paso("createInvoice (EMITE en habilitación)", () -> {
+                var d = trevol.invoices().createInvoice(InvoiceInput.fromJson(factura("HUMO-JAVA-" + Instant.now().getEpochSecond(), true))).execute();
+                id[0] = d.getId();
+                return d.getId() + " " + d.getStatus();
+            });
+            if (id[0] != null) {
+                paso("espera un estado final (hasta 90 s)", () -> {
+                    long limite = System.currentTimeMillis() + 90_000;
+                    for (;;) {
+                        String estado = trevol.invoices().retrieveInvoice(id[0]).execute().getStatus();
+                        if (!java.util.List.of("pending", "sending", "processing").contains(estado)) {
+                            if (!"accepted".equals(estado)) throw new IllegalStateException("status = " + estado);
+                            return estado;
+                        }
+                        if (System.currentTimeMillis() > limite) throw new IllegalStateException("status = " + estado);
+                        Thread.sleep(3000);
+                    }
+                });
+                paso("downloadInvoicePdf", () -> {
+                    byte[] bytes = Files.readAllBytes(trevol.invoices().downloadInvoicePdf(id[0]).execute().toPath());
+                    if (!new String(bytes, 0, Math.min(4, bytes.length), StandardCharsets.ISO_8859_1).equals("%PDF")) throw new IllegalStateException("no es un PDF");
+                    return "PDF " + bytes.length + " bytes";
+                });
+            }
+        } else {
+            System.out.println("(no se emite nada: define TREVOL_HUMO_EMITIR=1 para emitir una factura en habilitación)");
+        }
 
         System.out.println("\n" + (total - fallas) + "/" + total + " pasos bien");
         System.exit(fallas > 0 ? 1 : 0);
