@@ -24,8 +24,8 @@ class ClienteTest {
             b.trevol.invoices().retrieveInvoice(Banco.ID_DOC).execute();
             okhttp3.Headers c = b.peticiones.get(0).cabeceras;
             assertEquals("Bearer " + Banco.LLAVE_TEST, c.get("Authorization"));
-            assertEquals("2026-10-22", c.get("Trevol-Version"));
-            assertEquals("2026-10-22", Tablas.API_VERSION);
+            assertEquals("2026-11-18", c.get("Trevol-Version"));
+            assertEquals("2026-11-18", Tablas.API_VERSION);
             assertTrue(c.get("User-Agent").matches("trevol-java/" + java.util.regex.Pattern.quote(Trevol.VERSION) + " \\(java [\\w.+-]+; \\+https://platform\\.trevol\\.si/docs\\)"), c.get("User-Agent"));
             assertEquals("application/json, application/problem+json", c.get("Accept"));
             for (String k : c.names()) {

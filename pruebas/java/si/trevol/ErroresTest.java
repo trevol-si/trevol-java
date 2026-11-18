@@ -35,7 +35,7 @@ class ErroresTest {
 
     @Test
     void cubreLos30Code() {
-        assertEquals(30, codes().count());
+        assertEquals(40, codes().count());
     }
 
     @ParameterizedTest(name = "{1} → {0}")

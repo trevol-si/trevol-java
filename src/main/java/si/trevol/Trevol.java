@@ -26,6 +26,18 @@ import si.trevol.generado.api.RequestsApi;
 import si.trevol.generado.api.SupportDocumentAdjustmentsApi;
 import si.trevol.generado.api.SupportDocumentsApi;
 import si.trevol.generado.api.WebhookEndpointsApi;
+import si.trevol.generado.api.CustomersApi;
+import si.trevol.generado.api.DianDocumentsApi;
+import si.trevol.generado.api.DianSyncsApi;
+import si.trevol.generado.api.InvoiceBatchesApi;
+import si.trevol.generado.api.NumberingAssociationsApi;
+import si.trevol.generado.api.NumberingRangesApi;
+import si.trevol.generado.api.NumberingRequestsApi;
+import si.trevol.generado.api.PaperNumberingRangesApi;
+import si.trevol.generado.api.ProductsApi;
+import si.trevol.generado.api.RadianStatusApi;
+import si.trevol.generado.api.ReportRunsApi;
+import si.trevol.generado.api.ReportsApi;
 
 /**
  * El cliente de la API de Trevol: un método por recurso ({@code invoices()}, {@code creditNotes()}, …), cada uno con los métodos
@@ -70,6 +82,18 @@ public final class Trevol {
     private final SupportDocumentAdjustmentsApi supportDocumentAdjustments;
     private final SupportDocumentsApi supportDocuments;
     private final WebhookEndpointsApi webhookEndpoints;
+    private final CustomersApi customers;
+    private final DianDocumentsApi dianDocuments;
+    private final DianSyncsApi dianSyncs;
+    private final InvoiceBatchesApi invoiceBatches;
+    private final NumberingAssociationsApi numberingAssociations;
+    private final NumberingRangesApi numberingRanges;
+    private final NumberingRequestsApi numberingRequests;
+    private final PaperNumberingRangesApi paperNumberingRanges;
+    private final ProductsApi products;
+    private final RadianStatusApi radianStatus;
+    private final ReportRunsApi reportRuns;
+    private final ReportsApi reports;
 
     private Trevol(Builder b) {
         String llave = b.apiKey != null ? b.apiKey : System.getenv("TREVOL_API_KEY");
@@ -114,6 +138,18 @@ public final class Trevol {
         this.supportDocumentAdjustments = new SupportDocumentAdjustmentsApi(apiClient);
         this.supportDocuments = new SupportDocumentsApi(apiClient);
         this.webhookEndpoints = new WebhookEndpointsApi(apiClient);
+        this.customers = new CustomersApi(apiClient);
+        this.dianDocuments = new DianDocumentsApi(apiClient);
+        this.dianSyncs = new DianSyncsApi(apiClient);
+        this.invoiceBatches = new InvoiceBatchesApi(apiClient);
+        this.numberingAssociations = new NumberingAssociationsApi(apiClient);
+        this.numberingRanges = new NumberingRangesApi(apiClient);
+        this.numberingRequests = new NumberingRequestsApi(apiClient);
+        this.paperNumberingRanges = new PaperNumberingRangesApi(apiClient);
+        this.products = new ProductsApi(apiClient);
+        this.radianStatus = new RadianStatusApi(apiClient);
+        this.reportRuns = new ReportRunsApi(apiClient);
+        this.reports = new ReportsApi(apiClient);
     }
 
     private static void dormir(double segundos) {
@@ -149,6 +185,18 @@ public final class Trevol {
     public SupportDocumentAdjustmentsApi supportDocumentAdjustments() { return supportDocumentAdjustments; }
     public SupportDocumentsApi supportDocuments() { return supportDocuments; }
     public WebhookEndpointsApi webhookEndpoints() { return webhookEndpoints; }
+    public CustomersApi customers() { return customers; }
+    public DianDocumentsApi dianDocuments() { return dianDocuments; }
+    public DianSyncsApi dianSyncs() { return dianSyncs; }
+    public InvoiceBatchesApi invoiceBatches() { return invoiceBatches; }
+    public NumberingAssociationsApi numberingAssociations() { return numberingAssociations; }
+    public NumberingRangesApi numberingRanges() { return numberingRanges; }
+    public NumberingRequestsApi numberingRequests() { return numberingRequests; }
+    public PaperNumberingRangesApi paperNumberingRanges() { return paperNumberingRanges; }
+    public ProductsApi products() { return products; }
+    public RadianStatusApi radianStatus() { return radianStatus; }
+    public ReportRunsApi reportRuns() { return reportRuns; }
+    public ReportsApi reports() { return reports; }
 
     /**
      * Recorre todas las páginas de un listado, perezosamente:

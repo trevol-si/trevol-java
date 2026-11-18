@@ -126,6 +126,7 @@ public final class Transporte implements Interceptor {
             case "pdf": return "application/pdf, " + PROBLEMA;
             case "xml": return "application/xml, " + PROBLEMA;
             case "zip": return "application/zip, " + PROBLEMA;
+            case "csv": return "text/csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, " + PROBLEMA; // los reportes: CSV o Excel
             default: return "application/json, " + PROBLEMA;
         }
     }
