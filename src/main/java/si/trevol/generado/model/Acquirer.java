@@ -81,6 +81,11 @@ public class Acquirer {
   @javax.annotation.Nullable
   private String email;
 
+  public static final String SERIALIZED_NAME_PERSONAL_DATA = "personal_data";
+  @SerializedName(SERIALIZED_NAME_PERSONAL_DATA)
+  @javax.annotation.Nullable
+  private String personalData;
+
   public Acquirer() {
   }
 
@@ -185,7 +190,7 @@ public class Acquirer {
   }
 
   /**
-   * Get email
+   * Null si la DIAN no lo tiene o si la llave no tiene el permiso &#x60;customers:read&#x60; (es un dato personal).
    * @return email
    */
   @javax.annotation.Nullable
@@ -195,6 +200,25 @@ public class Acquirer {
 
   public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
+  }
+
+
+  public Acquirer personalData(@javax.annotation.Nullable String personalData) {
+    this.personalData = personalData;
+    return this;
+  }
+
+  /**
+   * Solo si la llave no tiene el permiso &#x60;customers:read&#x60;: &#x60;email&#x60; viene en null. Valores conocidos: &#x60;redacted&#x60;.
+   * @return personalData
+   */
+  @javax.annotation.Nullable
+  public String getPersonalData() {
+    return personalData;
+  }
+
+  public void setPersonalData(@javax.annotation.Nullable String personalData) {
+    this.personalData = personalData;
   }
 
   /**
@@ -257,13 +281,14 @@ public class Acquirer {
         Objects.equals(this.documentNumber, acquirer.documentNumber) &&
         Objects.equals(this.found, acquirer.found) &&
         Objects.equals(this.name, acquirer.name) &&
-        Objects.equals(this.email, acquirer.email)&&
+        Objects.equals(this.email, acquirer.email) &&
+        Objects.equals(this.personalData, acquirer.personalData)&&
         Objects.equals(this.additionalProperties, acquirer.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_object, documentType, documentNumber, found, name, email, additionalProperties);
+    return Objects.hash(_object, documentType, documentNumber, found, name, email, personalData, additionalProperties);
   }
 
   @Override
@@ -276,6 +301,7 @@ public class Acquirer {
     sb.append("    found: ").append(toIndentedString(found)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    personalData: ").append(toIndentedString(personalData)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -295,7 +321,7 @@ public class Acquirer {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("object", "document_type", "document_number", "found", "name", "email"));
+    openapiFields = new HashSet<String>(Arrays.asList("object", "document_type", "document_number", "found", "name", "email", "personal_data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -328,6 +354,9 @@ public class Acquirer {
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+      }
+      if ((jsonObj.get("personal_data") != null && !jsonObj.get("personal_data").isJsonNull()) && !jsonObj.get("personal_data").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `personal_data` to be a primitive type in the JSON string but got `%s`", jsonObj.get("personal_data").toString()));
       }
   }
 

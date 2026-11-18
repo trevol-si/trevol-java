@@ -743,6 +743,7 @@ public class SupportDocumentAdjustmentsApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -759,6 +760,7 @@ public class SupportDocumentAdjustmentsApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -776,6 +778,7 @@ public class SupportDocumentAdjustmentsApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -793,6 +796,7 @@ public class SupportDocumentAdjustmentsApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -811,6 +815,7 @@ public class SupportDocumentAdjustmentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
         <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
      </table>
      */
