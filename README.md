@@ -10,7 +10,7 @@ RADIAN ante la DIAN (Colombia). Documentación: <https://platform.trevol.si/docs
 > `Trevol-Version`, Standard Webhooks signature verification, cursor pagination with `Iterable` and PDF/XML/ZIP downloads. Docs are in Spanish
 > like the API.
 
-**Versión 0.1.0** — API `2026-10-22`. Licencia MIT.
+**Versión 0.2.0** — API `2026-11-18`. Licencia MIT.
 
 ## Instalación
 
@@ -18,12 +18,12 @@ RADIAN ante la DIAN (Colombia). Documentación: <https://platform.trevol.si/docs
 <dependency>
   <groupId>si.trevol</groupId>
   <artifactId>trevol-java</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 
 ```kotlin
-implementation("si.trevol:trevol-java:0.1.0")   // Gradle
+implementation("si.trevol:trevol-java:0.2.0")   // Gradle
 ```
 
 Necesita Java 11 o más nuevo. Depende de OkHttp 4, Gson y de la biblioteca abierta
@@ -111,9 +111,10 @@ llama a `execute()` desde tus propios hilos o un `ExecutorService`.
 
 ### La versión de la API
 
-El SDK fija `Trevol-Version: 2026-10-22` en cada petición. **Ojo:** una llave creada con la versión `2026-10-21` que empiece a usar este SDK
-pasa a `2026-10-22` (el encabezado manda): recibe `202 processing` donde antes recibía `503`. Si todavía no quieres ese cambio:
-`Trevol.builder().apiKey(llave).apiVersion("2026-10-21").build()`. Más en <https://platform.trevol.si/docs/versiones>.
+El SDK fija `Trevol-Version: 2026-11-18` en cada petición. **Ojo:** una llave de una versión anterior que empiece a usar este SDK
+pasa a `2026-11-18` (el encabezado manda): un `422 validation_error` trae todos los problemas de los datos juntos en `errors`, no solo el
+primero, y si la llave estaba en `2026-10-21`, recibe `202 processing` donde antes recibía `503`. Si todavía no quieres ese cambio, fija
+la versión que usabas: `Trevol.builder().apiKey(llave).apiVersion("2026-10-22").build()`. Más en <https://platform.trevol.si/docs/versiones>.
 
 ### Excepciones tipadas
 
@@ -158,7 +159,7 @@ Cada operación tiene `executeWithHttpInfo()` que devuelve `ApiResponse` con `ge
 ```java
 Trevol.builder()
     .apiKey(llave)
-    .apiVersion("2026-10-22")                    // Trevol-Version en cada petición
+    .apiVersion("2026-11-18")                    // Trevol-Version en cada petición
     .maxRetries(2)                               // 0 los apaga
     .timeout(Duration.ofSeconds(65))             // por intento
     .maxRetryAfter(Duration.ofSeconds(60))
