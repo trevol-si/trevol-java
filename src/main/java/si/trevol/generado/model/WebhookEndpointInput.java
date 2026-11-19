@@ -312,7 +312,7 @@ public class WebhookEndpointInput {
   }
 
   /**
-   * Eventos del catálogo (60 tipos, hasta 100 en la lista), o [\&quot;*\&quot;] para todos (no se mezcla). Solo existen en producción (llaves live): &#x60;balance.low&#x60;, &#x60;numbering.low&#x60;, &#x60;numbering.expiring&#x60;, &#x60;dian_sync.completed&#x60;, &#x60;dian_sync.failed&#x60;, &#x60;numbering_range.exhausted&#x60;. &#x60;webhook.test&#x60; no se suscribe.
+   * Eventos del catálogo (69 tipos, hasta 100 en la lista), o [\&quot;*\&quot;] para todos (no se mezcla). Solo existen en producción (llaves live): &#x60;balance.low&#x60;, &#x60;numbering.low&#x60;, &#x60;numbering.expiring&#x60;, &#x60;dian_sync.completed&#x60;, &#x60;dian_sync.failed&#x60;, &#x60;numbering_range.exhausted&#x60;. &#x60;webhook.test&#x60; no se suscribe.
    * @return events
    */
   @javax.annotation.Nonnull

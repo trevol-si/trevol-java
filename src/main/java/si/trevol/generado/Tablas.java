@@ -7,7 +7,7 @@ import java.util.Map;
 public final class Tablas {
     private Tablas() {}
 
-    public static final String VERSION = "0.3.0";
+    public static final String VERSION = "0.3.1";
     public static final String API_VERSION = "2026-11-18";
 
     /** Una operación de la API. reintento: «seguro» (GET, preview, PATCH y todo POST/PUT con Idempotency-Key que no devuelva un secreto una sola vez) o «solo_429». binario: «pdf», «xml», «zip», «csv» (los reportes: CSV o Excel) o null. */

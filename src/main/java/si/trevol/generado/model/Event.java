@@ -193,7 +193,7 @@ public class Event {
   }
 
   /**
-   * La versión vigente más nueva de la API; el resumen del documento no cambia con la versión de la llave.
+   * La versión del formato de los eventos (hoy &#x60;2026-10-22&#x60;), la misma para todas las llaves: el resumen del documento no cambia con la versión de la llave.
    * @return apiVersion
    */
   @javax.annotation.Nullable

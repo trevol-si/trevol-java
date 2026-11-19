@@ -59,7 +59,7 @@ public class AccountApiKeyInput {
   private String name;
 
   /**
-   * &#x60;read&#x60;: solo lee; &#x60;write&#x60;: emite y lee. Una de escritura de producción, por ahora, se crea en la app.
+   * &#x60;read&#x60;: solo lee; &#x60;write&#x60;: emite y lee.
    */
   @JsonAdapter(PermissionsEnum.Adapter.class)
   public enum PermissionsEnum {
@@ -153,7 +153,7 @@ public class AccountApiKeyInput {
   }
 
   /**
-   * &#x60;read&#x60;: solo lee; &#x60;write&#x60;: emite y lee. Una de escritura de producción, por ahora, se crea en la app.
+   * &#x60;read&#x60;: solo lee; &#x60;write&#x60;: emite y lee.
    * @return permissions
    */
   @javax.annotation.Nonnull
