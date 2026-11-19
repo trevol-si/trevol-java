@@ -3,6 +3,17 @@
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado, [SemVer](https://semver.org/lang/es/): antes
 de la 1.0, un cambio incompatible sube el número menor.
 
+## [0.3.0] — sin publicar
+
+Regenerado con la llave de administración pública (la misma versión `2026-11-18` de la API; 159 operaciones y 70 tipos de evento).
+
+- Recurso nuevo `account()`: las diez operaciones de `/v1/account` para quien lleva varias empresas en una cuenta (la llave, sus empresas, reservar una empresa, las llaves de cada empresa y lo emitido, lo recibido y los eventos RADIAN de todas). Piden una llave de administración (`tva_test_…` o `tva_live_…`).
+- El cliente acepta la llave de administración (`tva_test_…` o `tva_live_…`) además de la de una empresa (`tvl_…`); el entorno sale del prefijo en las dos. `keyType()` dice cuál es (`API` o `ACCOUNT`).
+- Empresa de una llave de administración: `Trevol.builder().company("com_…")` o, por empresa, `trevol.withCompany("com_…")` (un cliente derivado que comparte la llave, las opciones y las conexiones; `company()` dice cuál lleva). Con una `tva_`, cada ruta de una empresa manda `Trevol-Company` y `Trevol-Environment`; con una `tvl_` esas cabeceras no viajan nunca. Una `tva_` sin empresa en una ruta de empresa, una operación de `account()` con una `tvl_`, `company` con una `tvl_` o un id mal formado son una `ConfigurationException` antes de llamar.
+- Errores tipados para los códigos nuevos: `company_exists` y `key_limit_reached` → conflicto; `company_limit_reached` → límite (con `retry_after`).
+- `Problem` trae `company` (en `company_exists`), `balance_cop` y `price_cop` (en `insufficient_balance` de una operación cobrada); `required_permission` admite los permisos de la llave de administración.
+- La tabla de operaciones dice qué llave admite cada una (`llave`: `api_o_administracion`, `administracion` o `ninguna`).
+
 ## [0.2.0] — 2026-11-18
 
 Regenerado con la API de noviembre de 2026 (versión `2026-11-18`, la de los errores juntos; 149 operaciones y 70 tipos de evento).

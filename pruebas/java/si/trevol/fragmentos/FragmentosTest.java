@@ -12,6 +12,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
@@ -43,17 +45,47 @@ class FragmentosTest {
     @Test
     void laEstructura() throws IOException {
         List<String> ops = operaciones();
-        assertEquals(149, ops.size());
+        assertEquals(159, ops.size());
         try (Stream<Path> s = Files.list(programas())) {
             List<String> archivos = s.map(p -> p.getFileName().toString()).filter(n -> n.endsWith(".java")).sorted().collect(Collectors.toList());
             assertEquals(ops.stream().map(o -> "Ejemplo" + Character.toUpperCase(o.charAt(0)) + o.substring(1) + ".java").sorted().collect(Collectors.toList()), archivos);
         }
     }
 
+    /**
+     * Las operaciones de /v1/account piden una llave de administración: el SDK se niega a llamarlas con una tvl_ (ConfigurationException
+     * antes de la red), así que su programa corre en un proceso aparte con TREVOL_API_KEY = una tva_ de prueba. Prism no distingue una de
+     * otra (las dos son Bearer).
+     */
+    static final String LLAVE_ADMINISTRACION = "tva_test_" + "c4".repeat(32);
+
+    @SuppressWarnings("unchecked")
+    static Set<String> operacionesDeCuenta() throws IOException {
+        List<Map<String, Object>> ops = new Gson().fromJson(Files.readString(Path.of("pruebas", "datos", "operaciones.json"), StandardCharsets.UTF_8), List.class);
+        return ops.stream().filter(o -> "administracion".equals(o.get("llave"))).map(o -> (String) o.get("operationId")).collect(Collectors.toSet());
+    }
+
+    @Test
+    void lasOperacionesDeCuentaSonDiez() throws IOException {
+        Set<String> cuenta = operacionesDeCuenta();
+        assertEquals(10, cuenta.size());
+        assertTrue(operaciones().containsAll(cuenta), cuenta.toString());
+    }
+
     @ParameterizedTest
     @MethodSource("ops")
     @EnabledIfEnvironmentVariable(named = "TREVOL_PRISM_URL", matches = ".+")
     void elFragmentoCorreContraPrism(String op) throws Exception {
+        if (operacionesDeCuenta().contains(op)) {
+            Path java = Path.of(System.getProperty("java.home"), "bin", "java");
+            ProcessBuilder pb = new ProcessBuilder(java.toString(), "-cp", System.getProperty("java.class.path"), clase(op)).redirectErrorStream(true);
+            pb.environment().put("TREVOL_API_KEY", LLAVE_ADMINISTRACION);
+            Process p = pb.start();
+            String salida = new String(p.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+            assertTrue(p.waitFor(60, TimeUnit.SECONDS), op + ": no terminó");
+            assertEquals(0, p.exitValue(), op + ":\n" + salida);
+            return;
+        }
         Method main = Class.forName(clase(op)).getMethod("main", String[].class);
         main.invoke(null, (Object) new String[0]);
     }

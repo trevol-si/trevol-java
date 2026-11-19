@@ -6,11 +6,11 @@ RADIAN ante la DIAN (Colombia). Documentación: <https://platform.trevol.si/docs
 > **In English.** Java SDK for the Trevol API (Colombian e-invoicing, DIAN). Java ≥ 11, OkHttp 4 + Gson. Typed models and API clients generated
 > from the OpenAPI spec (OpenAPI Generator `okhttp-gson`, package `si.trevol.generado`), plus a thin hand-written layer (package `si.trevol`):
 > automatic `Idempotency-Key` (the same one on retries), retries with exponential backoff honouring `Retry-After`, typed unchecked exceptions
-> by problem+json `code`, environment inferred from the key prefix (`tvl_test_` = DIAN test environment, `tvl_live_` = production), pinned
-> `Trevol-Version`, Standard Webhooks signature verification, cursor pagination with `Iterable` and PDF/XML/ZIP downloads. Docs are in Spanish
+> by problem+json `code`, environment inferred from the key prefix (`tvl_test_` = DIAN test environment, `tvl_live_` = production), account
+> (admin) keys `tva_test_`/`tva_live_` with `account()` and a per-company client (`company(…)`, `withCompany(…)`), pinned `Trevol-Version`, Standard Webhooks signature verification, cursor pagination with `Iterable` and PDF/XML/ZIP downloads. Docs are in Spanish
 > like the API.
 
-**Versión 0.2.0** — API `2026-11-18`. Licencia MIT.
+**Versión 0.3.0** (sin publicar) — API `2026-11-18`. Licencia MIT.
 
 ## Instalación
 
@@ -18,12 +18,12 @@ RADIAN ante la DIAN (Colombia). Documentación: <https://platform.trevol.si/docs
 <dependency>
   <groupId>si.trevol</groupId>
   <artifactId>trevol-java</artifactId>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 
 ```kotlin
-implementation("si.trevol:trevol-java:0.2.0")   // Gradle
+implementation("si.trevol:trevol-java:0.3.0")   // Gradle
 ```
 
 Necesita Java 11 o más nuevo. Depende de OkHttp 4, Gson y de la biblioteca abierta
@@ -74,6 +74,29 @@ y lo opcional en un método por parámetro (`.limit(100)`, `.startingAfter(c)`, 
 rompe tu compilación. El cuerpo se arma con el modelo generado o, lo más cómodo, desde JSON (`InvoiceInput.fromJson(texto)`;
 `TrevolJson.fromJson(texto, Clase.class)` hace lo mismo con la configuración de Gson del SDK); los importes y las fechas viajan como texto
 (`"32000.50"`, `"2026-10-31"`). (Los bloques de texto `"""` necesitan Java 15+ en *tu* código; el SDK funciona desde Java 11.)
+
+## Llave de administración
+
+Si llevas varias empresas en una cuenta, una llave de administración (`tva_test_…` o `tva_live_…`, creada en la consola) sirve para todas.
+`trevol.account()` trae las operaciones de la cuenta (la llave, las empresas, sus llaves, lo emitido y lo recibido de todas). Para las rutas de
+una empresa (facturas, notas, clientes…), dile al cliente cuál: `company("com_…")` al crearlo o `withCompany("com_…")` por empresa. El SDK manda
+`Trevol-Company` y `Trevol-Environment` (el entorno sale del prefijo de la llave) solo con una `tva_`; nunca con una `tvl_`.
+
+```java
+Trevol cuenta = Trevol.builder().apiKey(System.getenv("TREVOL_ACCOUNT_KEY")).build(); // tva_test_… → keyType() == ACCOUNT, environment() == TEST
+
+for (AccountCompany c : cuenta.paginate(cur -> cuenta.account().listAccountCompanies().status("enabled").startingAfter(cur).execute(),
+        AccountCompanyList::getData)) {
+    Trevol empresa = cuenta.withCompany(c.getId()); // barato: comparte la llave, las opciones y las conexiones
+    InvoiceList facturas = empresa.invoices().listInvoices().limit(10).execute();
+    System.out.println(c.getName() + ": " + facturas.getData().size());
+}
+```
+
+Una `tva_` sin empresa en una ruta de empresa es una `ConfigurationException` antes de llamar; `company` o `withCompany` con una llave `tvl_`
+(que ya es de una empresa) o con un id mal formado, también, y lo mismo cualquier operación de `trevol.account()` con una `tvl_`. Los permisos y el alcance los decide la API: una empresa que no es de la cuenta o
+queda fuera del alcance de la llave es un `NotFoundException`, y un permiso que falta, un `PermissionDeniedException` con
+`getProblem().get("required_permission")`. Más en <https://platform.trevol.si/docs/llaves-de-administracion>.
 
 ## Lo que conviene saber
 
@@ -165,6 +188,7 @@ Trevol.builder()
     .maxRetryAfter(Duration.ofSeconds(60))
     .baseUrl("https://api.trevol.si/v1")
     .environment(Trevol.Environment.TEST)        // si la llave no coincide: ConfigurationException antes de llamar
+    .company("com_…")                            // solo con una llave de administración (tva_…)
     .httpClient(miOkHttpClient)                  // proxy, TLS, métricas: el SDK le agrega su interceptor
     .build();
 ```

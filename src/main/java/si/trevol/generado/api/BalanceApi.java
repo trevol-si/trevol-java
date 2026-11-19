@@ -184,7 +184,7 @@ public class BalanceApi {
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
@@ -203,7 +203,7 @@ public class BalanceApi {
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
@@ -223,7 +223,7 @@ public class BalanceApi {
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
@@ -243,7 +243,7 @@ public class BalanceApi {
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
@@ -264,7 +264,7 @@ public class BalanceApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
         <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
      </table>
@@ -465,7 +465,7 @@ public class BalanceApi {
 
     /**
      * Los movimientos del saldo de la cuenta
-     * Los movimientos del saldo de la cuenta (de todas sus empresas), del más nuevo al más viejo: lo mismo que «Saldo y recargas» en la app. Un documento es UNA fila (&#x60;type: document&#x60;) con su &#x60;status&#x60;: &#x60;pending&#x60; (apartado mientras la DIAN lo valida), &#x60;charged&#x60; (validado y cobrado) o &#x60;released&#x60; (la DIAN lo rechazó: no se cobró y &#x60;amount&#x60; es 0); &#x60;company&#x60; dice qué empresa lo emitió. Lo demás es una fila por movimiento: &#x60;top_up&#x60; (recarga, con su &#x60;reference&#x60;), &#x60;top_up_reversal&#x60;, &#x60;bonus&#x60;, &#x60;adjustment&#x60;, &#x60;license_fee&#x60;, &#x60;expiration&#x60; u &#x60;other&#x60;. Una operación de la API que se cobra (una sincronización o una de numeración, ver &#x60;operation_prices&#x60; en &#x60;GET /v1/balance&#x60;) es también UNA fila (&#x60;type: operation&#x60;) con el mismo &#x60;status&#x60; que un documento (&#x60;released&#x60;: no terminó y no se cobró) y &#x60;operation: {type, id}&#x60; (el id de la sincronización, la asociación o la solicitud; null en una lectura de numeraciones). &#x60;amount&#x60; es lo que el movimiento hizo con el disponible, con signo; &#x60;available_after&#x60;, el disponible justo después. Filtro &#x60;type&#x60;: &#x60;all&#x60; (por defecto), &#x60;documents&#x60;, &#x60;funding&#x60; (todo lo que no es un documento, también las operaciones), &#x60;top_ups&#x60; u &#x60;operations&#x60;. Paginación por cursor: &#x60;limit&#x60; (1 a 100, 25 por defecto) y &#x60;starting_after&#x60; (el &#x60;id&#x60; de la última fila que tienes).
+     * Los movimientos del saldo de la cuenta (de todas sus empresas), del más nuevo al más viejo: lo mismo que «Saldo y recargas» en la app. Un documento es UNA fila (&#x60;type: document&#x60;) con su &#x60;status&#x60;: &#x60;pending&#x60; (apartado mientras la DIAN lo valida), &#x60;charged&#x60; (validado y cobrado) o &#x60;released&#x60; (la DIAN lo rechazó: no se cobró y &#x60;amount&#x60; es 0); &#x60;company&#x60; dice qué empresa lo emitió. Lo demás es una fila por movimiento: &#x60;top_up&#x60; (recarga, con su &#x60;reference&#x60;), &#x60;top_up_reversal&#x60;, &#x60;bonus&#x60;, &#x60;adjustment&#x60;, &#x60;license_fee&#x60;, &#x60;expiration&#x60; u &#x60;other&#x60;. Una operación de la API que se cobra (una sincronización o una de numeración, ver &#x60;operation_prices&#x60; en &#x60;GET /v1/balance&#x60;) es también UNA fila (&#x60;type: operation&#x60;) con el mismo &#x60;status&#x60; que un documento (&#x60;released&#x60;: no terminó y no se cobró) y &#x60;operation: {type, id}&#x60; (el id de la sincronización, la asociación o la solicitud; null en una lectura de numeraciones). &#x60;amount&#x60; es lo que el movimiento hizo con el disponible, con signo; &#x60;available_after&#x60;, el disponible justo después. Filtro &#x60;type&#x60;: &#x60;all&#x60; (por defecto), &#x60;documents&#x60;, &#x60;funding&#x60; (todo lo que no es un documento, también las operaciones), &#x60;top_ups&#x60; u &#x60;operations&#x60;. Paginación por cursor: &#x60;limit&#x60; (1 a 100, 25 por defecto) y &#x60;starting_after&#x60; (el &#x60;id&#x60; de la última fila que tienes). Con una llave de administración con alcance de lista, lo de una empresa que la llave no alcanza sale con su monto, su &#x60;status&#x60; y &#x60;available_after&#x60;, pero sin &#x60;company&#x60;, &#x60;document&#x60; ni &#x60;reference&#x60;, y con la descripción «Movimiento de otra empresa de la cuenta».
      * @return APIlistBalanceTransactionsRequest
      * @http.response.details
      <table border="1">

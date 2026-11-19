@@ -25,6 +25,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import si.trevol.generado.model.AccountCompany;
 import si.trevol.generado.model.Document;
 import si.trevol.generado.model.ProblemCurrentSoftware;
 import si.trevol.generado.model.ProblemError;
@@ -133,6 +134,16 @@ public class Problem {
   @javax.annotation.Nullable
   private Integer maximumCop;
 
+  public static final String SERIALIZED_NAME_BALANCE_COP = "balance_cop";
+  @SerializedName(SERIALIZED_NAME_BALANCE_COP)
+  @javax.annotation.Nullable
+  private Integer balanceCop;
+
+  public static final String SERIALIZED_NAME_PRICE_COP = "price_cop";
+  @SerializedName(SERIALIZED_NAME_PRICE_COP)
+  @javax.annotation.Nullable
+  private Integer priceCop;
+
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
   @javax.annotation.Nullable
@@ -162,6 +173,11 @@ public class Problem {
   @SerializedName(SERIALIZED_NAME_REQUIRED_PERMISSION)
   @javax.annotation.Nullable
   private String requiredPermission;
+
+  public static final String SERIALIZED_NAME_COMPANY = "company";
+  @SerializedName(SERIALIZED_NAME_COMPANY)
+  @javax.annotation.Nullable
+  private AccountCompany company;
 
   public static final String SERIALIZED_NAME_ROWS = "rows";
   @SerializedName(SERIALIZED_NAME_ROWS)
@@ -239,7 +255,7 @@ public class Problem {
   }
 
   /**
-   * Valores conocidos: &#x60;authentication_required&#x60;, &#x60;automatic_mode_unavailable&#x60;, &#x60;certificate_problem&#x60;, &#x60;company_busy&#x60;, &#x60;company_not_enabled&#x60;, &#x60;confirmation_required&#x60;, &#x60;dian_rejected&#x60;, &#x60;dian_unavailable&#x60;, &#x60;duplicate_customer&#x60;, &#x60;duplicate_document&#x60;, &#x60;duplicate_product&#x60;, &#x60;external_id_in_use&#x60;, &#x60;file_unavailable&#x60;, &#x60;idempotency_key_required&#x60;, &#x60;idempotency_key_reused&#x60;, &#x60;insufficient_balance&#x60;, &#x60;internal_error&#x60;, &#x60;invalid_api_key&#x60;, &#x60;invalid_json&#x60;, &#x60;invalid_request&#x60;, &#x60;invalid_state&#x60;, &#x60;method_not_allowed&#x60;, &#x60;not_found&#x60;, &#x60;numbering_request_in_progress&#x60;, &#x60;numbering_unavailable&#x60;, &#x60;paper_numbering_limit_reached&#x60;, &#x60;permission_denied&#x60;, &#x60;portal_read_required&#x60;, &#x60;previous_event_pending&#x60;, &#x60;range_protected&#x60;, &#x60;rate_limited&#x60;, &#x60;report_too_large&#x60;, &#x60;request_in_progress&#x60;, &#x60;tacit_acceptance_not_due&#x60;, &#x60;top_up_above_maximum&#x60;, &#x60;top_up_below_minimum&#x60;, &#x60;top_ups_unavailable&#x60;, &#x60;unsupported_version&#x60;, &#x60;validation_error&#x60;, &#x60;webhook_limit_reached&#x60;.
+   * Valores conocidos: &#x60;authentication_required&#x60;, &#x60;automatic_mode_unavailable&#x60;, &#x60;certificate_problem&#x60;, &#x60;company_busy&#x60;, &#x60;company_exists&#x60;, &#x60;company_limit_reached&#x60;, &#x60;company_not_enabled&#x60;, &#x60;confirmation_required&#x60;, &#x60;dian_rejected&#x60;, &#x60;dian_unavailable&#x60;, &#x60;duplicate_customer&#x60;, &#x60;duplicate_document&#x60;, &#x60;duplicate_product&#x60;, &#x60;external_id_in_use&#x60;, &#x60;file_unavailable&#x60;, &#x60;idempotency_key_required&#x60;, &#x60;idempotency_key_reused&#x60;, &#x60;insufficient_balance&#x60;, &#x60;internal_error&#x60;, &#x60;invalid_api_key&#x60;, &#x60;invalid_json&#x60;, &#x60;invalid_request&#x60;, &#x60;invalid_state&#x60;, &#x60;key_limit_reached&#x60;, &#x60;method_not_allowed&#x60;, &#x60;not_found&#x60;, &#x60;numbering_request_in_progress&#x60;, &#x60;numbering_unavailable&#x60;, &#x60;paper_numbering_limit_reached&#x60;, &#x60;permission_denied&#x60;, &#x60;portal_read_required&#x60;, &#x60;previous_event_pending&#x60;, &#x60;range_protected&#x60;, &#x60;rate_limited&#x60;, &#x60;report_too_large&#x60;, &#x60;request_in_progress&#x60;, &#x60;tacit_acceptance_not_due&#x60;, &#x60;top_up_above_maximum&#x60;, &#x60;top_up_below_minimum&#x60;, &#x60;top_ups_unavailable&#x60;, &#x60;unsupported_version&#x60;, &#x60;validation_error&#x60;, &#x60;webhook_limit_reached&#x60;.
    * @return code
    */
   @javax.annotation.Nullable
@@ -399,7 +415,7 @@ public class Problem {
   }
 
   /**
-   * En &#x60;company_not_enabled&#x60; (&#x60;missing_legal_representative&#x60;, &#x60;missing_pin&#x60;, &#x60;missing_software&#x60;, &#x60;payroll_not_enabled&#x60;) y en &#x60;numbering_unavailable&#x60; (&#x60;missing_technical_key&#x60;, &#x60;no_contingency_numbering&#x60;, &#x60;no_resolution&#x60;, &#x60;prefix_in_use&#x60;, &#x60;resolution_exhausted&#x60;, &#x60;resolution_expired&#x60;, &#x60;resolution_not_yet_valid&#x60;): por qué. En &#x60;automatic_mode_unavailable&#x60; (&#x60;credentials_missing&#x60;, &#x60;mandate_required&#x60;: falta el mandato para integraciones que se acepta en la app, &#x60;disabled&#x60;) y en &#x60;permission_denied&#x60; de una ruta que solo existe en producción (&#x60;live_mode_required&#x60;). Valores conocidos: &#x60;credentials_missing&#x60;, &#x60;disabled&#x60;, &#x60;live_mode_required&#x60;, &#x60;mandate_required&#x60;, &#x60;missing_legal_representative&#x60;, &#x60;missing_pin&#x60;, &#x60;missing_software&#x60;, &#x60;missing_technical_key&#x60;, &#x60;no_contingency_numbering&#x60;, &#x60;no_resolution&#x60;, &#x60;payroll_not_enabled&#x60;, &#x60;prefix_in_use&#x60;, &#x60;resolution_exhausted&#x60;, &#x60;resolution_expired&#x60;, &#x60;resolution_not_yet_valid&#x60;.
+   * En &#x60;company_not_enabled&#x60; (&#x60;missing_legal_representative&#x60;, &#x60;missing_pin&#x60;, &#x60;missing_software&#x60;, &#x60;payroll_not_enabled&#x60;) y en &#x60;numbering_unavailable&#x60; (&#x60;missing_technical_key&#x60;, &#x60;no_contingency_numbering&#x60;, &#x60;no_resolution&#x60;, &#x60;prefix_in_use&#x60;, &#x60;resolution_exhausted&#x60;, &#x60;resolution_expired&#x60;, &#x60;resolution_not_yet_valid&#x60;): por qué. En &#x60;automatic_mode_unavailable&#x60; (&#x60;credentials_missing&#x60;, &#x60;mandate_required&#x60;: falta el mandato para integraciones que se acepta en la app, &#x60;disabled&#x60;) y en &#x60;permission_denied&#x60; de una ruta que solo existe en producción (&#x60;live_mode_required&#x60;). En &#x60;permission_denied&#x60; de una llave de administración: &#x60;environment_mismatch&#x60; (&#x60;Trevol-Environment&#x60; no es el ambiente de la llave), &#x60;live_mode_required&#x60; (el alta de empresas pide una llave de producción) y &#x60;scope_list&#x60; (una llave con alcance de lista no da de alta empresas; como esa llave no puede tener &#x60;companies:write&#x60;, lo que llega en la práctica es el 403 con &#x60;required_permission: companies:write&#x60;). Valores conocidos: &#x60;credentials_missing&#x60;, &#x60;disabled&#x60;, &#x60;environment_mismatch&#x60;, &#x60;live_mode_required&#x60;, &#x60;mandate_required&#x60;, &#x60;missing_legal_representative&#x60;, &#x60;missing_pin&#x60;, &#x60;missing_software&#x60;, &#x60;missing_technical_key&#x60;, &#x60;no_contingency_numbering&#x60;, &#x60;no_resolution&#x60;, &#x60;payroll_not_enabled&#x60;, &#x60;prefix_in_use&#x60;, &#x60;resolution_exhausted&#x60;, &#x60;resolution_expired&#x60;, &#x60;resolution_not_yet_valid&#x60;, &#x60;scope_list&#x60;.
    * @return reason
    */
   @javax.annotation.Nullable
@@ -469,13 +485,51 @@ public class Problem {
   }
 
 
+  public Problem balanceCop(@javax.annotation.Nullable Integer balanceCop) {
+    this.balanceCop = balanceCop;
+    return this;
+  }
+
+  /**
+   * En &#x60;insufficient_balance&#x60; de una operación cobrada: el saldo disponible de la cuenta, en pesos.
+   * @return balanceCop
+   */
+  @javax.annotation.Nullable
+  public Integer getBalanceCop() {
+    return balanceCop;
+  }
+
+  public void setBalanceCop(@javax.annotation.Nullable Integer balanceCop) {
+    this.balanceCop = balanceCop;
+  }
+
+
+  public Problem priceCop(@javax.annotation.Nullable Integer priceCop) {
+    this.priceCop = priceCop;
+    return this;
+  }
+
+  /**
+   * En &#x60;insufficient_balance&#x60; de una operación cobrada: lo que cuesta la operación, en pesos.
+   * @return priceCop
+   */
+  @javax.annotation.Nullable
+  public Integer getPriceCop() {
+    return priceCop;
+  }
+
+  public void setPriceCop(@javax.annotation.Nullable Integer priceCop) {
+    this.priceCop = priceCop;
+  }
+
+
   public Problem limit(@javax.annotation.Nullable String limit) {
     this.limit = limit;
     return this;
   }
 
   /**
-   * En &#x60;rate_limited&#x60;: qué límite se pasó.
+   * En &#x60;rate_limited&#x60;: qué límite se pasó. Con una llave de administración: &#x60;lecturas&#x60; (600 peticiones por minuto de la llave en &#x60;/v1/account&#x60;), &#x60;account_key&#x60; (el mismo contador, visto desde una ruta de empresa), &#x60;api_keys&#x60; (60 llaves de empresa creadas o revocadas por hora) y &#x60;account_queries&#x60; (60 consultas de documentos o eventos por minuto, sumando las llaves de la cuenta). En &#x60;company_limit_reached&#x60;: &#x60;hour&#x60; (20 altas por hora) o &#x60;day&#x60; (100 por día).
    * @return limit
    */
   @javax.annotation.Nullable
@@ -578,7 +632,7 @@ public class Problem {
   }
 
   /**
-   * En &#x60;permission_denied&#x60;: el permiso de la llave que hace falta (buscar clientes por su documento necesita &#x60;customers:read&#x60;). Valores conocidos: &#x60;customers:read&#x60;.
+   * En &#x60;permission_denied&#x60;: el permiso de la llave que hace falta (buscar clientes por su documento necesita &#x60;customers:read&#x60;). Con una llave de administración, el permiso que le falta a esa llave (&#x60;companies:read&#x60;, &#x60;companies:write&#x60;, &#x60;keys:write&#x60;, &#x60;documents:read&#x60;, &#x60;documents:write&#x60;, &#x60;customers:read&#x60;). Valores conocidos: &#x60;companies:read&#x60;, &#x60;companies:write&#x60;, &#x60;keys:write&#x60;, &#x60;documents:read&#x60;, &#x60;documents:write&#x60;, &#x60;customers:read&#x60;.
    * @return requiredPermission
    */
   @javax.annotation.Nullable
@@ -588,6 +642,25 @@ public class Problem {
 
   public void setRequiredPermission(@javax.annotation.Nullable String requiredPermission) {
     this.requiredPermission = requiredPermission;
+  }
+
+
+  public Problem company(@javax.annotation.Nullable AccountCompany company) {
+    this.company = company;
+    return this;
+  }
+
+  /**
+   * En &#x60;company_exists&#x60;: la empresa que ya está en la cuenta con ese NIT.
+   * @return company
+   */
+  @javax.annotation.Nullable
+  public AccountCompany getCompany() {
+    return company;
+  }
+
+  public void setCompany(@javax.annotation.Nullable AccountCompany company) {
+    this.company = company;
   }
 
 
@@ -698,12 +771,15 @@ public class Problem {
         Objects.equals(this.previous, problem.previous) &&
         Objects.equals(this.minimumCop, problem.minimumCop) &&
         Objects.equals(this.maximumCop, problem.maximumCop) &&
+        Objects.equals(this.balanceCop, problem.balanceCop) &&
+        Objects.equals(this.priceCop, problem.priceCop) &&
         Objects.equals(this.limit, problem.limit) &&
         Objects.equals(this.availableFrom, problem.availableFrom) &&
         Objects.equals(this.rules, problem.rules) &&
         Objects.equals(this.currentSoftware, problem.currentSoftware) &&
         Objects.equals(this.existingActive, problem.existingActive) &&
         Objects.equals(this.requiredPermission, problem.requiredPermission) &&
+        Objects.equals(this.company, problem.company) &&
         Objects.equals(this.rows, problem.rows) &&
         Objects.equals(this.maxRows, problem.maxRows)&&
         Objects.equals(this.additionalProperties, problem.additionalProperties);
@@ -711,7 +787,7 @@ public class Problem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, title, status, code, detail, retryable, retryAfter, requestId, errors, document, existingId, reason, previous, minimumCop, maximumCop, limit, availableFrom, rules, currentSoftware, existingActive, requiredPermission, rows, maxRows, additionalProperties);
+    return Objects.hash(type, title, status, code, detail, retryable, retryAfter, requestId, errors, document, existingId, reason, previous, minimumCop, maximumCop, balanceCop, priceCop, limit, availableFrom, rules, currentSoftware, existingActive, requiredPermission, company, rows, maxRows, additionalProperties);
   }
 
   @Override
@@ -733,12 +809,15 @@ public class Problem {
     sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
     sb.append("    minimumCop: ").append(toIndentedString(minimumCop)).append("\n");
     sb.append("    maximumCop: ").append(toIndentedString(maximumCop)).append("\n");
+    sb.append("    balanceCop: ").append(toIndentedString(balanceCop)).append("\n");
+    sb.append("    priceCop: ").append(toIndentedString(priceCop)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    availableFrom: ").append(toIndentedString(availableFrom)).append("\n");
     sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
     sb.append("    currentSoftware: ").append(toIndentedString(currentSoftware)).append("\n");
     sb.append("    existingActive: ").append(toIndentedString(existingActive)).append("\n");
     sb.append("    requiredPermission: ").append(toIndentedString(requiredPermission)).append("\n");
+    sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("    maxRows: ").append(toIndentedString(maxRows)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -760,7 +839,7 @@ public class Problem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "title", "status", "code", "detail", "retryable", "retry_after", "request_id", "errors", "document", "existing_id", "reason", "previous", "minimum_cop", "maximum_cop", "limit", "available_from", "rules", "current_software", "existing_active", "required_permission", "rows", "max_rows"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "title", "status", "code", "detail", "retryable", "retry_after", "request_id", "errors", "document", "existing_id", "reason", "previous", "minimum_cop", "maximum_cop", "balance_cop", "price_cop", "limit", "available_from", "rules", "current_software", "existing_active", "required_permission", "company", "rows", "max_rows"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -834,6 +913,10 @@ public class Problem {
       }
       if ((jsonObj.get("required_permission") != null && !jsonObj.get("required_permission").isJsonNull()) && !jsonObj.get("required_permission").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `required_permission` to be a primitive type in the JSON string but got `%s`", jsonObj.get("required_permission").toString()));
+      }
+      // validate the optional field `company`
+      if (jsonObj.get("company") != null && !jsonObj.get("company").isJsonNull()) {
+        AccountCompany.validateJsonElement(jsonObj.get("company"));
       }
   }
 

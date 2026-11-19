@@ -131,7 +131,17 @@ public final class Transporte implements Interceptor {
         }
     }
 
+    static final String CABECERA_EMPRESA = "Trevol-Company";
+    static final String CABECERA_ENTORNO = "Trevol-Environment";
+    static final String SIN_EMPRESA = "Con una llave de administración (tva_…), cada petición a una empresa necesita su id: pásalo al crear el cliente "
+            + "(Trevol.builder().company(\"com_…\")) o usa trevol.withCompany(\"com_…\"). Las operaciones de trevol.account() no lo necesitan.";
+    static final String SOLO_ADMINISTRACION = "Las operaciones de trevol.account() piden una llave de administración (tva_test_… o tva_live_…); "
+            + "una llave tvl_ es de una sola empresa. La crea el titular de la cuenta en https://platform.trevol.si/administracion.";
+
     private final String llave;
+    private final boolean administracion;
+    private final String entorno;
+    private final String empresa;
     private final String apiVersion;
     private final String userAgent;
     private final int maxReintentos;
@@ -144,7 +154,16 @@ public final class Transporte implements Interceptor {
 
     Transporte(String llave, String apiVersion, String userAgent, int maxReintentos, double maxRetryAfter, String rutaBase,
                DoubleConsumer dormir, DoubleSupplier azar, Supplier<String> uuid, Supplier<Instant> ahora) {
+        this(llave, Llave.leer(llave).tipo == Trevol.KeyType.ACCOUNT, Llave.entorno(llave).toString(), null, apiVersion, userAgent, maxReintentos,
+                maxRetryAfter, rutaBase, dormir, azar, uuid, ahora);
+    }
+
+    private Transporte(String llave, boolean administracion, String entorno, String empresa, String apiVersion, String userAgent, int maxReintentos,
+                       double maxRetryAfter, String rutaBase, DoubleConsumer dormir, DoubleSupplier azar, Supplier<String> uuid, Supplier<Instant> ahora) {
         this.llave = llave;
+        this.administracion = administracion;
+        this.entorno = entorno;
+        this.empresa = empresa;
         this.apiVersion = apiVersion;
         this.userAgent = userAgent;
         this.maxReintentos = maxReintentos;
@@ -156,10 +175,26 @@ public final class Transporte implements Interceptor {
         this.ahora = ahora;
     }
 
+    /** El mismo transporte (llave, reintentos, reloj) para otra empresa. {@code empresa} ya viene validada; solo con una llave tva_. */
+    Transporte conEmpresa(String empresa) {
+        return new Transporte(llave, administracion, entorno, empresa, apiVersion, userAgent, maxReintentos, maxRetryAfter, rutaBase, dormir, azar, uuid, ahora);
+    }
+
     /** La llave nunca sale en un toString, un log ni un volcado. */
     @Override
     public String toString() {
-        return "Transporte{apiVersion=" + apiVersion + ", maxReintentos=" + maxReintentos + "}";
+        return "Transporte{apiVersion=" + apiVersion + ", maxReintentos=" + maxReintentos + (empresa != null ? ", company=" + empresa : "") + "}";
+    }
+
+    /**
+     * Qué llave admite una ruta: la de la tabla de operaciones y, si la ruta no está en la tabla (una operación más nueva que el SDK),
+     * {@code /account…} es solo de la llave de administración, {@code /health} no lleva llave y todo lo demás es de una empresa.
+     */
+    static String llaveDe(Tablas.Operacion op, String ruta) {
+        if (op != null && op.llave != null) return op.llave;
+        if (ruta.equals("/account") || ruta.startsWith("/account/")) return "administracion";
+        if (ruta.equals("/health")) return "ninguna";
+        return "api_o_administracion";
     }
 
     @Override
@@ -171,9 +206,20 @@ public final class Transporte implements Interceptor {
         Tablas.Operacion op = operacion(metodo, ruta);
         String reintento = op != null ? op.reintento : "GET".equals(metodo) ? "seguro" : "solo_429";
 
+        // Antes de la red: una operación de la cuenta con una tvl_ la API la rechaza de seguro (401), así que no sale.
+        String llaveOp = llaveDe(op, ruta);
+        if (!administracion && "administracion".equals(llaveOp)) throw new ConfigurationException(SOLO_ADMINISTRACION);
+
+        // La empresa y el entorno: solo con una llave de administración y solo en las rutas de una empresa. Con una tvl_ no viajan nunca
+        // (su empresa y su entorno salen de la llave), ni aunque otro interceptor los haya puesto.
+        Request.Builder b = original.newBuilder().removeHeader(CABECERA_EMPRESA).removeHeader(CABECERA_ENTORNO);
+        if (administracion && "api_o_administracion".equals(llaveOp)) {
+            if (empresa == null) throw new ConfigurationException(SIN_EMPRESA);
+            b.header(CABECERA_EMPRESA, empresa).header(CABECERA_ENTORNO, entorno);
+        }
+
         // La Idempotency-Key: una por llamada, la misma en todos los reintentos.
         String clave = null;
-        Request.Builder b = original.newBuilder();
         if (op != null && op.idempotente) {
             String dada = original.header("Idempotency-Key");
             if (dada == null) {

@@ -187,7 +187,7 @@ public class ReportRunsApi {
             <tr><td> 401 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
          */
@@ -208,7 +208,7 @@ public class ReportRunsApi {
             <tr><td> 401 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
          */
@@ -230,7 +230,7 @@ public class ReportRunsApi {
             <tr><td> 401 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
          */
@@ -252,7 +252,7 @@ public class ReportRunsApi {
             <tr><td> 401 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
          */
@@ -275,7 +275,7 @@ public class ReportRunsApi {
         <tr><td> 401 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
         <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
      </table>
      */

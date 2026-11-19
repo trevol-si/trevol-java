@@ -410,7 +410,7 @@ public class EventsApi {
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 202 </td><td> La entrega encolada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -428,7 +428,7 @@ public class EventsApi {
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 202 </td><td> La entrega encolada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -447,7 +447,7 @@ public class EventsApi {
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 202 </td><td> La entrega encolada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -466,7 +466,7 @@ public class EventsApi {
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 202 </td><td> La entrega encolada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -487,7 +487,7 @@ public class EventsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> La entrega encolada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
         <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
         <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
      </table>
      */

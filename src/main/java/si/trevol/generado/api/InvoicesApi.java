@@ -390,7 +390,7 @@ public class InvoicesApi {
             <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
@@ -412,7 +412,7 @@ public class InvoicesApi {
             <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
@@ -435,7 +435,7 @@ public class InvoicesApi {
             <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
@@ -458,7 +458,7 @@ public class InvoicesApi {
             <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
          </table>
@@ -482,7 +482,7 @@ public class InvoicesApi {
         <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
         <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
      </table>

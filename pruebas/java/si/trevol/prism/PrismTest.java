@@ -21,9 +21,16 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import si.trevol.ConflictException;
 import si.trevol.PreconditionException;
+import si.trevol.RateLimitException;
 import si.trevol.Trevol;
 import si.trevol.TrevolException;
 import si.trevol.TrevolJson;
+import si.trevol.generado.model.AccountApiKeyInput;
+import si.trevol.generado.model.AccountCompanyInput;
+import si.trevol.generado.model.AccountCompanyList;
+import si.trevol.generado.model.AccountDianDocumentList;
+import si.trevol.generado.model.AccountRadianEventList;
+import si.trevol.generado.model.AccountRequestLogList;
 import si.trevol.generado.model.Document;
 import si.trevol.generado.model.EventList;
 import si.trevol.generado.model.InvoiceInput;
@@ -178,5 +185,90 @@ class PrismTest {
         TrevolException e = assertThrows(TrevolException.class, () -> c.invoices().createInvoice(InvoiceInput.fromJson(ejemplo("createInvoice", null))).idempotencyKey("PRUEBA-PRISM-1").execute());
         assertEquals(503, e.getStatus());
         assertEquals("PRUEBA-PRISM-1", e.getIdempotencyKey());
+    }
+
+    // --- Llave de administración (tva_). Prism no distingue una tva_ de una tvl_ (las dos son bearer): aquí se comprueba que lo que manda el
+    // SDK cumple la especificación; la falta de empresa y las cabeceras las cubren las unitarias (AdministracionTest).
+
+    static final String TVA = "tva_test_" + "c3".repeat(32);
+    static final String EMPRESA = "com_3f0c9a1e5b2d4c7f8a6e1d2c3b4a5f60";
+
+    Trevol administracion(String prefer) {
+        Trevol.Builder b = Trevol.builder().apiKey(TVA).baseUrl(URL).maxRetries(0);
+        if (prefer != null) {
+            b.httpClient(new OkHttpClient.Builder().addInterceptor(c -> c.proceed(c.request().newBuilder().header("Prefer", prefer).build()))
+                    .connectTimeout(Duration.ofSeconds(10)).readTimeout(Duration.ofSeconds(30)).build());
+        }
+        return b.build();
+    }
+
+    @Test
+    void conUnaTvaLaCuentaSusEmpresasYSusLlaves() throws Exception {
+        Trevol a = administracion(null);
+        assertEquals(Trevol.KeyType.ACCOUNT, a.keyType());
+        var info = conViolaciones(() -> a.account().retrieveAccount().execute());
+        assertEquals("account_key_info", info.getObject());
+        int n = 0;
+        for (var c : a.paginate(cur -> a.account().listAccountCompanies().limit(2).status("enabled").startingAfter(cur).execute(), AccountCompanyList::getData)) {
+            assertTrue(c.getId().startsWith("com_"));
+            if (++n == 3) break;
+        }
+        assertTrue(n > 0);
+        var empresa = conViolaciones(() -> a.account().createAccountCompany(AccountCompanyInput.fromJson(ejemplo("createAccountCompany", null))).execute());
+        assertEquals("pending", empresa.getStatus());
+        assertEquals("company", conViolaciones(() -> a.account().retrieveAccountCompany(EMPRESA).execute()).getObject());
+        var llave = conViolaciones(() -> a.account().createAccountCompanyApiKey(EMPRESA, AccountApiKeyInput.fromJson(ejemplo("createAccountCompanyApiKey", null))).execute());
+        assertTrue(llave.getToken().startsWith("tvl_"));
+        assertEquals("revoked", conViolaciones(() -> a.account().revokeAccountCompanyApiKey(EMPRESA, llave.getId()).execute()).getStatus());
+        assertNotNull(conViolaciones(() -> a.account().listAccountCompanyApiKeys(EMPRESA).status("active").execute()).getData());
+    }
+
+    @Test
+    void conUnaTvaLoEmitidoLosEventosYLasPeticionesDeLaCuenta() throws Exception {
+        Trevol a = administracion(null);
+        assertNotNull(conViolaciones(() -> a.account().listAccountDianDocuments().company(EMPRESA).direction("received").type("invoice")
+                .issuedFrom("2026-11-01").issuedTo("2026-11-18").limit(10).execute()).getData());
+        int n = 0;
+        for (var e : a.paginate(cur -> a.account().listAccountRadianEvents().code("030").startingAfter(cur).execute(), AccountRadianEventList::getData)) {
+            assertTrue(e.getId().startsWith("rev_"));
+            if (++n == 3) break;
+        }
+        assertNotNull(conViolaciones(() -> a.account().listAccountRequests().status(201).createdFrom("2026-11-01").execute()).getData());
+        n = 0;
+        for (var d : a.paginate(cur -> a.account().listAccountDianDocuments().startingAfter(cur).execute(), AccountDianDocumentList::getData)) {
+            assertNotNull(d.getId());
+            if (++n == 3) break;
+        }
+        n = 0;
+        for (var r : a.paginate(cur -> a.account().listAccountRequests().startingAfter(cur).execute(), AccountRequestLogList::getData)) {
+            assertNotNull(r.getId());
+            if (++n == 3) break;
+        }
+    }
+
+    @Test
+    void conUnaTvaYWithCompanyUnaRutaDeEmpresaCumpleLaEspecificacion() throws Exception {
+        Trevol a = administracion(null).withCompany(EMPRESA);
+        assertEquals("company", conViolaciones(() -> a.general().retrieveCompany().execute()).getObject());
+        Document doc = conViolaciones(() -> a.invoices().createInvoice(InvoiceInput.fromJson(ejemplo("createInvoice", null))).execute());
+        assertEquals("invoice", doc.getObject());
+    }
+
+    @Test
+    void preferCode409CompanyExistsEsConflictConLaEmpresa() throws Exception {
+        Trevol a = administracion("code=409, example=existe");
+        ConflictException e = assertThrows(ConflictException.class,
+                () -> a.account().createAccountCompany(AccountCompanyInput.fromJson(ejemplo("createAccountCompany", null))).execute());
+        assertEquals("company_exists", e.getCode());
+        assertTrue(((Map<?, ?>) e.getProblem().get("company")).get("id").toString().startsWith("com_"));
+    }
+
+    @Test
+    void preferCode429AltasEsRateLimitSinEsperar() throws Exception {
+        Trevol a = administracion("code=429, example=altas");
+        RateLimitException e = assertThrows(RateLimitException.class,
+                () -> a.account().createAccountCompany(AccountCompanyInput.fromJson(ejemplo("createAccountCompany", null))).execute());
+        assertEquals("company_limit_reached", e.getCode());
+        assertNotNull(e.getRetryAfter());
     }
 }
