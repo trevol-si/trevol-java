@@ -183,6 +183,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede recargar el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
@@ -202,6 +203,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede recargar el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
@@ -222,6 +224,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede recargar el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
@@ -242,6 +245,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede recargar el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
             <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
             <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
@@ -255,7 +259,7 @@ public class BalanceApi {
 
     /**
      * Preparar una recarga del saldo (para el widget de Wompi)
-     * Prepara una recarga del saldo de la cuenta y devuelve lo que necesita el widget de Wompi (&#x60;WidgetCheckout&#x60;: &#x60;publicKey&#x60;, &#x60;currency&#x60;, &#x60;amountInCents&#x60;, &#x60;reference&#x60;, &#x60;signature: {integrity}&#x60; y &#x60;expirationTime&#x60;). El pago se hace en el widget; cuando Wompi lo aprueba, Trevol abona el saldo (y la factura de la recarga sale a nombre de &#x60;buyer&#x60;). Preparar no mueve saldo y la firma vence en una hora: si el widget venció, prepara otra. Solo llaves de escritura; exige &#x60;Idempotency-Key&#x60; (repetir con la misma clave devuelve la MISMA recarga). Sin &#x60;buyer&#x60;, la factura va a nombre de la empresa de la llave con sus datos (NIT, DV, razón social, correo, teléfono, dirección y municipio); si no alcanzan, 422 en &#x60;buyer.*&#x60;. El monto va entre la recarga mínima y la máxima (422 &#x60;top_up_below_minimum&#x60; / &#x60;top_up_above_maximum&#x60; con &#x60;minimum_cop&#x60; / &#x60;maximum_cop&#x60;). Es dinero real con cualquier llave (también &#x60;test&#x60;): el saldo es uno solo. Hasta 20 por llave cada 10 minutos (429).
+     * Prepara una recarga del saldo de la cuenta y devuelve lo que necesita el widget de Wompi (&#x60;WidgetCheckout&#x60;: &#x60;publicKey&#x60;, &#x60;currency&#x60;, &#x60;amountInCents&#x60;, &#x60;reference&#x60;, &#x60;signature: {integrity}&#x60; y &#x60;expirationTime&#x60;). El pago se hace en el widget; cuando Wompi lo aprueba, Trevol abona el saldo (y la factura de la recarga sale a nombre de &#x60;buyer&#x60;). Preparar no mueve saldo y la firma vence en una hora: si el widget venció, prepara otra. Solo llaves de escritura; exige &#x60;Idempotency-Key&#x60; (repetir con la misma clave devuelve la MISMA recarga). Sin &#x60;buyer&#x60;, la factura va a nombre de la empresa de la llave con sus datos (NIT, DV, razón social, correo, teléfono, dirección y municipio); si no alcanzan, 422 en &#x60;buyer.*&#x60;. El monto va entre la recarga mínima y la máxima (422 &#x60;top_up_below_minimum&#x60; / &#x60;top_up_above_maximum&#x60; con &#x60;minimum_cop&#x60; / &#x60;maximum_cop&#x60;). Es dinero real con cualquier llave (también &#x60;test&#x60;): el saldo es uno solo. Hasta 20 por llave cada 10 minutos (429). En una cuenta compartida, solo si la persona responsable de la llave puede recargar el saldo de la cuenta (el titular y los administradores); si no, 403 &#x60;permission_denied&#x60; con &#x60;reason: key_owner_without_access&#x60;.
      * @param topUpInput  (required)
      * @return APIcreateBalanceTopUpRequest
      * @http.response.details
@@ -263,6 +267,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> La recarga preparada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La persona responsable de la llave no puede recargar el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
         <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
         <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
@@ -401,6 +406,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede ver los movimientos de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
@@ -418,6 +424,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede ver los movimientos de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
@@ -436,6 +443,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede ver los movimientos de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
@@ -454,6 +462,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede ver los movimientos de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
@@ -472,6 +481,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La persona responsable de la llave no puede ver los movimientos de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
         <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
         <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
      </table>
@@ -560,6 +570,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> El saldo </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede ver el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -576,6 +587,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> El saldo </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede ver el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -593,6 +605,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> El saldo </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede ver el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -610,6 +623,7 @@ public class BalanceApi {
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
             <tr><td> 200 </td><td> El saldo </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La persona responsable de la llave no puede ver el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
             <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
          </table>
          */
@@ -620,13 +634,14 @@ public class BalanceApi {
 
     /**
      * El saldo de la cuenta (lo comparten sus empresas)
-     * El saldo prepago de Trevol. Es de la **cuenta**, no de la empresa: todas las empresas de la cuenta lo comparten (&#x60;shared: true&#x60;) y cualquier llave de cualquiera de ellas, de lectura o de escritura, &#x60;test&#x60; o &#x60;live&#x60;, ve el mismo. Solo lo que se emite en producción (llaves &#x60;live&#x60;) lo consume; la habilitación (&#x60;test&#x60;) no cobra. &#x60;available&#x60; es lo que se puede gastar (en pesos); &#x60;held&#x60;, lo apartado por documentos que la DIAN todavía valida y por operaciones de la API en curso; &#x60;overdraft&#x60;, cuánto puede bajar &#x60;available&#x60; de cero al apartar un documento; &#x60;low_threshold&#x60;, el umbral del aviso de saldo bajo (el 20 % de la última recarga; &#x60;null&#x60; sin recargas). &#x60;level&#x60;: &#x60;empty&#x60; con &#x60;available&#x60; ≤ 0, &#x60;low&#x60; por debajo de &#x60;low_threshold&#x60;, si no &#x60;ok&#x60;. Con &#x60;available&#x60; por debajo del precio de un documento, emitir en producción responde 402 &#x60;insufficient_balance&#x60;. El evento &#x60;balance.low&#x60; avisa por webhook. &#x60;operation_prices&#x60;: el precio en pesos de cada operación que Trevol hace por la empresa en el portal de la DIAN y que se cobra del saldo (&#x60;dian_sync&#x60;: &#x60;POST /v1/dian_syncs&#x60;; &#x60;numbering_refresh&#x60;: &#x60;POST /v1/numbering_ranges/refresh&#x60;; &#x60;numbering_association&#x60;: &#x60;POST /v1/numbering_ranges/{id}/associate&#x60;; &#x60;numbering_request&#x60;: &#x60;POST /v1/numbering_requests&#x60;, una vez por solicitud). 0 es gratis. Solo en producción: se aparta al crearla, se cobra si termina bien y se devuelve si falla; sin saldo, 402 &#x60;insufficient_balance&#x60; y no se crea nada. Si la persona responsable de la llave no puede ver el saldo de la cuenta (en una cuenta compartida, un Facturador: en la app solo ve si alcanza), 403 &#x60;permission_denied&#x60; con &#x60;reason: key_owner_without_access&#x60;, y el 402 llega sin &#x60;balance_cop&#x60;.
+     * El saldo prepago de Trevol. Es de la **cuenta**, no de la empresa: todas las empresas de la cuenta lo comparten (&#x60;shared: true&#x60;) y toda llave que lo lee, de cualquiera de ellas, de lectura o de escritura, &#x60;test&#x60; o &#x60;live&#x60;, ve el mismo (en una cuenta compartida, la llave de un Facturador no lo lee: 403, abajo). Solo lo que se emite en producción (llaves &#x60;live&#x60;) lo consume; la habilitación (&#x60;test&#x60;) no cobra. &#x60;available&#x60; es lo que se puede gastar (en pesos); &#x60;held&#x60;, lo apartado por documentos que la DIAN todavía valida y por operaciones de la API en curso; &#x60;overdraft&#x60;, cuánto puede bajar &#x60;available&#x60; de cero al apartar un documento; &#x60;low_threshold&#x60;, el umbral del aviso de saldo bajo (el 20 % de la última recarga; &#x60;null&#x60; sin recargas). &#x60;level&#x60;: &#x60;empty&#x60; con &#x60;available&#x60; ≤ 0, &#x60;low&#x60; por debajo de &#x60;low_threshold&#x60;, si no &#x60;ok&#x60;. Con &#x60;available&#x60; por debajo del precio de un documento, emitir en producción responde 402 &#x60;insufficient_balance&#x60;. El evento &#x60;balance.low&#x60; avisa por webhook. &#x60;operation_prices&#x60;: el precio en pesos de cada operación que Trevol hace por la empresa en el portal de la DIAN y que se cobra del saldo (&#x60;dian_sync&#x60;: &#x60;POST /v1/dian_syncs&#x60;; &#x60;numbering_refresh&#x60;: &#x60;POST /v1/numbering_ranges/refresh&#x60;; &#x60;numbering_association&#x60;: &#x60;POST /v1/numbering_ranges/{id}/associate&#x60;; &#x60;numbering_request&#x60;: &#x60;POST /v1/numbering_requests&#x60;, una vez por solicitud). 0 es gratis. Solo en producción: se aparta al crearla, se cobra si termina bien y se devuelve si falla; sin saldo, 402 &#x60;insufficient_balance&#x60; y no se crea nada. Si la persona responsable de la llave no puede ver el saldo de la cuenta (en una cuenta compartida, un Facturador: en la app solo ve si alcanza), 403 &#x60;permission_denied&#x60; con &#x60;reason: key_owner_without_access&#x60;, y el 402 llega sin &#x60;balance_cop&#x60;. Por eso &#x60;key_owner&#x60; (el nivel del saldo propio de la persona responsable, si la llave paga con él) solo llega a las llaves de quien puede ver el saldo de la cuenta.
      * @return APIretrieveBalanceRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> El saldo </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La persona responsable de la llave no puede ver el saldo de la cuenta (&#x60;key_owner_without_access&#x60;) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
         <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
      </table>
      */
