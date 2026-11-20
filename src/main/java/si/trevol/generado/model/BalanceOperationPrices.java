@@ -47,7 +47,7 @@ import java.util.Set;
 import si.trevol.generado.JSON;
 
 /**
- * El precio en pesos de cada operación de la API que se cobra del saldo porque Trevol entra al portal de la DIAN (0 &#x3D; gratis). Solo en producción.
+ * El precio en pesos de cada operación que Trevol hace por la empresa en el portal de la DIAN y que se cobra del saldo (0 es gratis). Solo en producción.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.26.0")
 public class BalanceOperationPrices {

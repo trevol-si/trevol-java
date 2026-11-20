@@ -89,7 +89,7 @@ public class AccountCompanyOnboarding {
   }
 
   /**
-   * Con &#x60;status: stopped&#x60;, por qué se detuvo (el detalle se ve en la app); si no, null. Valores conocidos: &#x60;invalid_link&#x60;, &#x60;link_already_used&#x60;, &#x60;no_free_certificate&#x60;, &#x60;duplicate_email&#x60;, &#x60;missing_legal_representative&#x60;, &#x60;legal_representative_data&#x60;, &#x60;invalid_certificate&#x60;, &#x60;certificate_password&#x60;, &#x60;association_blocked&#x60;, &#x60;not_registered_for_testing&#x60;, &#x60;test_set_rejected&#x60;, &#x60;dian_portal_unavailable&#x60;, &#x60;captcha&#x60;, &#x60;internal_error&#x60;.
+   * Con &#x60;status: stopped&#x60;, por qué se detuvo (el detalle se ve en la app); si no, null. Valores conocidos: &#x60;invalid_link&#x60;, &#x60;link_already_used&#x60;, &#x60;no_free_certificate&#x60;, &#x60;duplicate_email&#x60;, &#x60;missing_legal_representative&#x60;, &#x60;legal_representative_data&#x60;, &#x60;invalid_certificate&#x60;, &#x60;certificate_password&#x60;, &#x60;association_blocked&#x60;, &#x60;not_registered_for_testing&#x60;, &#x60;test_set_rejected&#x60;, &#x60;dian_portal_unavailable&#x60;, &#x60;internal_error&#x60;.
    * @return stopReason
    */
   @javax.annotation.Nullable
