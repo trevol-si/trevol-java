@@ -164,15 +164,15 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -187,15 +187,15 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public File execute() throws ApiException {
@@ -211,15 +211,15 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<File> executeWithHttpInfo() throws ApiException {
@@ -235,15 +235,15 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<File> _callback) throws ApiException {
@@ -260,15 +260,15 @@ public class DianDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  </td></tr>
-        <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> El XML, tal como lo entrega la DIAN en el momento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Error (application/problem+json). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 502 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIdownloadDianDocumentXmlRequest downloadDianDocumentXml(@javax.annotation.Nonnull String id) {
@@ -363,9 +363,9 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -380,9 +380,9 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public DianDocument execute() throws ApiException {
@@ -398,9 +398,9 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<DianDocument> executeWithHttpInfo() throws ApiException {
@@ -416,9 +416,9 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<DianDocument> _callback) throws ApiException {
@@ -435,15 +435,15 @@ public class DianDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIgetDianDocumentRequest getDianDocument(@javax.annotation.Nonnull String id) {
         return new APIgetDianDocumentRequest(id);
     }
-    private okhttp3.Call listDianDocumentsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String type, @javax.annotation.Nullable String issuedFrom, @javax.annotation.Nullable String issuedTo, @javax.annotation.Nullable String direction, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDianDocumentsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String type, @javax.annotation.Nullable String issuedFrom, @javax.annotation.Nullable String issuedTo, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -492,6 +492,14 @@ public class DianDocumentsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("direction", direction));
         }
 
+        if (number != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("number", number));
+        }
+
+        if (prefix != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("prefix", prefix));
+        }
+
         final String[] localVarAccepts = {
             "application/json",
             "application/problem+json"
@@ -513,21 +521,21 @@ public class DianDocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDianDocumentsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String type, @javax.annotation.Nullable String issuedFrom, @javax.annotation.Nullable String issuedTo, @javax.annotation.Nullable String direction, final ApiCallback _callback) throws ApiException {
-        return listDianDocumentsCall(limit, startingAfter, type, issuedFrom, issuedTo, direction, _callback);
+    private okhttp3.Call listDianDocumentsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String type, @javax.annotation.Nullable String issuedFrom, @javax.annotation.Nullable String issuedTo, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback _callback) throws ApiException {
+        return listDianDocumentsCall(limit, startingAfter, type, issuedFrom, issuedTo, direction, number, prefix, _callback);
 
     }
 
 
-    private ApiResponse<DianDocumentList> listDianDocumentsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String type, @javax.annotation.Nullable String issuedFrom, @javax.annotation.Nullable String issuedTo, @javax.annotation.Nullable String direction) throws ApiException {
-        okhttp3.Call localVarCall = listDianDocumentsValidateBeforeCall(limit, startingAfter, type, issuedFrom, issuedTo, direction, null);
+    private ApiResponse<DianDocumentList> listDianDocumentsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String type, @javax.annotation.Nullable String issuedFrom, @javax.annotation.Nullable String issuedTo, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix) throws ApiException {
+        okhttp3.Call localVarCall = listDianDocumentsValidateBeforeCall(limit, startingAfter, type, issuedFrom, issuedTo, direction, number, prefix, null);
         Type localVarReturnType = new TypeToken<DianDocumentList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listDianDocumentsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String type, @javax.annotation.Nullable String issuedFrom, @javax.annotation.Nullable String issuedTo, @javax.annotation.Nullable String direction, final ApiCallback<DianDocumentList> _callback) throws ApiException {
+    private okhttp3.Call listDianDocumentsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String type, @javax.annotation.Nullable String issuedFrom, @javax.annotation.Nullable String issuedTo, @javax.annotation.Nullable String direction, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback<DianDocumentList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listDianDocumentsValidateBeforeCall(limit, startingAfter, type, issuedFrom, issuedTo, direction, _callback);
+        okhttp3.Call localVarCall = listDianDocumentsValidateBeforeCall(limit, startingAfter, type, issuedFrom, issuedTo, direction, number, prefix, _callback);
         Type localVarReturnType = new TypeToken<DianDocumentList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -546,6 +554,10 @@ public class DianDocumentsApi {
         private String issuedTo;
         @javax.annotation.Nullable
         private String direction;
+        @javax.annotation.Nullable
+        private String number;
+        @javax.annotation.Nullable
+        private String prefix;
 
         private APIlistDianDocumentsRequest() {
         }
@@ -611,6 +623,26 @@ public class DianDocumentsApi {
         }
 
         /**
+         * Set number
+         * @param number El número completo exacto, como sale en &#x60;number&#x60; (sin prefijo, solo el consecutivo). En lo recibido es el del proveedor y puede repetirse entre proveedores. (optional)
+         * @return APIlistDianDocumentsRequest
+         */
+        public APIlistDianDocumentsRequest number(@javax.annotation.Nullable String number) {
+            this.number = number;
+            return this;
+        }
+
+        /**
+         * Set prefix
+         * @param prefix El prefijo exacto, como sale en &#x60;prefix&#x60;. Solo, lista una numeración; con &#x60;number&#x60;, quita la ambigüedad. (optional)
+         * @return APIlistDianDocumentsRequest
+         */
+        public APIlistDianDocumentsRequest prefix(@javax.annotation.Nullable String prefix) {
+            this.prefix = prefix;
+            return this;
+        }
+
+        /**
          * Build call for listDianDocuments
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -619,14 +651,14 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return listDianDocumentsCall(limit, startingAfter, type, issuedFrom, issuedTo, direction, _callback);
+            return listDianDocumentsCall(limit, startingAfter, type, issuedFrom, issuedTo, direction, number, prefix, _callback);
         }
 
         /**
@@ -637,14 +669,14 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public DianDocumentList execute() throws ApiException {
-            ApiResponse<DianDocumentList> localVarResp = listDianDocumentsWithHttpInfo(limit, startingAfter, type, issuedFrom, issuedTo, direction);
+            ApiResponse<DianDocumentList> localVarResp = listDianDocumentsWithHttpInfo(limit, startingAfter, type, issuedFrom, issuedTo, direction, number, prefix);
             return localVarResp.getData();
         }
 
@@ -656,14 +688,14 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<DianDocumentList> executeWithHttpInfo() throws ApiException {
-            return listDianDocumentsWithHttpInfo(limit, startingAfter, type, issuedFrom, issuedTo, direction);
+            return listDianDocumentsWithHttpInfo(limit, startingAfter, type, issuedFrom, issuedTo, direction, number, prefix);
         }
 
         /**
@@ -675,29 +707,29 @@ public class DianDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<DianDocumentList> _callback) throws ApiException {
-            return listDianDocumentsAsync(limit, startingAfter, type, issuedFrom, issuedTo, direction, _callback);
+            return listDianDocumentsAsync(limit, startingAfter, type, issuedFrom, issuedTo, direction, number, prefix, _callback);
         }
     }
 
     /**
      * Lo que la empresa emitió y recibió según la DIAN (con Trevol o con otro sistema)
-     * Lo que la DIAN tiene de la empresa de la llave, emitido con Trevol o con cualquier otro sistema, tal como lo trajo la sincronización de Trevol («Sincronizar con la DIAN» en la app, o &#x60;POST /v1/dian_syncs&#x60;). &#x60;direction&#x60;: &#x60;issued&#x60; (por defecto: lo EMITIDO), &#x60;received&#x60; (lo RECIBIDO de los proveedores, por la sincronización o por el buzón de recepción; lo del buzón aparece cuando una sincronización con lo recibido ya lo trajo de la DIAN) o &#x60;all&#x60;. Del más nuevo al más viejo por fecha de expedición. Es de solo lectura y no se cobra; no tiene PDF ni acciones aquí (&#x60;cufe&#x60; lo identifica ante la DIAN). El XML de cualquiera se pide a la DIAN en el momento (&#x60;xml_available&#x60; y &#x60;GET /v1/dian_documents/{id}/xml&#x60;; el de lo emitido trae los datos personales del cliente y exige el permiso &#x60;customers:read&#x60; de la llave). Lo que se emitió con Trevol aparece también en su recurso (&#x60;/invoices&#x60;…) con el mismo &#x60;cufe&#x60;. Filtros: &#x60;type&#x60; y &#x60;issued_from&#x60; / &#x60;issued_to&#x60; (AAAA-MM-DD, incluidos). Paginación por cursor: &#x60;limit&#x60; (1 a 100, 20 por defecto) y &#x60;starting_after&#x60; (el &#x60;id&#x60; de la última fila que tienes, pedida con la misma &#x60;direction&#x60;).
+     * Lo que la DIAN tiene de la empresa de la llave, emitido con Trevol o con cualquier otro sistema, tal como lo trajo la sincronización de Trevol («Sincronizar con la DIAN» en la app, o &#x60;POST /v1/dian_syncs&#x60;). &#x60;direction&#x60;: &#x60;issued&#x60; (por defecto: lo EMITIDO), &#x60;received&#x60; (lo RECIBIDO de los proveedores, por la sincronización o por el buzón de recepción; lo del buzón aparece cuando una sincronización con lo recibido ya lo trajo de la DIAN) o &#x60;all&#x60;. Del más nuevo al más viejo por fecha de expedición. Es de solo lectura y no se cobra; no tiene PDF ni acciones aquí (&#x60;cufe&#x60; lo identifica ante la DIAN). El XML de cualquiera se pide a la DIAN en el momento (&#x60;xml_available&#x60; y &#x60;GET /v1/dian_documents/{id}/xml&#x60;; el de lo emitido trae los datos personales del cliente y exige el permiso &#x60;customers:read&#x60; de la llave). Lo que se emitió con Trevol aparece también en su recurso (&#x60;/invoices&#x60;…) con el mismo &#x60;cufe&#x60;. Filtros: &#x60;type&#x60;, &#x60;issued_from&#x60; / &#x60;issued_to&#x60; (AAAA-MM-DD, incluidos) y, para buscar un documento por su número, &#x60;number&#x60; (el número completo exacto, como sale en &#x60;number&#x60;: &#x60;?number&#x3D;FE7595&#x60;) y &#x60;prefix&#x60; (el prefijo exacto). En lo recibido el número es el del proveedor y puede repetirse entre proveedores: por eso es una lista. Paginación por cursor: &#x60;limit&#x60; (1 a 100, 20 por defecto) y &#x60;starting_after&#x60; (el &#x60;id&#x60; de la última fila que tienes, pedida con la misma &#x60;direction&#x60;).
      * @return APIlistDianDocumentsRequest
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIlistDianDocumentsRequest listDianDocuments() {

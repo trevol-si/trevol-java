@@ -71,6 +71,11 @@ public class InvoiceBatch {
   @javax.annotation.Nullable
   private String environment;
 
+  public static final String SERIALIZED_NAME_SIMULATED = "simulated";
+  @SerializedName(SERIALIZED_NAME_SIMULATED)
+  @javax.annotation.Nullable
+  private Boolean simulated;
+
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
@@ -153,6 +158,25 @@ public class InvoiceBatch {
 
   public void setEnvironment(@javax.annotation.Nullable String environment) {
     this.environment = environment;
+  }
+
+
+  public InvoiceBatch simulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+    return this;
+  }
+
+  /**
+   * Solo en el entorno SIMULADO (la empresa simulada de la cuenta): el objeto se validó, se calculó y se firmó como siempre, pero nunca llegó a la DIAN ni tiene validez. Un objeto real no lleva esta propiedad.
+   * @return simulated
+   */
+  @javax.annotation.Nullable
+  public Boolean getSimulated() {
+    return simulated;
+  }
+
+  public void setSimulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
   }
 
 
@@ -316,6 +340,7 @@ public class InvoiceBatch {
     return Objects.equals(this.id, invoiceBatch.id) &&
         Objects.equals(this._object, invoiceBatch._object) &&
         Objects.equals(this.environment, invoiceBatch.environment) &&
+        Objects.equals(this.simulated, invoiceBatch.simulated) &&
         Objects.equals(this.status, invoiceBatch.status) &&
         Objects.equals(this.createdAt, invoiceBatch.createdAt) &&
         Objects.equals(this.completedAt, invoiceBatch.completedAt) &&
@@ -326,7 +351,7 @@ public class InvoiceBatch {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, environment, status, createdAt, completedAt, counts, items, additionalProperties);
+    return Objects.hash(id, _object, environment, simulated, status, createdAt, completedAt, counts, items, additionalProperties);
   }
 
   @Override
@@ -336,6 +361,7 @@ public class InvoiceBatch {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    simulated: ").append(toIndentedString(simulated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    completedAt: ").append(toIndentedString(completedAt)).append("\n");
@@ -360,7 +386,7 @@ public class InvoiceBatch {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "status", "created_at", "completed_at", "counts", "items"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "simulated", "status", "created_at", "completed_at", "counts", "items"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

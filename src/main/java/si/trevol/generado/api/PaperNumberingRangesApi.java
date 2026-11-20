@@ -182,11 +182,11 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -201,11 +201,11 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public PaperNumberingRange execute() throws ApiException {
@@ -221,11 +221,11 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<PaperNumberingRange> executeWithHttpInfo() throws ApiException {
@@ -241,11 +241,11 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<PaperNumberingRange> _callback) throws ApiException {
@@ -262,11 +262,11 @@ public class PaperNumberingRangesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 201 </td><td> La numeración registrada </td><td>  * Location -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIcreatePaperNumberingRangeRequest createPaperNumberingRange(@javax.annotation.Nonnull PaperNumberingRangeInput paperNumberingRangeInput) {
@@ -361,10 +361,10 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -379,10 +379,10 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public PaperNumberingRange execute() throws ApiException {
@@ -398,10 +398,10 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<PaperNumberingRange> executeWithHttpInfo() throws ApiException {
@@ -417,10 +417,10 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<PaperNumberingRange> _callback) throws ApiException {
@@ -437,10 +437,10 @@ public class PaperNumberingRangesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> La numeración retirada </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIdeactivatePaperNumberingRangeRequest deactivatePaperNumberingRange(@javax.annotation.Nonnull String id) {
@@ -526,8 +526,8 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -542,8 +542,8 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public PaperNumberingRangeList execute() throws ApiException {
@@ -559,8 +559,8 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<PaperNumberingRangeList> executeWithHttpInfo() throws ApiException {
@@ -576,8 +576,8 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<PaperNumberingRangeList> _callback) throws ApiException {
@@ -593,8 +593,8 @@ public class PaperNumberingRangesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIlistPaperNumberingRangesRequest listPaperNumberingRanges() {
@@ -689,9 +689,9 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -706,9 +706,9 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public PaperNumberingRange execute() throws ApiException {
@@ -724,9 +724,9 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<PaperNumberingRange> executeWithHttpInfo() throws ApiException {
@@ -742,9 +742,9 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<PaperNumberingRange> _callback) throws ApiException {
@@ -761,9 +761,9 @@ public class PaperNumberingRangesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIretrievePaperNumberingRangeRequest retrievePaperNumberingRange(@javax.annotation.Nonnull String id) {
@@ -867,12 +867,12 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -887,12 +887,12 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public PaperNumberingRange execute() throws ApiException {
@@ -908,12 +908,12 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<PaperNumberingRange> executeWithHttpInfo() throws ApiException {
@@ -929,12 +929,12 @@ public class PaperNumberingRangesApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<PaperNumberingRange> _callback) throws ApiException {
@@ -952,12 +952,12 @@ public class PaperNumberingRangesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> La numeración </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIupdatePaperNumberingRangeRequest updatePaperNumberingRange(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull PaperNumberingRangeUpdate paperNumberingRangeUpdate) {

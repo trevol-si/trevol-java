@@ -185,13 +185,13 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -206,13 +206,13 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public DianSync execute() throws ApiException {
@@ -228,13 +228,13 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<DianSync> executeWithHttpInfo() throws ApiException {
@@ -250,13 +250,13 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<DianSync> _callback) throws ApiException {
@@ -272,13 +272,13 @@ public class DianSyncsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 202 </td><td> La sincronización, en curso </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIcreateDianSyncRequest createDianSync() {
@@ -373,9 +373,9 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -390,9 +390,9 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public DianSync execute() throws ApiException {
@@ -408,9 +408,9 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<DianSync> executeWithHttpInfo() throws ApiException {
@@ -426,9 +426,9 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<DianSync> _callback) throws ApiException {
@@ -445,9 +445,9 @@ public class DianSyncsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> La sincronización </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIgetDianSyncRequest getDianSync(@javax.annotation.Nonnull String id) {
@@ -581,10 +581,10 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -599,10 +599,10 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public DianSyncList execute() throws ApiException {
@@ -618,10 +618,10 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<DianSyncList> executeWithHttpInfo() throws ApiException {
@@ -637,10 +637,10 @@ public class DianSyncsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<DianSyncList> _callback) throws ApiException {
@@ -656,10 +656,10 @@ public class DianSyncsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIlistDianSyncsRequest listDianSyncs() {

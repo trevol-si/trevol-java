@@ -85,7 +85,7 @@ public class DocumentTotalsItem {
   }
 
   /**
-   * Get gross
+   * Cantidad × precio SIN impuestos.
    * @return gross
    */
   @javax.annotation.Nullable

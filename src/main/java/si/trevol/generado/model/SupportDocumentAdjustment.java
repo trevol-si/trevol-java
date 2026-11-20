@@ -79,6 +79,11 @@ public class SupportDocumentAdjustment {
   @javax.annotation.Nullable
   private String environment;
 
+  public static final String SERIALIZED_NAME_SIMULATED = "simulated";
+  @SerializedName(SERIALIZED_NAME_SIMULATED)
+  @javax.annotation.Nullable
+  private Boolean simulated;
+
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
@@ -251,6 +256,25 @@ public class SupportDocumentAdjustment {
 
   public void setEnvironment(@javax.annotation.Nullable String environment) {
     this.environment = environment;
+  }
+
+
+  public SupportDocumentAdjustment simulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+    return this;
+  }
+
+  /**
+   * Solo en el entorno SIMULADO (la empresa simulada de la cuenta): el objeto se validó, se calculó y se firmó como siempre, pero nunca llegó a la DIAN ni tiene validez. Un objeto real no lleva esta propiedad.
+   * @return simulated
+   */
+  @javax.annotation.Nullable
+  public Boolean getSimulated() {
+    return simulated;
+  }
+
+  public void setSimulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
   }
 
 
@@ -772,6 +796,7 @@ public class SupportDocumentAdjustment {
     return Objects.equals(this.id, supportDocumentAdjustment.id) &&
         Objects.equals(this._object, supportDocumentAdjustment._object) &&
         Objects.equals(this.environment, supportDocumentAdjustment.environment) &&
+        Objects.equals(this.simulated, supportDocumentAdjustment.simulated) &&
         Objects.equals(this.status, supportDocumentAdjustment.status) &&
         Objects.equals(this.number, supportDocumentAdjustment.number) &&
         Objects.equals(this.prefix, supportDocumentAdjustment.prefix) &&
@@ -800,7 +825,7 @@ public class SupportDocumentAdjustment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, environment, status, number, prefix, externalId, origin, qr, issuedAt, items, payment, currency, totals, dian, delivery, createdAt, updatedAt, cuds, seller, notes, references, allowanceCharges, concept, description, supportDocument, additionalProperties);
+    return Objects.hash(id, _object, environment, simulated, status, number, prefix, externalId, origin, qr, issuedAt, items, payment, currency, totals, dian, delivery, createdAt, updatedAt, cuds, seller, notes, references, allowanceCharges, concept, description, supportDocument, additionalProperties);
   }
 
   @Override
@@ -810,6 +835,7 @@ public class SupportDocumentAdjustment {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    simulated: ").append(toIndentedString(simulated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
@@ -852,7 +878,7 @@ public class SupportDocumentAdjustment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "status", "number", "prefix", "external_id", "origin", "qr", "issued_at", "items", "payment", "currency", "totals", "dian", "delivery", "created_at", "updated_at", "cuds", "seller", "notes", "references", "allowance_charges", "concept", "description", "support_document"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "simulated", "status", "number", "prefix", "external_id", "origin", "qr", "issued_at", "items", "payment", "currency", "totals", "dian", "delivery", "created_at", "updated_at", "cuds", "seller", "notes", "references", "allowance_charges", "concept", "description", "support_document"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

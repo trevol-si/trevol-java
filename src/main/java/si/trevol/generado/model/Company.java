@@ -97,6 +97,11 @@ public class Company {
   @javax.annotation.Nullable
   private String environment;
 
+  public static final String SERIALIZED_NAME_SIMULATED = "simulated";
+  @SerializedName(SERIALIZED_NAME_SIMULATED)
+  @javax.annotation.Nullable
+  private Boolean simulated;
+
   public static final String SERIALIZED_NAME_NUMBERING = "numbering";
   @SerializedName(SERIALIZED_NAME_NUMBERING)
   @javax.annotation.Nullable
@@ -267,6 +272,25 @@ public class Company {
   }
 
 
+  public Company simulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+    return this;
+  }
+
+  /**
+   * Solo en el entorno SIMULADO (la empresa simulada de la cuenta): el objeto se validó, se calculó y se firmó como siempre, pero nunca llegó a la DIAN ni tiene validez. Un objeto real no lleva esta propiedad.
+   * @return simulated
+   */
+  @javax.annotation.Nullable
+  public Boolean getSimulated() {
+    return simulated;
+  }
+
+  public void setSimulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+  }
+
+
   public Company numbering(@javax.annotation.Nullable List<CompanyNumbering> numbering) {
     this.numbering = numbering;
     return this;
@@ -402,6 +426,7 @@ public class Company {
         Objects.equals(this.tradeName, company.tradeName) &&
         Objects.equals(this.status, company.status) &&
         Objects.equals(this.environment, company.environment) &&
+        Objects.equals(this.simulated, company.simulated) &&
         Objects.equals(this.numbering, company.numbering) &&
         Objects.equals(this.key, company.key) &&
         Objects.equals(this.capabilities, company.capabilities)&&
@@ -410,7 +435,7 @@ public class Company {
 
   @Override
   public int hashCode() {
-    return Objects.hash(_object, id, nit, checkDigit, name, tradeName, status, environment, numbering, key, capabilities, additionalProperties);
+    return Objects.hash(_object, id, nit, checkDigit, name, tradeName, status, environment, simulated, numbering, key, capabilities, additionalProperties);
   }
 
   @Override
@@ -425,6 +450,7 @@ public class Company {
     sb.append("    tradeName: ").append(toIndentedString(tradeName)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    simulated: ").append(toIndentedString(simulated)).append("\n");
     sb.append("    numbering: ").append(toIndentedString(numbering)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
@@ -447,7 +473,7 @@ public class Company {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("object", "id", "nit", "check_digit", "name", "trade_name", "status", "environment", "numbering", "key", "capabilities"));
+    openapiFields = new HashSet<String>(Arrays.asList("object", "id", "nit", "check_digit", "name", "trade_name", "status", "environment", "simulated", "numbering", "key", "capabilities"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

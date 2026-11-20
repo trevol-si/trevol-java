@@ -65,7 +65,7 @@ public class Numbering {
   }
 
   /**
-   * Prefijo de la resolución POS o de documento soporte que numera (el de &#x60;GET /v1/company&#x60; → &#x60;capabilities.equivalent_documents.pos_numbering&#x60; o &#x60;capabilities.support_documents.numbering&#x60;).
+   * Prefijo de la numeración (1 a 4 letras o dígitos, sin distinguir mayúsculas). Factura: una con &#x60;usable: true&#x60; en GET /v1/numbering_ranges (sin él, la predeterminada); POS y DS: GET /v1/company.
    * @return prefix
    */
   @javax.annotation.Nonnull

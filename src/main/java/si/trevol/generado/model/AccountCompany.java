@@ -65,6 +65,11 @@ public class AccountCompany {
   @javax.annotation.Nullable
   private String _object;
 
+  public static final String SERIALIZED_NAME_SIMULATED = "simulated";
+  @SerializedName(SERIALIZED_NAME_SIMULATED)
+  @javax.annotation.Nullable
+  private Boolean simulated;
+
   public static final String SERIALIZED_NAME_NIT = "nit";
   @SerializedName(SERIALIZED_NAME_NIT)
   @javax.annotation.Nullable
@@ -158,6 +163,25 @@ public class AccountCompany {
 
   public void setObject(@javax.annotation.Nullable String _object) {
     this._object = _object;
+  }
+
+
+  public AccountCompany simulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+    return this;
+  }
+
+  /**
+   * Solo en el entorno SIMULADO (la empresa simulada de la cuenta): el objeto se validó, se calculó y se firmó como siempre, pero nunca llegó a la DIAN ni tiene validez. Un objeto real no lleva esta propiedad. En la empresa de &#x60;/v1/account/companies&#x60;: solo la ve una llave de administración de pruebas (&#x60;tva_test_…&#x60;); para una de producción no existe.
+   * @return simulated
+   */
+  @javax.annotation.Nullable
+  public Boolean getSimulated() {
+    return simulated;
+  }
+
+  public void setSimulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
   }
 
 
@@ -426,6 +450,7 @@ public class AccountCompany {
     AccountCompany accountCompany = (AccountCompany) o;
     return Objects.equals(this.id, accountCompany.id) &&
         Objects.equals(this._object, accountCompany._object) &&
+        Objects.equals(this.simulated, accountCompany.simulated) &&
         Objects.equals(this.nit, accountCompany.nit) &&
         Objects.equals(this.checkDigit, accountCompany.checkDigit) &&
         Objects.equals(this.name, accountCompany.name) &&
@@ -442,7 +467,7 @@ public class AccountCompany {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, nit, checkDigit, name, tradeName, status, onboarding, emissionEnvironment, createdAt, enabledAt, onboardingUrl, apiKeys, additionalProperties);
+    return Objects.hash(id, _object, simulated, nit, checkDigit, name, tradeName, status, onboarding, emissionEnvironment, createdAt, enabledAt, onboardingUrl, apiKeys, additionalProperties);
   }
 
   @Override
@@ -451,6 +476,7 @@ public class AccountCompany {
     sb.append("class AccountCompany {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+    sb.append("    simulated: ").append(toIndentedString(simulated)).append("\n");
     sb.append("    nit: ").append(toIndentedString(nit)).append("\n");
     sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -481,7 +507,7 @@ public class AccountCompany {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "nit", "check_digit", "name", "trade_name", "status", "onboarding", "emission_environment", "created_at", "enabled_at", "onboarding_url", "api_keys"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "simulated", "nit", "check_digit", "name", "trade_name", "status", "onboarding", "emission_environment", "created_at", "enabled_at", "onboarding_url", "api_keys"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

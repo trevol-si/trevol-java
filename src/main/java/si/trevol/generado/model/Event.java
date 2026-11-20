@@ -79,6 +79,11 @@ public class Event {
   @javax.annotation.Nullable
   private String environment;
 
+  public static final String SERIALIZED_NAME_SIMULATED = "simulated";
+  @SerializedName(SERIALIZED_NAME_SIMULATED)
+  @javax.annotation.Nullable
+  private Boolean simulated;
+
   public static final String SERIALIZED_NAME_API_VERSION = "api_version";
   @SerializedName(SERIALIZED_NAME_API_VERSION)
   @javax.annotation.Nullable
@@ -187,6 +192,25 @@ public class Event {
   }
 
 
+  public Event simulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+    return this;
+  }
+
+  /**
+   * Solo en el entorno SIMULADO (la empresa simulada de la cuenta): el objeto se validó, se calculó y se firmó como siempre, pero nunca llegó a la DIAN ni tiene validez. Un objeto real no lleva esta propiedad.
+   * @return simulated
+   */
+  @javax.annotation.Nullable
+  public Boolean getSimulated() {
+    return simulated;
+  }
+
+  public void setSimulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+  }
+
+
   public Event apiVersion(@javax.annotation.Nullable String apiVersion) {
     this.apiVersion = apiVersion;
     return this;
@@ -292,6 +316,7 @@ public class Event {
         Objects.equals(this.type, event.type) &&
         Objects.equals(this.timestamp, event.timestamp) &&
         Objects.equals(this.environment, event.environment) &&
+        Objects.equals(this.simulated, event.simulated) &&
         Objects.equals(this.apiVersion, event.apiVersion) &&
         Objects.equals(this.data, event.data)&&
         Objects.equals(this.additionalProperties, event.additionalProperties);
@@ -299,7 +324,7 @@ public class Event {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, type, timestamp, environment, apiVersion, data, additionalProperties);
+    return Objects.hash(id, _object, type, timestamp, environment, simulated, apiVersion, data, additionalProperties);
   }
 
   @Override
@@ -311,6 +336,7 @@ public class Event {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    simulated: ").append(toIndentedString(simulated)).append("\n");
     sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -332,7 +358,7 @@ public class Event {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "type", "timestamp", "environment", "api_version", "data"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "type", "timestamp", "environment", "simulated", "api_version", "data"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

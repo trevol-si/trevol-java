@@ -3,7 +3,7 @@ package si.trevol;
 import java.util.List;
 import java.util.Map;
 
-/** validation_error (422): {@link #getErrors()} dice qué campo ({@code pointer}) y por qué. */
+/** validation_error (422): {@link #getErrors()} dice qué campo ({@code pointer}) y por qué. También logo_invalid y pdf_design_invalid. */
 public class ValidationException extends TrevolException {
     private static final long serialVersionUID = 1L;
 

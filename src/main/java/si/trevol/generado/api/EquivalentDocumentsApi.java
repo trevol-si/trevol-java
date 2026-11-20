@@ -27,6 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import si.trevol.generado.model.EmailResend;
+import si.trevol.generado.model.EmailResendRequest;
 import si.trevol.generado.model.EquivalentDocument;
 import si.trevol.generado.model.EquivalentDocumentInput;
 import si.trevol.generado.model.EquivalentDocumentList;
@@ -192,10 +194,11 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -210,10 +213,11 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public EquivalentDocument execute() throws ApiException {
@@ -229,10 +233,11 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<EquivalentDocument> executeWithHttpInfo() throws ApiException {
@@ -248,10 +253,11 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<EquivalentDocument> _callback) throws ApiException {
@@ -269,10 +275,11 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIcorrectEquivalentDocumentRequest correctEquivalentDocument(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull EquivalentDocumentInput equivalentDocumentInput) {
@@ -384,14 +391,15 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -406,14 +414,15 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public EquivalentDocument execute() throws ApiException {
@@ -429,14 +438,15 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<EquivalentDocument> executeWithHttpInfo() throws ApiException {
@@ -452,14 +462,15 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<EquivalentDocument> _callback) throws ApiException {
@@ -476,14 +487,15 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-        <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIcreateEquivalentDocumentRequest createEquivalentDocument(@javax.annotation.Nonnull EquivalentDocumentInput equivalentDocumentInput) {
@@ -578,8 +590,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -594,8 +607,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public File execute() throws ApiException {
@@ -611,8 +625,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<File> executeWithHttpInfo() throws ApiException {
@@ -628,8 +643,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<File> _callback) throws ApiException {
@@ -646,8 +662,9 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> dian_response </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIdownloadEquivalentDocumentDianResponseRequest downloadEquivalentDocumentDianResponse(@javax.annotation.Nonnull String id) {
@@ -742,9 +759,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -759,9 +776,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public File execute() throws ApiException {
@@ -777,9 +794,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<File> executeWithHttpInfo() throws ApiException {
@@ -795,9 +812,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<File> _callback) throws ApiException {
@@ -814,9 +831,9 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> pdf </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIdownloadEquivalentDocumentPdfRequest downloadEquivalentDocumentPdf(@javax.annotation.Nonnull String id) {
@@ -911,9 +928,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -928,9 +945,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public File execute() throws ApiException {
@@ -946,9 +963,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<File> executeWithHttpInfo() throws ApiException {
@@ -964,9 +981,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<File> _callback) throws ApiException {
@@ -983,9 +1000,9 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIdownloadEquivalentDocumentXmlRequest downloadEquivalentDocumentXml(@javax.annotation.Nonnull String id) {
@@ -1080,9 +1097,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -1097,9 +1114,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public File execute() throws ApiException {
@@ -1115,9 +1132,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<File> executeWithHttpInfo() throws ApiException {
@@ -1133,9 +1150,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<File> _callback) throws ApiException {
@@ -1152,15 +1169,15 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> zip </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Sin el permiso &#x60;customers:read&#x60; (trae los datos personales del cliente). O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIdownloadEquivalentDocumentZipRequest downloadEquivalentDocumentZip(@javax.annotation.Nonnull String id) {
         return new APIdownloadEquivalentDocumentZipRequest(id);
     }
-    private okhttp3.Call listEquivalentDocumentsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String documentType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listEquivalentDocumentsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String documentType, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1213,6 +1230,14 @@ public class EquivalentDocumentsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("document_type", documentType));
         }
 
+        if (number != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("number", number));
+        }
+
+        if (prefix != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("prefix", prefix));
+        }
+
         final String[] localVarAccepts = {
             "application/json",
             "application/problem+json"
@@ -1234,21 +1259,21 @@ public class EquivalentDocumentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listEquivalentDocumentsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String documentType, final ApiCallback _callback) throws ApiException {
-        return listEquivalentDocumentsCall(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, _callback);
+    private okhttp3.Call listEquivalentDocumentsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String documentType, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback _callback) throws ApiException {
+        return listEquivalentDocumentsCall(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, number, prefix, _callback);
 
     }
 
 
-    private ApiResponse<EquivalentDocumentList> listEquivalentDocumentsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String documentType) throws ApiException {
-        okhttp3.Call localVarCall = listEquivalentDocumentsValidateBeforeCall(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, null);
+    private ApiResponse<EquivalentDocumentList> listEquivalentDocumentsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String documentType, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix) throws ApiException {
+        okhttp3.Call localVarCall = listEquivalentDocumentsValidateBeforeCall(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, number, prefix, null);
         Type localVarReturnType = new TypeToken<EquivalentDocumentList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listEquivalentDocumentsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String documentType, final ApiCallback<EquivalentDocumentList> _callback) throws ApiException {
+    private okhttp3.Call listEquivalentDocumentsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String documentType, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback<EquivalentDocumentList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listEquivalentDocumentsValidateBeforeCall(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, _callback);
+        okhttp3.Call localVarCall = listEquivalentDocumentsValidateBeforeCall(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, number, prefix, _callback);
         Type localVarReturnType = new TypeToken<EquivalentDocumentList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1269,6 +1294,10 @@ public class EquivalentDocumentsApi {
         private String createdTo;
         @javax.annotation.Nullable
         private String documentType;
+        @javax.annotation.Nullable
+        private String number;
+        @javax.annotation.Nullable
+        private String prefix;
 
         private APIlistEquivalentDocumentsRequest() {
         }
@@ -1344,6 +1373,26 @@ public class EquivalentDocumentsApi {
         }
 
         /**
+         * Set number
+         * @param number El número completo exacto, como sale en &#x60;number&#x60; (p. ej. &#x60;SETP990000123&#x60;; sin prefijo, solo el consecutivo), sin ceros a la izquierda, espacios ni guiones. Puede traer más de un documento. (optional)
+         * @return APIlistEquivalentDocumentsRequest
+         */
+        public APIlistEquivalentDocumentsRequest number(@javax.annotation.Nullable String number) {
+            this.number = number;
+            return this;
+        }
+
+        /**
+         * Set prefix
+         * @param prefix El prefijo exacto, como sale en &#x60;prefix&#x60;. Solo, lista una numeración; con &#x60;number&#x60;, quita la ambigüedad. (optional)
+         * @return APIlistEquivalentDocumentsRequest
+         */
+        public APIlistEquivalentDocumentsRequest prefix(@javax.annotation.Nullable String prefix) {
+            this.prefix = prefix;
+            return this;
+        }
+
+        /**
          * Build call for listEquivalentDocuments
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -1352,12 +1401,13 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return listEquivalentDocumentsCall(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, _callback);
+            return listEquivalentDocumentsCall(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, number, prefix, _callback);
         }
 
         /**
@@ -1368,12 +1418,13 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public EquivalentDocumentList execute() throws ApiException {
-            ApiResponse<EquivalentDocumentList> localVarResp = listEquivalentDocumentsWithHttpInfo(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType);
+            ApiResponse<EquivalentDocumentList> localVarResp = listEquivalentDocumentsWithHttpInfo(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, number, prefix);
             return localVarResp.getData();
         }
 
@@ -1385,12 +1436,13 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<EquivalentDocumentList> executeWithHttpInfo() throws ApiException {
-            return listEquivalentDocumentsWithHttpInfo(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType);
+            return listEquivalentDocumentsWithHttpInfo(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, number, prefix);
         }
 
         /**
@@ -1402,12 +1454,13 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<EquivalentDocumentList> _callback) throws ApiException {
-            return listEquivalentDocumentsAsync(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, _callback);
+            return listEquivalentDocumentsAsync(limit, startingAfter, status, externalId, createdFrom, createdTo, documentType, number, prefix, _callback);
         }
     }
 
@@ -1419,8 +1472,9 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIlistEquivalentDocumentsRequest listEquivalentDocuments() {
@@ -1515,8 +1569,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -1531,8 +1586,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public Preview execute() throws ApiException {
@@ -1548,8 +1604,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<Preview> executeWithHttpInfo() throws ApiException {
@@ -1565,8 +1622,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<Preview> _callback) throws ApiException {
@@ -1583,8 +1641,9 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Totales </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIpreviewEquivalentDocumentRequest previewEquivalentDocument(@javax.annotation.Nonnull EquivalentDocumentInput equivalentDocumentInput) {
@@ -1679,8 +1738,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -1695,8 +1755,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public EquivalentDocument execute() throws ApiException {
@@ -1712,8 +1773,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<EquivalentDocument> executeWithHttpInfo() throws ApiException {
@@ -1729,8 +1791,9 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<EquivalentDocument> _callback) throws ApiException {
@@ -1747,8 +1810,9 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIretrieveEquivalentDocumentRequest retrieveEquivalentDocument(@javax.annotation.Nonnull String id) {
@@ -1843,10 +1907,11 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -1861,10 +1926,11 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public EquivalentDocument execute() throws ApiException {
@@ -1880,10 +1946,11 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<EquivalentDocument> executeWithHttpInfo() throws ApiException {
@@ -1899,10 +1966,11 @@ public class EquivalentDocumentsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<EquivalentDocument> _callback) throws ApiException {
@@ -1919,13 +1987,233 @@ public class EquivalentDocumentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIsendEquivalentDocumentRequest sendEquivalentDocument(@javax.annotation.Nonnull String id) {
         return new APIsendEquivalentDocumentRequest(id);
+    }
+    private okhttp3.Call sendEquivalentDocumentEmailCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String idempotencyKey, @javax.annotation.Nullable EmailResendRequest emailResendRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = emailResendRequest;
+
+        // create path and map variables
+        String localVarPath = "/equivalent_documents/{id}/email"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json",
+            "application/problem+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (idempotencyKey != null) {
+            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
+        }
+
+
+        String[] localVarAuthNames = new String[] { "llave" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call sendEquivalentDocumentEmailValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String idempotencyKey, @javax.annotation.Nullable EmailResendRequest emailResendRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling sendEquivalentDocumentEmail(Async)");
+        }
+
+        return sendEquivalentDocumentEmailCall(id, idempotencyKey, emailResendRequest, _callback);
+
+    }
+
+
+    private ApiResponse<EmailResend> sendEquivalentDocumentEmailWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String idempotencyKey, @javax.annotation.Nullable EmailResendRequest emailResendRequest) throws ApiException {
+        okhttp3.Call localVarCall = sendEquivalentDocumentEmailValidateBeforeCall(id, idempotencyKey, emailResendRequest, null);
+        Type localVarReturnType = new TypeToken<EmailResend>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    private okhttp3.Call sendEquivalentDocumentEmailAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String idempotencyKey, @javax.annotation.Nullable EmailResendRequest emailResendRequest, final ApiCallback<EmailResend> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = sendEquivalentDocumentEmailValidateBeforeCall(id, idempotencyKey, emailResendRequest, _callback);
+        Type localVarReturnType = new TypeToken<EmailResend>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class APIsendEquivalentDocumentEmailRequest {
+        @javax.annotation.Nonnull
+        private final String id;
+        @javax.annotation.Nullable
+        private String idempotencyKey;
+        @javax.annotation.Nullable
+        private EmailResendRequest emailResendRequest;
+
+        private APIsendEquivalentDocumentEmailRequest(@javax.annotation.Nonnull String id) {
+            this.id = id;
+        }
+
+        /**
+         * Set idempotencyKey
+         * @param idempotencyKey Obligatoria: 1 a 255 caracteres ASCII visibles, única por pedido (7 días). (optional)
+         * @return APIsendEquivalentDocumentEmailRequest
+         */
+        public APIsendEquivalentDocumentEmailRequest idempotencyKey(@javax.annotation.Nullable String idempotencyKey) {
+            this.idempotencyKey = idempotencyKey;
+            return this;
+        }
+
+        /**
+         * Set emailResendRequest
+         * @param emailResendRequest  (optional)
+         * @return APIsendEquivalentDocumentEmailRequest
+         */
+        public APIsendEquivalentDocumentEmailRequest emailResendRequest(@javax.annotation.Nullable EmailResendRequest emailResendRequest) {
+            this.emailResendRequest = emailResendRequest;
+            return this;
+        }
+
+        /**
+         * Build call for sendEquivalentDocumentEmail
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> El reenvío, con el resultado de cada destinatario </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Llave de lectura, o &#x60;to&#x60; sin el permiso &#x60;customers:read&#x60;. O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return sendEquivalentDocumentEmailCall(id, idempotencyKey, emailResendRequest, _callback);
+        }
+
+        /**
+         * Execute sendEquivalentDocumentEmail request
+         * @return EmailResend
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> El reenvío, con el resultado de cada destinatario </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Llave de lectura, o &#x60;to&#x60; sin el permiso &#x60;customers:read&#x60;. O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public EmailResend execute() throws ApiException {
+            ApiResponse<EmailResend> localVarResp = sendEquivalentDocumentEmailWithHttpInfo(id, idempotencyKey, emailResendRequest);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute sendEquivalentDocumentEmail request with HTTP info returned
+         * @return ApiResponse&lt;EmailResend&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> El reenvío, con el resultado de cada destinatario </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Llave de lectura, o &#x60;to&#x60; sin el permiso &#x60;customers:read&#x60;. O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<EmailResend> executeWithHttpInfo() throws ApiException {
+            return sendEquivalentDocumentEmailWithHttpInfo(id, idempotencyKey, emailResendRequest);
+        }
+
+        /**
+         * Execute sendEquivalentDocumentEmail request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> El reenvío, con el resultado de cada destinatario </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Llave de lectura, o &#x60;to&#x60; sin el permiso &#x60;customers:read&#x60;. O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<EmailResend> _callback) throws ApiException {
+            return sendEquivalentDocumentEmailAsync(id, idempotencyKey, emailResendRequest, _callback);
+        }
+    }
+
+    /**
+     * Reenviar el correo de un documento equivalente
+     * Reenvía el correo del documento validado: el mismo ZIP (el AttachedDocument y el PDF), la misma plantilla y el mismo asunto. Sin cuerpo, va al destinatario de siempre: en producción, el correo del comprador (&#x60;customer.email&#x60;); en habilitación, solo a quien emitió el documento (con «[PRUEBA – sin validez legal]» en el asunto). Con &#x60;to&#x60; (de 1 a 3 direcciones; solo producción y solo con el permiso &#x60;customers:read&#x60;, porque el ZIP trae los datos del comprador) va a esas direcciones, un correo por destinatario: nadie ve a los demás.  Solo sirve cuando el documento está validado y su correo original ya terminó (si todavía se está enviando o se va a reintentar, 409 &#x60;invalid_state&#x60; con &#x60;reason: delivery_pending&#x60; y &#x60;Retry-After&#x60;; si ya no está programada, &#x60;delivery_incomplete&#x60;, sin reintento). Si el correo original falló y ya no se va a reintentar, sí se puede reenviar. A una dirección que rebotó o se quejó no le volvemos a escribir (409 &#x60;email_suppressed&#x60;). Topes: 5 reenvíos por documento al día y 200 por empresa al día en producción (20 en habilitación; cuentan reenvíos, no destinatarios: con 3 direcciones, hasta 600 correos); al pasarse, 429 con &#x60;limit: \&quot;email_resend\&quot;&#x60; y &#x60;Retry-After&#x60; hasta la medianoche (hora de Colombia).  &#x60;Idempotency-Key&#x60; obligatoria: repetirla devuelve el mismo resultado sin volver a enviar. El reenvío queda en &#x60;delivery.email_resends&#x60; del documento (&#x60;last.deliveries&#x60; dice cómo le fue a cada destinatario del último reenvío, también si rebotó o se quejó después); &#x60;delivery.status&#x60; y &#x60;delivery.email&#x60; siguen hablando del correo original. Sin &#x60;customers:read&#x60;, las direcciones salen en &#x60;null&#x60;.
+     * @param id  (required)
+     * @return APIsendEquivalentDocumentEmailRequest
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> El reenvío, con el resultado de cada destinatario </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Llave de lectura, o &#x60;to&#x60; sin el permiso &#x60;customers:read&#x60;. O la llave es de la empresa simulada y esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+     </table>
+     */
+    public APIsendEquivalentDocumentEmailRequest sendEquivalentDocumentEmail(@javax.annotation.Nonnull String id) {
+        return new APIsendEquivalentDocumentEmailRequest(id);
     }
 }

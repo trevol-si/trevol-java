@@ -30,6 +30,7 @@ import si.trevol.generado.model.DeliveryTerms;
 import si.trevol.generado.model.Interoperability;
 import si.trevol.generado.model.InvoiceContingencyInput;
 import si.trevol.generado.model.ItemInput;
+import si.trevol.generado.model.Numbering;
 import si.trevol.generado.model.Payment;
 import si.trevol.generado.model.Period;
 import si.trevol.generado.model.Prepayment;
@@ -165,6 +166,16 @@ public class InvoiceInput {
   @SerializedName(SERIALIZED_NAME_CONTINGENCY)
   @javax.annotation.Nullable
   private InvoiceContingencyInput contingency;
+
+  public static final String SERIALIZED_NAME_NUMBERING = "numbering";
+  @SerializedName(SERIALIZED_NAME_NUMBERING)
+  @javax.annotation.Nullable
+  private Numbering numbering;
+
+  public static final String SERIALIZED_NAME_PDF_DESIGN_ID = "pdf_design_id";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN_ID)
+  @javax.annotation.Nullable
+  private String pdfDesignId;
 
   public InvoiceInput() {
   }
@@ -588,6 +599,44 @@ public class InvoiceInput {
     this.contingency = contingency;
   }
 
+
+  public InvoiceInput numbering(@javax.annotation.Nullable Numbering numbering) {
+    this.numbering = numbering;
+    return this;
+  }
+
+  /**
+   * Get numbering
+   * @return numbering
+   */
+  @javax.annotation.Nullable
+  public Numbering getNumbering() {
+    return numbering;
+  }
+
+  public void setNumbering(@javax.annotation.Nullable Numbering numbering) {
+    this.numbering = numbering;
+  }
+
+
+  public InvoiceInput pdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+    return this;
+  }
+
+  /**
+   * El diseño del PDF de este documento (&#x60;pdd_…&#x60; o &#x60;classic&#x60;); gana al de la numeración y al predeterminado. &#x60;null&#x60; es lo mismo que no mandarlo. Guía: Diseño del PDF.
+   * @return pdfDesignId
+   */
+  @javax.annotation.Nullable
+  public String getPdfDesignId() {
+    return pdfDesignId;
+  }
+
+  public void setPdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -662,13 +711,15 @@ public class InvoiceInput {
         Objects.equals(this.shipment, invoiceInput.shipment) &&
         Objects.equals(this.dueDiligence, invoiceInput.dueDiligence) &&
         Objects.equals(this.interoperability, invoiceInput.interoperability) &&
-        Objects.equals(this.contingency, invoiceInput.contingency)&&
+        Objects.equals(this.contingency, invoiceInput.contingency) &&
+        Objects.equals(this.numbering, invoiceInput.numbering) &&
+        Objects.equals(this.pdfDesignId, invoiceInput.pdfDesignId)&&
         Objects.equals(this.additionalProperties, invoiceInput.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(externalId, customer, items, payment, notes, period, references, allowanceCharges, prepayments, withholdings, rounding, documentType, operationType, currency, copTotals, deliveryTerms, shipment, dueDiligence, interoperability, contingency, additionalProperties);
+    return Objects.hash(externalId, customer, items, payment, notes, period, references, allowanceCharges, prepayments, withholdings, rounding, documentType, operationType, currency, copTotals, deliveryTerms, shipment, dueDiligence, interoperability, contingency, numbering, pdfDesignId, additionalProperties);
   }
 
   @Override
@@ -695,6 +746,8 @@ public class InvoiceInput {
     sb.append("    dueDiligence: ").append(toIndentedString(dueDiligence)).append("\n");
     sb.append("    interoperability: ").append(toIndentedString(interoperability)).append("\n");
     sb.append("    contingency: ").append(toIndentedString(contingency)).append("\n");
+    sb.append("    numbering: ").append(toIndentedString(numbering)).append("\n");
+    sb.append("    pdfDesignId: ").append(toIndentedString(pdfDesignId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -714,7 +767,7 @@ public class InvoiceInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("external_id", "customer", "items", "payment", "notes", "period", "references", "allowance_charges", "prepayments", "withholdings", "rounding", "document_type", "operation_type", "currency", "cop_totals", "delivery_terms", "shipment", "due_diligence", "interoperability", "contingency"));
+    openapiFields = new HashSet<String>(Arrays.asList("external_id", "customer", "items", "payment", "notes", "period", "references", "allowance_charges", "prepayments", "withholdings", "rounding", "document_type", "operation_type", "currency", "cop_totals", "delivery_terms", "shipment", "due_diligence", "interoperability", "contingency", "numbering", "pdf_design_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("items"));
@@ -843,6 +896,13 @@ public class InvoiceInput {
       // validate the optional field `contingency`
       if (jsonObj.get("contingency") != null && !jsonObj.get("contingency").isJsonNull()) {
         InvoiceContingencyInput.validateJsonElement(jsonObj.get("contingency"));
+      }
+      // validate the optional field `numbering`
+      if (jsonObj.get("numbering") != null && !jsonObj.get("numbering").isJsonNull()) {
+        Numbering.validateJsonElement(jsonObj.get("numbering"));
+      }
+      if ((jsonObj.get("pdf_design_id") != null && !jsonObj.get("pdf_design_id").isJsonNull()) && !jsonObj.get("pdf_design_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pdf_design_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pdf_design_id").toString()));
       }
   }
 

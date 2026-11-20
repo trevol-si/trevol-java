@@ -35,6 +35,7 @@ import si.trevol.generado.model.InvoiceContingency;
 import si.trevol.generado.model.InvoiceReference;
 import si.trevol.generado.model.Item;
 import si.trevol.generado.model.Payment;
+import si.trevol.generado.model.PdfDesignApplied;
 import si.trevol.generado.model.Shipment;
 
 import com.google.gson.Gson;
@@ -80,6 +81,11 @@ public class Document {
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
   @javax.annotation.Nullable
   private String environment;
+
+  public static final String SERIALIZED_NAME_SIMULATED = "simulated";
+  @SerializedName(SERIALIZED_NAME_SIMULATED)
+  @javax.annotation.Nullable
+  private Boolean simulated;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -216,6 +222,16 @@ public class Document {
   @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
+  public static final String SERIALIZED_NAME_PDF_DESIGN_ID = "pdf_design_id";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN_ID)
+  @javax.annotation.Nullable
+  private String pdfDesignId;
+
+  public static final String SERIALIZED_NAME_PDF_DESIGN = "pdf_design";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN)
+  @javax.annotation.Nullable
+  private PdfDesignApplied pdfDesign;
+
   public Document() {
   }
 
@@ -273,6 +289,25 @@ public class Document {
 
   public void setEnvironment(@javax.annotation.Nullable String environment) {
     this.environment = environment;
+  }
+
+
+  public Document simulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+    return this;
+  }
+
+  /**
+   * Solo en el entorno SIMULADO (la empresa simulada de la cuenta): el objeto se validó, se calculó y se firmó como siempre, pero nunca llegó a la DIAN ni tiene validez. Un objeto real no lleva esta propiedad.
+   * @return simulated
+   */
+  @javax.annotation.Nullable
+  public Boolean getSimulated() {
+    return simulated;
+  }
+
+  public void setSimulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
   }
 
 
@@ -796,6 +831,44 @@ public class Document {
     this.updatedAt = updatedAt;
   }
 
+
+  public Document pdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+    return this;
+  }
+
+  /**
+   * El que pidió el documento, o null.
+   * @return pdfDesignId
+   */
+  @javax.annotation.Nullable
+  public String getPdfDesignId() {
+    return pdfDesignId;
+  }
+
+  public void setPdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+  }
+
+
+  public Document pdfDesign(@javax.annotation.Nullable PdfDesignApplied pdfDesign) {
+    this.pdfDesign = pdfDesign;
+    return this;
+  }
+
+  /**
+   * El diseño fijado al emitir; null mientras está pendiente.
+   * @return pdfDesign
+   */
+  @javax.annotation.Nullable
+  public PdfDesignApplied getPdfDesign() {
+    return pdfDesign;
+  }
+
+  public void setPdfDesign(@javax.annotation.Nullable PdfDesignApplied pdfDesign) {
+    this.pdfDesign = pdfDesign;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -854,6 +927,7 @@ public class Document {
     return Objects.equals(this.id, document.id) &&
         Objects.equals(this._object, document._object) &&
         Objects.equals(this.environment, document.environment) &&
+        Objects.equals(this.simulated, document.simulated) &&
         Objects.equals(this.status, document.status) &&
         Objects.equals(this.number, document.number) &&
         Objects.equals(this.prefix, document.prefix) &&
@@ -880,13 +954,15 @@ public class Document {
         Objects.equals(this.dian, document.dian) &&
         Objects.equals(this.delivery, document.delivery) &&
         Objects.equals(this.createdAt, document.createdAt) &&
-        Objects.equals(this.updatedAt, document.updatedAt)&&
+        Objects.equals(this.updatedAt, document.updatedAt) &&
+        Objects.equals(this.pdfDesignId, document.pdfDesignId) &&
+        Objects.equals(this.pdfDesign, document.pdfDesign)&&
         Objects.equals(this.additionalProperties, document.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, environment, status, number, prefix, externalId, origin, cufe, cude, qr, issuedAt, customer, items, payment, invoice, documentType, operationType, currency, copTotals, deliveryTerms, shipment, dueDiligence, interoperability, contingency, totals, dian, delivery, createdAt, updatedAt, additionalProperties);
+    return Objects.hash(id, _object, environment, simulated, status, number, prefix, externalId, origin, cufe, cude, qr, issuedAt, customer, items, payment, invoice, documentType, operationType, currency, copTotals, deliveryTerms, shipment, dueDiligence, interoperability, contingency, totals, dian, delivery, createdAt, updatedAt, pdfDesignId, pdfDesign, additionalProperties);
   }
 
   @Override
@@ -896,6 +972,7 @@ public class Document {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    simulated: ").append(toIndentedString(simulated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
@@ -923,6 +1000,8 @@ public class Document {
     sb.append("    delivery: ").append(toIndentedString(delivery)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    pdfDesignId: ").append(toIndentedString(pdfDesignId)).append("\n");
+    sb.append("    pdfDesign: ").append(toIndentedString(pdfDesign)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -942,7 +1021,7 @@ public class Document {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "status", "number", "prefix", "external_id", "origin", "cufe", "cude", "qr", "issued_at", "customer", "items", "payment", "invoice", "document_type", "operation_type", "currency", "cop_totals", "delivery_terms", "shipment", "due_diligence", "interoperability", "contingency", "totals", "dian", "delivery", "created_at", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "simulated", "status", "number", "prefix", "external_id", "origin", "cufe", "cude", "qr", "issued_at", "customer", "items", "payment", "invoice", "document_type", "operation_type", "currency", "cop_totals", "delivery_terms", "shipment", "due_diligence", "interoperability", "contingency", "totals", "dian", "delivery", "created_at", "updated_at", "pdf_design_id", "pdf_design"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1060,6 +1139,13 @@ public class Document {
       // validate the optional field `delivery`
       if (jsonObj.get("delivery") != null && !jsonObj.get("delivery").isJsonNull()) {
         Delivery.validateJsonElement(jsonObj.get("delivery"));
+      }
+      if ((jsonObj.get("pdf_design_id") != null && !jsonObj.get("pdf_design_id").isJsonNull()) && !jsonObj.get("pdf_design_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pdf_design_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pdf_design_id").toString()));
+      }
+      // validate the optional field `pdf_design`
+      if (jsonObj.get("pdf_design") != null && !jsonObj.get("pdf_design").isJsonNull()) {
+        PdfDesignApplied.validateJsonElement(jsonObj.get("pdf_design"));
       }
   }
 

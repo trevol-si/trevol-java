@@ -29,6 +29,7 @@ import si.trevol.generado.model.Customer;
 import si.trevol.generado.model.DeliveryTerms;
 import si.trevol.generado.model.Interoperability;
 import si.trevol.generado.model.ItemInput;
+import si.trevol.generado.model.Numbering;
 import si.trevol.generado.model.Payment;
 import si.trevol.generado.model.Period;
 import si.trevol.generado.model.Prepayment;
@@ -61,7 +62,7 @@ import java.util.Set;
 import si.trevol.generado.JSON;
 
 /**
- * El cuerpo de &#x60;POST /v1/invoices&#x60; (los campos y las reglas de InvoiceInput) más su &#x60;idempotency_key&#x60;. Sin &#x60;contingency&#x60; (la 03 va sola).
+ * El cuerpo de &#x60;POST /v1/invoices&#x60; (los campos y las reglas de InvoiceInput) más su &#x60;idempotency_key&#x60;. Sin &#x60;contingency&#x60; (la 03 va sola). Cada factura puede elegir su numeración con &#x60;numbering&#x60;; si no sirve, esa factura queda &#x60;failed&#x60; sin numerarse.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.26.0")
 public class InvoiceBatchInvoiceInput {
@@ -164,6 +165,16 @@ public class InvoiceBatchInvoiceInput {
   @SerializedName(SERIALIZED_NAME_INTEROPERABILITY)
   @javax.annotation.Nullable
   private Interoperability interoperability;
+
+  public static final String SERIALIZED_NAME_NUMBERING = "numbering";
+  @SerializedName(SERIALIZED_NAME_NUMBERING)
+  @javax.annotation.Nullable
+  private Numbering numbering;
+
+  public static final String SERIALIZED_NAME_PDF_DESIGN_ID = "pdf_design_id";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN_ID)
+  @javax.annotation.Nullable
+  private String pdfDesignId;
 
   public InvoiceBatchInvoiceInput() {
   }
@@ -587,6 +598,44 @@ public class InvoiceBatchInvoiceInput {
     this.interoperability = interoperability;
   }
 
+
+  public InvoiceBatchInvoiceInput numbering(@javax.annotation.Nullable Numbering numbering) {
+    this.numbering = numbering;
+    return this;
+  }
+
+  /**
+   * Get numbering
+   * @return numbering
+   */
+  @javax.annotation.Nullable
+  public Numbering getNumbering() {
+    return numbering;
+  }
+
+  public void setNumbering(@javax.annotation.Nullable Numbering numbering) {
+    this.numbering = numbering;
+  }
+
+
+  public InvoiceBatchInvoiceInput pdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+    return this;
+  }
+
+  /**
+   * Get pdfDesignId
+   * @return pdfDesignId
+   */
+  @javax.annotation.Nullable
+  public String getPdfDesignId() {
+    return pdfDesignId;
+  }
+
+  public void setPdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -661,13 +710,15 @@ public class InvoiceBatchInvoiceInput {
         Objects.equals(this.deliveryTerms, invoiceBatchInvoiceInput.deliveryTerms) &&
         Objects.equals(this.shipment, invoiceBatchInvoiceInput.shipment) &&
         Objects.equals(this.dueDiligence, invoiceBatchInvoiceInput.dueDiligence) &&
-        Objects.equals(this.interoperability, invoiceBatchInvoiceInput.interoperability)&&
+        Objects.equals(this.interoperability, invoiceBatchInvoiceInput.interoperability) &&
+        Objects.equals(this.numbering, invoiceBatchInvoiceInput.numbering) &&
+        Objects.equals(this.pdfDesignId, invoiceBatchInvoiceInput.pdfDesignId)&&
         Objects.equals(this.additionalProperties, invoiceBatchInvoiceInput.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(idempotencyKey, externalId, customer, items, payment, notes, period, references, allowanceCharges, prepayments, withholdings, rounding, documentType, operationType, currency, copTotals, deliveryTerms, shipment, dueDiligence, interoperability, additionalProperties);
+    return Objects.hash(idempotencyKey, externalId, customer, items, payment, notes, period, references, allowanceCharges, prepayments, withholdings, rounding, documentType, operationType, currency, copTotals, deliveryTerms, shipment, dueDiligence, interoperability, numbering, pdfDesignId, additionalProperties);
   }
 
   @Override
@@ -694,6 +745,8 @@ public class InvoiceBatchInvoiceInput {
     sb.append("    shipment: ").append(toIndentedString(shipment)).append("\n");
     sb.append("    dueDiligence: ").append(toIndentedString(dueDiligence)).append("\n");
     sb.append("    interoperability: ").append(toIndentedString(interoperability)).append("\n");
+    sb.append("    numbering: ").append(toIndentedString(numbering)).append("\n");
+    sb.append("    pdfDesignId: ").append(toIndentedString(pdfDesignId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -713,7 +766,7 @@ public class InvoiceBatchInvoiceInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("idempotency_key", "external_id", "customer", "items", "payment", "notes", "period", "references", "allowance_charges", "prepayments", "withholdings", "rounding", "document_type", "operation_type", "currency", "cop_totals", "delivery_terms", "shipment", "due_diligence", "interoperability"));
+    openapiFields = new HashSet<String>(Arrays.asList("idempotency_key", "external_id", "customer", "items", "payment", "notes", "period", "references", "allowance_charges", "prepayments", "withholdings", "rounding", "document_type", "operation_type", "currency", "cop_totals", "delivery_terms", "shipment", "due_diligence", "interoperability", "numbering", "pdf_design_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("idempotency_key", "items"));
@@ -841,6 +894,13 @@ public class InvoiceBatchInvoiceInput {
       // validate the optional field `interoperability`
       if (jsonObj.get("interoperability") != null && !jsonObj.get("interoperability").isJsonNull()) {
         Interoperability.validateJsonElement(jsonObj.get("interoperability"));
+      }
+      // validate the optional field `numbering`
+      if (jsonObj.get("numbering") != null && !jsonObj.get("numbering").isJsonNull()) {
+        Numbering.validateJsonElement(jsonObj.get("numbering"));
+      }
+      if ((jsonObj.get("pdf_design_id") != null && !jsonObj.get("pdf_design_id").isJsonNull()) && !jsonObj.get("pdf_design_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pdf_design_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pdf_design_id").toString()));
       }
   }
 

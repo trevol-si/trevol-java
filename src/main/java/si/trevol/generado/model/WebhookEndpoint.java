@@ -86,7 +86,7 @@ public class WebhookEndpoint {
   private List<String> events;
 
   /**
-   * Qué catálogo recibe con &#x60;[\&quot;*\&quot;]&#x60;: &#x60;1&#x60; &#x3D; el de la fase 2 (facturas, notas, saldo, numeración y certificado); &#x60;2&#x60; &#x3D; también documento soporte, documento equivalente, nómina y eventos RADIAN; &#x60;3&#x60; &#x3D; también lo recibido, la sincronización con la DIAN, la numeración automática, los lotes y la contingencia; &#x60;4&#x60; &#x3D; también los clientes y productos del catálogo, el rango de numeración agotado y los reportes asíncronos. Un endpoint queda en el catálogo con que se guardó hasta que guardes de nuevo su lista de eventos (PATCH &#x60;events&#x60;); los nuevos nacen en 4. Una lista explícita siempre recibe lo que pide.
+   * Qué catálogo recibe con &#x60;[\&quot;*\&quot;]&#x60;: &#x60;1&#x60; &#x3D; el de la fase 2 (facturas, notas, saldo, numeración y certificado); &#x60;2&#x60; &#x3D; también documento soporte, documento equivalente, nómina y eventos RADIAN; &#x60;3&#x60; &#x3D; también lo recibido, la sincronización con la DIAN, la numeración automática, los lotes y la contingencia; &#x60;4&#x60; &#x3D; también los clientes y productos del catálogo, el rango de numeración agotado y los reportes asíncronos. Un endpoint queda en el catálogo con que se guardó hasta que guardes de nuevo su lista de eventos (PATCH &#x60;events&#x60;) o actives &#x60;follow_latest_catalog&#x60;; los nuevos nacen en 4. Una lista explícita siempre recibe lo que pide.
    */
   @JsonAdapter(CatalogVersionEnum.Adapter.class)
   public enum CatalogVersionEnum {
@@ -155,6 +155,11 @@ public class WebhookEndpoint {
   @SerializedName(SERIALIZED_NAME_DISABLED_REASON)
   @javax.annotation.Nullable
   private String disabledReason;
+
+  public static final String SERIALIZED_NAME_FOLLOW_LATEST_CATALOG = "follow_latest_catalog";
+  @SerializedName(SERIALIZED_NAME_FOLLOW_LATEST_CATALOG)
+  @javax.annotation.Nullable
+  private Boolean followLatestCatalog;
 
   public static final String SERIALIZED_NAME_SECRET_ROTATED_AT = "secret_rotated_at";
   @SerializedName(SERIALIZED_NAME_SECRET_ROTATED_AT)
@@ -307,7 +312,7 @@ public class WebhookEndpoint {
   }
 
   /**
-   * Qué catálogo recibe con &#x60;[\&quot;*\&quot;]&#x60;: &#x60;1&#x60; &#x3D; el de la fase 2 (facturas, notas, saldo, numeración y certificado); &#x60;2&#x60; &#x3D; también documento soporte, documento equivalente, nómina y eventos RADIAN; &#x60;3&#x60; &#x3D; también lo recibido, la sincronización con la DIAN, la numeración automática, los lotes y la contingencia; &#x60;4&#x60; &#x3D; también los clientes y productos del catálogo, el rango de numeración agotado y los reportes asíncronos. Un endpoint queda en el catálogo con que se guardó hasta que guardes de nuevo su lista de eventos (PATCH &#x60;events&#x60;); los nuevos nacen en 4. Una lista explícita siempre recibe lo que pide.
+   * Qué catálogo recibe con &#x60;[\&quot;*\&quot;]&#x60;: &#x60;1&#x60; &#x3D; el de la fase 2 (facturas, notas, saldo, numeración y certificado); &#x60;2&#x60; &#x3D; también documento soporte, documento equivalente, nómina y eventos RADIAN; &#x60;3&#x60; &#x3D; también lo recibido, la sincronización con la DIAN, la numeración automática, los lotes y la contingencia; &#x60;4&#x60; &#x3D; también los clientes y productos del catálogo, el rango de numeración agotado y los reportes asíncronos. Un endpoint queda en el catálogo con que se guardó hasta que guardes de nuevo su lista de eventos (PATCH &#x60;events&#x60;) o actives &#x60;follow_latest_catalog&#x60;; los nuevos nacen en 4. Una lista explícita siempre recibe lo que pide.
    * @return catalogVersion
    */
   @javax.annotation.Nullable
@@ -355,6 +360,25 @@ public class WebhookEndpoint {
 
   public void setDisabledReason(@javax.annotation.Nullable String disabledReason) {
     this.disabledReason = disabledReason;
+  }
+
+
+  public WebhookEndpoint followLatestCatalog(@javax.annotation.Nullable Boolean followLatestCatalog) {
+    this.followLatestCatalog = followLatestCatalog;
+    return this;
+  }
+
+  /**
+   * Con &#x60;events: [\&quot;*\&quot;]&#x60;, recibe el catálogo más nuevo sin volver a guardar la lista (y &#x60;catalog_version&#x60; dice ese catálogo). Por defecto false: un &#x60;[\&quot;*\&quot;]&#x60; se queda en el catálogo con que se guardó. Tu receptor tiene que ignorar los tipos que no conoce.
+   * @return followLatestCatalog
+   */
+  @javax.annotation.Nullable
+  public Boolean getFollowLatestCatalog() {
+    return followLatestCatalog;
+  }
+
+  public void setFollowLatestCatalog(@javax.annotation.Nullable Boolean followLatestCatalog) {
+    this.followLatestCatalog = followLatestCatalog;
   }
 
 
@@ -497,6 +521,7 @@ public class WebhookEndpoint {
         Objects.equals(this.catalogVersion, webhookEndpoint.catalogVersion) &&
         Objects.equals(this.status, webhookEndpoint.status) &&
         Objects.equals(this.disabledReason, webhookEndpoint.disabledReason) &&
+        Objects.equals(this.followLatestCatalog, webhookEndpoint.followLatestCatalog) &&
         Objects.equals(this.secretRotatedAt, webhookEndpoint.secretRotatedAt) &&
         Objects.equals(this.createdAt, webhookEndpoint.createdAt) &&
         Objects.equals(this.updatedAt, webhookEndpoint.updatedAt) &&
@@ -506,7 +531,7 @@ public class WebhookEndpoint {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, environment, url, description, events, catalogVersion, status, disabledReason, secretRotatedAt, createdAt, updatedAt, secret, additionalProperties);
+    return Objects.hash(id, _object, environment, url, description, events, catalogVersion, status, disabledReason, followLatestCatalog, secretRotatedAt, createdAt, updatedAt, secret, additionalProperties);
   }
 
   @Override
@@ -522,6 +547,7 @@ public class WebhookEndpoint {
     sb.append("    catalogVersion: ").append(toIndentedString(catalogVersion)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    disabledReason: ").append(toIndentedString(disabledReason)).append("\n");
+    sb.append("    followLatestCatalog: ").append(toIndentedString(followLatestCatalog)).append("\n");
     sb.append("    secretRotatedAt: ").append(toIndentedString(secretRotatedAt)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -545,7 +571,7 @@ public class WebhookEndpoint {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "url", "description", "events", "catalog_version", "status", "disabled_reason", "secret_rotated_at", "created_at", "updated_at", "secret"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "url", "description", "events", "catalog_version", "status", "disabled_reason", "follow_latest_catalog", "secret_rotated_at", "created_at", "updated_at", "secret"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
