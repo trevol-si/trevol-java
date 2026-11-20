@@ -183,6 +183,11 @@ public class EquivalentDocumentAdjustmentInput {
   @javax.annotation.Nonnull
   private EquivalentDocumentReference equivalentDocument;
 
+  public static final String SERIALIZED_NAME_PDF_DESIGN_ID = "pdf_design_id";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN_ID)
+  @javax.annotation.Nullable
+  private String pdfDesignId;
+
   public EquivalentDocumentAdjustmentInput() {
   }
 
@@ -483,6 +488,25 @@ public class EquivalentDocumentAdjustmentInput {
     this.equivalentDocument = equivalentDocument;
   }
 
+
+  public EquivalentDocumentAdjustmentInput pdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+    return this;
+  }
+
+  /**
+   * El diseño del PDF de este documento (&#x60;pdd_…&#x60; o &#x60;classic&#x60;); gana al de la numeración y al predeterminado. &#x60;null&#x60; es lo mismo que no mandarlo. Guía: Diseño del PDF.
+   * @return pdfDesignId
+   */
+  @javax.annotation.Nullable
+  public String getPdfDesignId() {
+    return pdfDesignId;
+  }
+
+  public void setPdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -551,13 +575,14 @@ public class EquivalentDocumentAdjustmentInput {
         Objects.equals(this.noteType, equivalentDocumentAdjustmentInput.noteType) &&
         Objects.equals(this.concept, equivalentDocumentAdjustmentInput.concept) &&
         Objects.equals(this.description, equivalentDocumentAdjustmentInput.description) &&
-        Objects.equals(this.equivalentDocument, equivalentDocumentAdjustmentInput.equivalentDocument)&&
+        Objects.equals(this.equivalentDocument, equivalentDocumentAdjustmentInput.equivalentDocument) &&
+        Objects.equals(this.pdfDesignId, equivalentDocumentAdjustmentInput.pdfDesignId)&&
         Objects.equals(this.additionalProperties, equivalentDocumentAdjustmentInput.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(externalId, customer, items, payment, notes, period, references, allowanceCharges, prepayments, rounding, noteType, concept, description, equivalentDocument, additionalProperties);
+    return Objects.hash(externalId, customer, items, payment, notes, period, references, allowanceCharges, prepayments, rounding, noteType, concept, description, equivalentDocument, pdfDesignId, additionalProperties);
   }
 
   @Override
@@ -578,6 +603,7 @@ public class EquivalentDocumentAdjustmentInput {
     sb.append("    concept: ").append(toIndentedString(concept)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    equivalentDocument: ").append(toIndentedString(equivalentDocument)).append("\n");
+    sb.append("    pdfDesignId: ").append(toIndentedString(pdfDesignId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -597,7 +623,7 @@ public class EquivalentDocumentAdjustmentInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("external_id", "customer", "items", "payment", "notes", "period", "references", "allowance_charges", "prepayments", "rounding", "note_type", "concept", "description", "equivalent_document"));
+    openapiFields = new HashSet<String>(Arrays.asList("external_id", "customer", "items", "payment", "notes", "period", "references", "allowance_charges", "prepayments", "rounding", "note_type", "concept", "description", "equivalent_document", "pdf_design_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("items", "note_type", "concept", "equivalent_document"));
@@ -697,6 +723,9 @@ public class EquivalentDocumentAdjustmentInput {
       }
       // validate the required field `equivalent_document`
       EquivalentDocumentReference.validateJsonElement(jsonObj.get("equivalent_document"));
+      if ((jsonObj.get("pdf_design_id") != null && !jsonObj.get("pdf_design_id").isJsonNull()) && !jsonObj.get("pdf_design_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pdf_design_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pdf_design_id").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -76,6 +76,16 @@ public class DocumentTotalsItem {
   @javax.annotation.Nullable
   private String commercialValue;
 
+  public static final String SERIALIZED_NAME_NET_UNIT_PRICE = "net_unit_price";
+  @SerializedName(SERIALIZED_NAME_NET_UNIT_PRICE)
+  @javax.annotation.Nullable
+  private String netUnitPrice;
+
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
+  @javax.annotation.Nullable
+  private String total;
+
   public DocumentTotalsItem() {
   }
 
@@ -85,7 +95,7 @@ public class DocumentTotalsItem {
   }
 
   /**
-   * Get gross
+   * Cantidad × precio SIN impuestos.
    * @return gross
    */
   @javax.annotation.Nullable
@@ -173,6 +183,44 @@ public class DocumentTotalsItem {
     this.commercialValue = commercialValue;
   }
 
+
+  public DocumentTotalsItem netUnitPrice(@javax.annotation.Nullable String netUnitPrice) {
+    this.netUnitPrice = netUnitPrice;
+    return this;
+  }
+
+  /**
+   * Solo en las líneas con unit_price_includes_tax: el precio unitario sin impuestos que Trevol derivó (hasta 6 decimales), en la moneda de totals.
+   * @return netUnitPrice
+   */
+  @javax.annotation.Nullable
+  public String getNetUnitPrice() {
+    return netUnitPrice;
+  }
+
+  public void setNetUnitPrice(@javax.annotation.Nullable String netUnitPrice) {
+    this.netUnitPrice = netUnitPrice;
+  }
+
+
+  public DocumentTotalsItem total(@javax.annotation.Nullable String total) {
+    this.total = total;
+    return this;
+  }
+
+  /**
+   * Solo en las líneas con unit_price_includes_tax: line_extension más los impuestos de la línea, en la moneda de totals.
+   * @return total
+   */
+  @javax.annotation.Nullable
+  public String getTotal() {
+    return total;
+  }
+
+  public void setTotal(@javax.annotation.Nullable String total) {
+    this.total = total;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -232,13 +280,15 @@ public class DocumentTotalsItem {
         Objects.equals(this.discount, documentTotalsItem.discount) &&
         Objects.equals(this.lineExtension, documentTotalsItem.lineExtension) &&
         Objects.equals(this.charge, documentTotalsItem.charge) &&
-        Objects.equals(this.commercialValue, documentTotalsItem.commercialValue)&&
+        Objects.equals(this.commercialValue, documentTotalsItem.commercialValue) &&
+        Objects.equals(this.netUnitPrice, documentTotalsItem.netUnitPrice) &&
+        Objects.equals(this.total, documentTotalsItem.total)&&
         Objects.equals(this.additionalProperties, documentTotalsItem.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(gross, discount, lineExtension, charge, commercialValue, additionalProperties);
+    return Objects.hash(gross, discount, lineExtension, charge, commercialValue, netUnitPrice, total, additionalProperties);
   }
 
   @Override
@@ -250,6 +300,8 @@ public class DocumentTotalsItem {
     sb.append("    lineExtension: ").append(toIndentedString(lineExtension)).append("\n");
     sb.append("    charge: ").append(toIndentedString(charge)).append("\n");
     sb.append("    commercialValue: ").append(toIndentedString(commercialValue)).append("\n");
+    sb.append("    netUnitPrice: ").append(toIndentedString(netUnitPrice)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -269,7 +321,7 @@ public class DocumentTotalsItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("gross", "discount", "line_extension", "charge", "commercial_value"));
+    openapiFields = new HashSet<String>(Arrays.asList("gross", "discount", "line_extension", "charge", "commercial_value", "net_unit_price", "total"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -302,6 +354,12 @@ public class DocumentTotalsItem {
       }
       if ((jsonObj.get("commercial_value") != null && !jsonObj.get("commercial_value").isJsonNull()) && !jsonObj.get("commercial_value").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `commercial_value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commercial_value").toString()));
+      }
+      if ((jsonObj.get("net_unit_price") != null && !jsonObj.get("net_unit_price").isJsonNull()) && !jsonObj.get("net_unit_price").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `net_unit_price` to be a primitive type in the JSON string but got `%s`", jsonObj.get("net_unit_price").toString()));
+      }
+      if ((jsonObj.get("total") != null && !jsonObj.get("total").isJsonNull()) && !jsonObj.get("total").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `total` to be a primitive type in the JSON string but got `%s`", jsonObj.get("total").toString()));
       }
   }
 

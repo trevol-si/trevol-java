@@ -89,6 +89,11 @@ public class EquivalentItem {
   @javax.annotation.Nullable
   private String unitPrice;
 
+  public static final String SERIALIZED_NAME_UNIT_PRICE_INCLUDES_TAX = "unit_price_includes_tax";
+  @SerializedName(SERIALIZED_NAME_UNIT_PRICE_INCLUDES_TAX)
+  @javax.annotation.Nullable
+  private Boolean unitPriceIncludesTax;
+
   public static final String SERIALIZED_NAME_TAXES = "taxes";
   @SerializedName(SERIALIZED_NAME_TAXES)
   @javax.annotation.Nullable
@@ -243,7 +248,7 @@ public class EquivalentItem {
   }
 
   /**
-   * Precio unitario SIN impuestos.
+   * Precio unitario SIN impuestos (con unit_price_includes_tax, con ellos).
    * @return unitPrice
    */
   @javax.annotation.Nullable
@@ -253,6 +258,25 @@ public class EquivalentItem {
 
   public void setUnitPrice(@javax.annotation.Nullable String unitPrice) {
     this.unitPrice = unitPrice;
+  }
+
+
+  public EquivalentItem unitPriceIncludesTax(@javax.annotation.Nullable Boolean unitPriceIncludesTax) {
+    this.unitPriceIncludesTax = unitPriceIncludesTax;
+    return this;
+  }
+
+  /**
+   * true: unit_price trae los impuestos de la línea; Trevol calcula el precio sin ellos.
+   * @return unitPriceIncludesTax
+   */
+  @javax.annotation.Nullable
+  public Boolean getUnitPriceIncludesTax() {
+    return unitPriceIncludesTax;
+  }
+
+  public void setUnitPriceIncludesTax(@javax.annotation.Nullable Boolean unitPriceIncludesTax) {
+    this.unitPriceIncludesTax = unitPriceIncludesTax;
   }
 
 
@@ -538,6 +562,7 @@ public class EquivalentItem {
         Objects.equals(this.unit, equivalentItem.unit) &&
         Objects.equals(this.quantity, equivalentItem.quantity) &&
         Objects.equals(this.unitPrice, equivalentItem.unitPrice) &&
+        Objects.equals(this.unitPriceIncludesTax, equivalentItem.unitPriceIncludesTax) &&
         Objects.equals(this.taxes, equivalentItem.taxes) &&
         Objects.equals(this.discounts, equivalentItem.discounts) &&
         Objects.equals(this.charges, equivalentItem.charges) &&
@@ -553,7 +578,7 @@ public class EquivalentItem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(productId, code, description, unit, quantity, unitPrice, taxes, discounts, charges, withholdings, freeOfCharge, standardCode, brand, model, income, mandator, additionalProperties);
+    return Objects.hash(productId, code, description, unit, quantity, unitPrice, unitPriceIncludesTax, taxes, discounts, charges, withholdings, freeOfCharge, standardCode, brand, model, income, mandator, additionalProperties);
   }
 
   @Override
@@ -566,6 +591,7 @@ public class EquivalentItem {
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     sb.append("    unitPrice: ").append(toIndentedString(unitPrice)).append("\n");
+    sb.append("    unitPriceIncludesTax: ").append(toIndentedString(unitPriceIncludesTax)).append("\n");
     sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
     sb.append("    discounts: ").append(toIndentedString(discounts)).append("\n");
     sb.append("    charges: ").append(toIndentedString(charges)).append("\n");
@@ -595,7 +621,7 @@ public class EquivalentItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("product_id", "code", "description", "unit", "quantity", "unit_price", "taxes", "discounts", "charges", "withholdings", "free_of_charge", "standard_code", "brand", "model", "income", "mandator"));
+    openapiFields = new HashSet<String>(Arrays.asList("product_id", "code", "description", "unit", "quantity", "unit_price", "unit_price_includes_tax", "taxes", "discounts", "charges", "withholdings", "free_of_charge", "standard_code", "brand", "model", "income", "mandator"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

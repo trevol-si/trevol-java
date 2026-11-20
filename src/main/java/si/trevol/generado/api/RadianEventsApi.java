@@ -183,14 +183,15 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -205,14 +206,15 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public RadianEvent execute() throws ApiException {
@@ -228,14 +230,15 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<RadianEvent> executeWithHttpInfo() throws ApiException {
@@ -251,14 +254,15 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+            <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<RadianEvent> _callback) throws ApiException {
@@ -275,14 +279,15 @@ public class RadianEventsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  </td></tr>
-        <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  </td></tr>
+        <tr><td> 201 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 422 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Idempotent-Replayed -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIcreateRadianEventRequest createRadianEvent(@javax.annotation.Nonnull RadianEventInput radianEventInput) {
@@ -377,8 +382,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -393,8 +399,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public File execute() throws ApiException {
@@ -410,8 +417,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<File> executeWithHttpInfo() throws ApiException {
@@ -427,8 +435,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<File> _callback) throws ApiException {
@@ -445,14 +454,15 @@ public class RadianEventsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> xml </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIdownloadRadianEventXmlRequest downloadRadianEventXml(@javax.annotation.Nonnull String id) {
         return new APIdownloadRadianEventXmlRequest(id);
     }
-    private okhttp3.Call listRadianEventsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String eventCode, @javax.annotation.Nullable String invoiceCufe, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listRadianEventsCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String eventCode, @javax.annotation.Nullable String invoiceCufe, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -509,6 +519,14 @@ public class RadianEventsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("invoice_cufe", invoiceCufe));
         }
 
+        if (number != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("number", number));
+        }
+
+        if (prefix != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("prefix", prefix));
+        }
+
         final String[] localVarAccepts = {
             "application/json",
             "application/problem+json"
@@ -530,21 +548,21 @@ public class RadianEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listRadianEventsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String eventCode, @javax.annotation.Nullable String invoiceCufe, final ApiCallback _callback) throws ApiException {
-        return listRadianEventsCall(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, _callback);
+    private okhttp3.Call listRadianEventsValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String eventCode, @javax.annotation.Nullable String invoiceCufe, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback _callback) throws ApiException {
+        return listRadianEventsCall(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, number, prefix, _callback);
 
     }
 
 
-    private ApiResponse<RadianEventList> listRadianEventsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String eventCode, @javax.annotation.Nullable String invoiceCufe) throws ApiException {
-        okhttp3.Call localVarCall = listRadianEventsValidateBeforeCall(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, null);
+    private ApiResponse<RadianEventList> listRadianEventsWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String eventCode, @javax.annotation.Nullable String invoiceCufe, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix) throws ApiException {
+        okhttp3.Call localVarCall = listRadianEventsValidateBeforeCall(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, number, prefix, null);
         Type localVarReturnType = new TypeToken<RadianEventList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
-    private okhttp3.Call listRadianEventsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String eventCode, @javax.annotation.Nullable String invoiceCufe, final ApiCallback<RadianEventList> _callback) throws ApiException {
+    private okhttp3.Call listRadianEventsAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable String startingAfter, @javax.annotation.Nullable String status, @javax.annotation.Nullable String externalId, @javax.annotation.Nullable String createdFrom, @javax.annotation.Nullable String createdTo, @javax.annotation.Nullable String eventCode, @javax.annotation.Nullable String invoiceCufe, @javax.annotation.Nullable String number, @javax.annotation.Nullable String prefix, final ApiCallback<RadianEventList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listRadianEventsValidateBeforeCall(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, _callback);
+        okhttp3.Call localVarCall = listRadianEventsValidateBeforeCall(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, number, prefix, _callback);
         Type localVarReturnType = new TypeToken<RadianEventList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -567,6 +585,10 @@ public class RadianEventsApi {
         private String eventCode;
         @javax.annotation.Nullable
         private String invoiceCufe;
+        @javax.annotation.Nullable
+        private String number;
+        @javax.annotation.Nullable
+        private String prefix;
 
         private APIlistRadianEventsRequest() {
         }
@@ -652,6 +674,26 @@ public class RadianEventsApi {
         }
 
         /**
+         * Set number
+         * @param number El número completo exacto del EVENTO, como sale en &#x60;number&#x60; (p. ej. &#x60;AR994000123&#x60;), no el de la factura (esa va con &#x60;invoice_cufe&#x60;). (optional)
+         * @return APIlistRadianEventsRequest
+         */
+        public APIlistRadianEventsRequest number(@javax.annotation.Nullable String number) {
+            this.number = number;
+            return this;
+        }
+
+        /**
+         * Set prefix
+         * @param prefix El prefijo exacto del evento, como sale en &#x60;prefix&#x60; (&#x60;AR&#x60;, &#x60;RC&#x60;, &#x60;RB&#x60;, &#x60;AE&#x60; o &#x60;E0xx&#x60;). Para filtrar por tipo es mejor &#x60;event_code&#x60;. (optional)
+         * @return APIlistRadianEventsRequest
+         */
+        public APIlistRadianEventsRequest prefix(@javax.annotation.Nullable String prefix) {
+            this.prefix = prefix;
+            return this;
+        }
+
+        /**
          * Build call for listRadianEvents
          * @param _callback ApiCallback API callback
          * @return Call to execute
@@ -660,12 +702,13 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
-            return listRadianEventsCall(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, _callback);
+            return listRadianEventsCall(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, number, prefix, _callback);
         }
 
         /**
@@ -676,12 +719,13 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public RadianEventList execute() throws ApiException {
-            ApiResponse<RadianEventList> localVarResp = listRadianEventsWithHttpInfo(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe);
+            ApiResponse<RadianEventList> localVarResp = listRadianEventsWithHttpInfo(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, number, prefix);
             return localVarResp.getData();
         }
 
@@ -693,12 +737,13 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<RadianEventList> executeWithHttpInfo() throws ApiException {
-            return listRadianEventsWithHttpInfo(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe);
+            return listRadianEventsWithHttpInfo(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, number, prefix);
         }
 
         /**
@@ -710,12 +755,13 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<RadianEventList> _callback) throws ApiException {
-            return listRadianEventsAsync(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, _callback);
+            return listRadianEventsAsync(limit, startingAfter, status, externalId, createdFrom, createdTo, eventCode, invoiceCufe, number, prefix, _callback);
         }
     }
 
@@ -727,8 +773,9 @@ public class RadianEventsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> {object: list, data, has_more, next_cursor} </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIlistRadianEventsRequest listRadianEvents() {
@@ -823,8 +870,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -839,8 +887,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public RadianEvent execute() throws ApiException {
@@ -856,8 +905,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<RadianEvent> executeWithHttpInfo() throws ApiException {
@@ -873,8 +923,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<RadianEvent> _callback) throws ApiException {
@@ -891,8 +942,9 @@ public class RadianEventsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIretrieveRadianEventRequest retrieveRadianEvent(@javax.annotation.Nonnull String id) {
@@ -990,8 +1042,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -1006,8 +1059,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public TacitAcceptance execute() throws ApiException {
@@ -1023,8 +1077,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<TacitAcceptance> executeWithHttpInfo() throws ApiException {
@@ -1040,8 +1095,9 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<TacitAcceptance> _callback) throws ApiException {
@@ -1058,8 +1114,9 @@ public class RadianEventsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> El resultado </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIretrieveTacitAcceptanceByCufeRequest retrieveTacitAcceptanceByCufe(@javax.annotation.Nonnull String cufe) {
@@ -1154,10 +1211,11 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
@@ -1172,10 +1230,11 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public RadianEvent execute() throws ApiException {
@@ -1191,10 +1250,11 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public ApiResponse<RadianEvent> executeWithHttpInfo() throws ApiException {
@@ -1210,10 +1270,11 @@ public class RadianEventsApi {
          <table border="1">
        <caption>Response Details</caption>
             <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+            <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
          </table>
          */
         public okhttp3.Call executeAsync(final ApiCallback<RadianEvent> _callback) throws ApiException {
@@ -1230,10 +1291,11 @@ public class RadianEventsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
-        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  </td></tr>
+        <tr><td> 200 </td><td> El documento </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 202 </td><td> Versión 2026-10-22: la DIAN no contestó (&#x60;status: processing&#x60;; Trevol termina el documento y avisa por webhook; no crees otro documento para la misma venta, y si repites con la misma Idempotency-Key respondemos sin enviar) o el documento se está enviando (&#x60;status: sending&#x60;); también la contingencia (&#x60;status: contingency&#x60;). Lleva &#x60;Location&#x60; y, salvo la contingencia, &#x60;Retry-After: 30&#x60;. En 2026-10-21 la DIAN sin contestar es un 503 &#x60;dian_unavailable&#x60;. También &#x60;status: validating&#x60; (en las dos versiones): la DIAN respondió 98; reintentar con la misma Idempotency-Key o &#x60;POST …/send&#x60; responde lo mismo SIN reenviar. En la 2026-10-21, el evento anterior que aún no aparece es 409 &#x60;previous_event_pending&#x60;. </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> La llave es de la empresa simulada: esto no existe en el entorno simulado. </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
      </table>
      */
     public APIsendRadianEventRequest sendRadianEvent(@javax.annotation.Nonnull String id) {

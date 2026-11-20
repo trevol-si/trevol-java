@@ -161,6 +161,11 @@ public class EquivalentDocumentInput {
   @javax.annotation.Nullable
   private Numbering numbering;
 
+  public static final String SERIALIZED_NAME_PDF_DESIGN_ID = "pdf_design_id";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN_ID)
+  @javax.annotation.Nullable
+  private String pdfDesignId;
+
   public EquivalentDocumentInput() {
   }
 
@@ -564,6 +569,25 @@ public class EquivalentDocumentInput {
     this.numbering = numbering;
   }
 
+
+  public EquivalentDocumentInput pdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+    return this;
+  }
+
+  /**
+   * El diseño del PDF de este documento (&#x60;pdd_…&#x60; o &#x60;classic&#x60;); gana al de la numeración y al predeterminado. &#x60;null&#x60; es lo mismo que no mandarlo. Guía: Diseño del PDF.
+   * @return pdfDesignId
+   */
+  @javax.annotation.Nullable
+  public String getPdfDesignId() {
+    return pdfDesignId;
+  }
+
+  public void setPdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -637,13 +661,14 @@ public class EquivalentDocumentInput {
         Objects.equals(this.prefix, equivalentDocumentInput.prefix) &&
         Objects.equals(this.originNote, equivalentDocumentInput.originNote) &&
         Objects.equals(this.contingency, equivalentDocumentInput.contingency) &&
-        Objects.equals(this.numbering, equivalentDocumentInput.numbering)&&
+        Objects.equals(this.numbering, equivalentDocumentInput.numbering) &&
+        Objects.equals(this.pdfDesignId, equivalentDocumentInput.pdfDesignId)&&
         Objects.equals(this.additionalProperties, equivalentDocumentInput.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(externalId, customer, items, payment, notes, period, references, allowanceCharges, prepayments, withholdings, rounding, documentType, operationType, pos, extension, prefix, originNote, contingency, numbering, additionalProperties);
+    return Objects.hash(externalId, customer, items, payment, notes, period, references, allowanceCharges, prepayments, withholdings, rounding, documentType, operationType, pos, extension, prefix, originNote, contingency, numbering, pdfDesignId, additionalProperties);
   }
 
   @Override
@@ -669,6 +694,7 @@ public class EquivalentDocumentInput {
     sb.append("    originNote: ").append(toIndentedString(originNote)).append("\n");
     sb.append("    contingency: ").append(toIndentedString(contingency)).append("\n");
     sb.append("    numbering: ").append(toIndentedString(numbering)).append("\n");
+    sb.append("    pdfDesignId: ").append(toIndentedString(pdfDesignId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -688,7 +714,7 @@ public class EquivalentDocumentInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("external_id", "customer", "items", "payment", "notes", "period", "references", "allowance_charges", "prepayments", "withholdings", "rounding", "document_type", "operation_type", "pos", "extension", "prefix", "origin_note", "contingency", "numbering"));
+    openapiFields = new HashSet<String>(Arrays.asList("external_id", "customer", "items", "payment", "notes", "period", "references", "allowance_charges", "prepayments", "withholdings", "rounding", "document_type", "operation_type", "pos", "extension", "prefix", "origin_note", "contingency", "numbering", "pdf_design_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("items"));
@@ -817,6 +843,9 @@ public class EquivalentDocumentInput {
       // validate the optional field `numbering`
       if (jsonObj.get("numbering") != null && !jsonObj.get("numbering").isJsonNull()) {
         Numbering.validateJsonElement(jsonObj.get("numbering"));
+      }
+      if ((jsonObj.get("pdf_design_id") != null && !jsonObj.get("pdf_design_id").isJsonNull()) && !jsonObj.get("pdf_design_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pdf_design_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pdf_design_id").toString()));
       }
   }
 

@@ -34,8 +34,8 @@ class ErroresTest {
     }
 
     @Test
-    void cubreLos43Code() {
-        assertEquals(43, codes().count()); // 40 + company_exists, key_limit_reached y company_limit_reached (llave de administración)
+    void cubreLos49Code() {
+        assertEquals(49, codes().count()); // 40 + company_exists, key_limit_reached y company_limit_reached (llave de administración) + los 6 del diseño del PDF (0.4.0)
     }
 
     @ParameterizedTest(name = "{1} → {0}")

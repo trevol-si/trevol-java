@@ -79,6 +79,11 @@ public class SupportDocument {
   @javax.annotation.Nullable
   private String environment;
 
+  public static final String SERIALIZED_NAME_SIMULATED = "simulated";
+  @SerializedName(SERIALIZED_NAME_SIMULATED)
+  @javax.annotation.Nullable
+  private Boolean simulated;
+
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nullable
@@ -246,6 +251,25 @@ public class SupportDocument {
 
   public void setEnvironment(@javax.annotation.Nullable String environment) {
     this.environment = environment;
+  }
+
+
+  public SupportDocument simulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
+    return this;
+  }
+
+  /**
+   * Solo en el entorno SIMULADO (la empresa simulada de la cuenta): el objeto se validó, se calculó y se firmó como siempre, pero nunca llegó a la DIAN ni tiene validez. Un objeto real no lleva esta propiedad.
+   * @return simulated
+   */
+  @javax.annotation.Nullable
+  public Boolean getSimulated() {
+    return simulated;
+  }
+
+  public void setSimulated(@javax.annotation.Nullable Boolean simulated) {
+    this.simulated = simulated;
   }
 
 
@@ -748,6 +772,7 @@ public class SupportDocument {
     return Objects.equals(this.id, supportDocument.id) &&
         Objects.equals(this._object, supportDocument._object) &&
         Objects.equals(this.environment, supportDocument.environment) &&
+        Objects.equals(this.simulated, supportDocument.simulated) &&
         Objects.equals(this.status, supportDocument.status) &&
         Objects.equals(this.number, supportDocument.number) &&
         Objects.equals(this.prefix, supportDocument.prefix) &&
@@ -775,7 +800,7 @@ public class SupportDocument {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, environment, status, number, prefix, externalId, origin, qr, issuedAt, items, payment, currency, totals, dian, delivery, createdAt, updatedAt, cuds, seller, notes, references, allowanceCharges, transmission, adjustmentNote, additionalProperties);
+    return Objects.hash(id, _object, environment, simulated, status, number, prefix, externalId, origin, qr, issuedAt, items, payment, currency, totals, dian, delivery, createdAt, updatedAt, cuds, seller, notes, references, allowanceCharges, transmission, adjustmentNote, additionalProperties);
   }
 
   @Override
@@ -785,6 +810,7 @@ public class SupportDocument {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    simulated: ").append(toIndentedString(simulated)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
@@ -826,7 +852,7 @@ public class SupportDocument {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "status", "number", "prefix", "external_id", "origin", "qr", "issued_at", "items", "payment", "currency", "totals", "dian", "delivery", "created_at", "updated_at", "cuds", "seller", "notes", "references", "allowance_charges", "transmission", "adjustment_note"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "simulated", "status", "number", "prefix", "external_id", "origin", "qr", "issued_at", "items", "payment", "currency", "totals", "dian", "delivery", "created_at", "updated_at", "cuds", "seller", "notes", "references", "allowance_charges", "transmission", "adjustment_note"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

@@ -39,6 +39,10 @@ import si.trevol.generado.api.ProductsApi;
 import si.trevol.generado.api.RadianStatusApi;
 import si.trevol.generado.api.ReportRunsApi;
 import si.trevol.generado.api.ReportsApi;
+import si.trevol.generado.api.CatalogsApi;
+import si.trevol.generado.api.CompanySettingsApi;
+import si.trevol.generado.api.PdfDesignsApi;
+import si.trevol.generado.api.PdfTemplatesApi;
 
 /**
  * El cliente de la API de Trevol: un método por recurso ({@code invoices()}, {@code creditNotes()}, …), cada uno con los métodos
@@ -112,6 +116,11 @@ public final class Trevol {
     private final RadianStatusApi radianStatus;
     private final ReportRunsApi reportRuns;
     private final ReportsApi reports;
+    // 0.4.0: las listas de valores y el diseño del PDF (plantillas, diseños, ajustes y logo de la empresa).
+    private final CatalogsApi catalogs;
+    private final CompanySettingsApi companySettings;
+    private final PdfDesignsApi pdfDesigns;
+    private final PdfTemplatesApi pdfTemplates;
 
     private Trevol(Builder b) {
         String llave = b.apiKey != null ? b.apiKey : System.getenv("TREVOL_API_KEY");
@@ -174,6 +183,10 @@ public final class Trevol {
         this.radianStatus = new RadianStatusApi(apiClient);
         this.reportRuns = new ReportRunsApi(apiClient);
         this.reports = new ReportsApi(apiClient);
+        this.catalogs = new CatalogsApi(apiClient);
+        this.companySettings = new CompanySettingsApi(apiClient);
+        this.pdfDesigns = new PdfDesignsApi(apiClient);
+        this.pdfTemplates = new PdfTemplatesApi(apiClient);
     }
 
     /** El cliente derivado de {@link #withCompany}: la misma llave, las mismas opciones y las mismas conexiones; otra empresa. */
@@ -216,6 +229,10 @@ public final class Trevol {
         this.radianStatus = new RadianStatusApi(apiClient);
         this.reportRuns = new ReportRunsApi(apiClient);
         this.reports = new ReportsApi(apiClient);
+        this.catalogs = new CatalogsApi(apiClient);
+        this.companySettings = new CompanySettingsApi(apiClient);
+        this.pdfDesigns = new PdfDesignsApi(apiClient);
+        this.pdfTemplates = new PdfTemplatesApi(apiClient);
     }
 
     private static String empresaValida(KeyType tipo, String company) {
@@ -292,6 +309,10 @@ public final class Trevol {
     public RadianStatusApi radianStatus() { return radianStatus; }
     public ReportRunsApi reportRuns() { return reportRuns; }
     public ReportsApi reports() { return reports; }
+    public CatalogsApi catalogs() { return catalogs; }
+    public CompanySettingsApi companySettings() { return companySettings; }
+    public PdfDesignsApi pdfDesigns() { return pdfDesigns; }
+    public PdfTemplatesApi pdfTemplates() { return pdfTemplates; }
 
     /**
      * Recorre todas las páginas de un listado, perezosamente:

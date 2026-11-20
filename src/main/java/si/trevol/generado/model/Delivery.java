@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import si.trevol.generado.model.DeliveryEmail;
+import si.trevol.generado.model.DeliveryEmailResends;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -76,6 +77,11 @@ public class Delivery {
   @SerializedName(SERIALIZED_NAME_EMAIL)
   @javax.annotation.Nullable
   private DeliveryEmail email;
+
+  public static final String SERIALIZED_NAME_EMAIL_RESENDS = "email_resends";
+  @SerializedName(SERIALIZED_NAME_EMAIL_RESENDS)
+  @javax.annotation.Nullable
+  private DeliveryEmailResends emailResends;
 
   public Delivery() {
   }
@@ -174,6 +180,25 @@ public class Delivery {
     this.email = email;
   }
 
+
+  public Delivery emailResends(@javax.annotation.Nullable DeliveryEmailResends emailResends) {
+    this.emailResends = emailResends;
+    return this;
+  }
+
+  /**
+   * Los reenvíos del correo con &#x60;POST …/{id}/email&#x60;; null si nunca se reenvió. &#x60;status&#x60; y &#x60;email&#x60; siguen hablando del correo original. &#x60;last.deliveries&#x60; dice cómo le fue a cada destinatario del último reenvío, también si rebotó o se quejó después. Sin &#x60;customers:read&#x60;, &#x60;last.to&#x60; y &#x60;last.deliveries[].to&#x60; salen en null.
+   * @return emailResends
+   */
+  @javax.annotation.Nullable
+  public DeliveryEmailResends getEmailResends() {
+    return emailResends;
+  }
+
+  public void setEmailResends(@javax.annotation.Nullable DeliveryEmailResends emailResends) {
+    this.emailResends = emailResends;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -233,13 +258,14 @@ public class Delivery {
         Objects.equals(this.pdf, delivery.pdf) &&
         Objects.equals(this.zip, delivery.zip) &&
         Objects.equals(this.xml, delivery.xml) &&
-        Objects.equals(this.email, delivery.email)&&
+        Objects.equals(this.email, delivery.email) &&
+        Objects.equals(this.emailResends, delivery.emailResends)&&
         Objects.equals(this.additionalProperties, delivery.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, pdf, zip, xml, email, additionalProperties);
+    return Objects.hash(status, pdf, zip, xml, email, emailResends, additionalProperties);
   }
 
   @Override
@@ -251,6 +277,7 @@ public class Delivery {
     sb.append("    zip: ").append(toIndentedString(zip)).append("\n");
     sb.append("    xml: ").append(toIndentedString(xml)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    emailResends: ").append(toIndentedString(emailResends)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -270,7 +297,7 @@ public class Delivery {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("status", "pdf", "zip", "xml", "email"));
+    openapiFields = new HashSet<String>(Arrays.asList("status", "pdf", "zip", "xml", "email", "email_resends"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -295,6 +322,10 @@ public class Delivery {
       // validate the optional field `email`
       if (jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) {
         DeliveryEmail.validateJsonElement(jsonObj.get("email"));
+      }
+      // validate the optional field `email_resends`
+      if (jsonObj.get("email_resends") != null && !jsonObj.get("email_resends").isJsonNull()) {
+        DeliveryEmailResends.validateJsonElement(jsonObj.get("email_resends"));
       }
   }
 

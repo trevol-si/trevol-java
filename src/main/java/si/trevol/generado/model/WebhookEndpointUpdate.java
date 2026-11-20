@@ -257,6 +257,11 @@ public class WebhookEndpointUpdate {
   @javax.annotation.Nullable
   private List<EventsEnum> events;
 
+  public static final String SERIALIZED_NAME_FOLLOW_LATEST_CATALOG = "follow_latest_catalog";
+  @SerializedName(SERIALIZED_NAME_FOLLOW_LATEST_CATALOG)
+  @javax.annotation.Nullable
+  private Boolean followLatestCatalog;
+
   /**
    * enabled reactiva (también uno desactivado por Trevol) y pone en cero el contador de fallos.
    */
@@ -382,6 +387,25 @@ public class WebhookEndpointUpdate {
   }
 
 
+  public WebhookEndpointUpdate followLatestCatalog(@javax.annotation.Nullable Boolean followLatestCatalog) {
+    this.followLatestCatalog = followLatestCatalog;
+    return this;
+  }
+
+  /**
+   * Solo con &#x60;events: [\&quot;*\&quot;]&#x60; (si no, 422 en &#x60;/follow_latest_catalog&#x60;): el endpoint sigue el catálogo más nuevo. Cambiar a una lista explícita lo apaga.
+   * @return followLatestCatalog
+   */
+  @javax.annotation.Nullable
+  public Boolean getFollowLatestCatalog() {
+    return followLatestCatalog;
+  }
+
+  public void setFollowLatestCatalog(@javax.annotation.Nullable Boolean followLatestCatalog) {
+    this.followLatestCatalog = followLatestCatalog;
+  }
+
+
   public WebhookEndpointUpdate status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
@@ -458,13 +482,14 @@ public class WebhookEndpointUpdate {
     return Objects.equals(this.url, webhookEndpointUpdate.url) &&
         Objects.equals(this.description, webhookEndpointUpdate.description) &&
         Objects.equals(this.events, webhookEndpointUpdate.events) &&
+        Objects.equals(this.followLatestCatalog, webhookEndpointUpdate.followLatestCatalog) &&
         Objects.equals(this.status, webhookEndpointUpdate.status)&&
         Objects.equals(this.additionalProperties, webhookEndpointUpdate.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, description, events, status, additionalProperties);
+    return Objects.hash(url, description, events, followLatestCatalog, status, additionalProperties);
   }
 
   @Override
@@ -474,6 +499,7 @@ public class WebhookEndpointUpdate {
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
+    sb.append("    followLatestCatalog: ").append(toIndentedString(followLatestCatalog)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -494,7 +520,7 @@ public class WebhookEndpointUpdate {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("url", "description", "events", "status"));
+    openapiFields = new HashSet<String>(Arrays.asList("url", "description", "events", "follow_latest_catalog", "status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

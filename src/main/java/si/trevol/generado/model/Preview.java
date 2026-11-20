@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import si.trevol.generado.model.PreviewNumbering;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -67,6 +68,11 @@ public class Preview {
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
   @javax.annotation.Nullable
   private String environment;
+
+  public static final String SERIALIZED_NAME_NUMBERING = "numbering";
+  @SerializedName(SERIALIZED_NAME_NUMBERING)
+  @javax.annotation.Nullable
+  private PreviewNumbering numbering;
 
   public static final String SERIALIZED_NAME_TOTALS = "totals";
   @SerializedName(SERIALIZED_NAME_TOTALS)
@@ -130,6 +136,25 @@ public class Preview {
 
   public void setEnvironment(@javax.annotation.Nullable String environment) {
     this.environment = environment;
+  }
+
+
+  public Preview numbering(@javax.annotation.Nullable PreviewNumbering numbering) {
+    this.numbering = numbering;
+    return this;
+  }
+
+  /**
+   * Solo en la factura que pide &#x60;numbering&#x60;: la numeración que la numeraría (el prefijo normalizado), ya comprobada. No reserva número.
+   * @return numbering
+   */
+  @javax.annotation.Nullable
+  public PreviewNumbering getNumbering() {
+    return numbering;
+  }
+
+  public void setNumbering(@javax.annotation.Nullable PreviewNumbering numbering) {
+    this.numbering = numbering;
   }
 
 
@@ -217,13 +242,14 @@ public class Preview {
     return Objects.equals(this._object, preview._object) &&
         Objects.equals(this.document, preview.document) &&
         Objects.equals(this.environment, preview.environment) &&
+        Objects.equals(this.numbering, preview.numbering) &&
         Objects.equals(this.totals, preview.totals)&&
         Objects.equals(this.additionalProperties, preview.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_object, document, environment, totals, additionalProperties);
+    return Objects.hash(_object, document, environment, numbering, totals, additionalProperties);
   }
 
   @Override
@@ -233,6 +259,7 @@ public class Preview {
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("    numbering: ").append(toIndentedString(numbering)).append("\n");
     sb.append("    totals: ").append(toIndentedString(totals)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -253,7 +280,7 @@ public class Preview {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("object", "document", "environment", "totals"));
+    openapiFields = new HashSet<String>(Arrays.asList("object", "document", "environment", "numbering", "totals"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -280,6 +307,10 @@ public class Preview {
       }
       if ((jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) && !jsonObj.get("environment").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environment` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environment").toString()));
+      }
+      // validate the optional field `numbering`
+      if (jsonObj.get("numbering") != null && !jsonObj.get("numbering").isJsonNull()) {
+        PreviewNumbering.validateJsonElement(jsonObj.get("numbering"));
       }
   }
 

@@ -32,6 +32,7 @@ import si.trevol.generado.model.DocumentTotals;
 import si.trevol.generado.model.EquivalentAdjustmentItem;
 import si.trevol.generado.model.EquivalentDocumentReference;
 import si.trevol.generado.model.Payment;
+import si.trevol.generado.model.PdfDesignApplied;
 import si.trevol.generado.model.Period;
 import si.trevol.generado.model.Prepayment;
 import si.trevol.generado.model.References;
@@ -209,6 +210,16 @@ public class EquivalentDocumentAdjustment {
   @SerializedName(SERIALIZED_NAME_EQUIVALENT_DOCUMENT)
   @javax.annotation.Nullable
   private EquivalentDocumentReference equivalentDocument;
+
+  public static final String SERIALIZED_NAME_PDF_DESIGN_ID = "pdf_design_id";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN_ID)
+  @javax.annotation.Nullable
+  private String pdfDesignId;
+
+  public static final String SERIALIZED_NAME_PDF_DESIGN = "pdf_design";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN)
+  @javax.annotation.Nullable
+  private PdfDesignApplied pdfDesign;
 
   public EquivalentDocumentAdjustment() {
   }
@@ -795,6 +806,44 @@ public class EquivalentDocumentAdjustment {
     this.equivalentDocument = equivalentDocument;
   }
 
+
+  public EquivalentDocumentAdjustment pdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+    return this;
+  }
+
+  /**
+   * El que pidió el documento, o null.
+   * @return pdfDesignId
+   */
+  @javax.annotation.Nullable
+  public String getPdfDesignId() {
+    return pdfDesignId;
+  }
+
+  public void setPdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+  }
+
+
+  public EquivalentDocumentAdjustment pdfDesign(@javax.annotation.Nullable PdfDesignApplied pdfDesign) {
+    this.pdfDesign = pdfDesign;
+    return this;
+  }
+
+  /**
+   * El diseño fijado al emitir; null mientras está pendiente.
+   * @return pdfDesign
+   */
+  @javax.annotation.Nullable
+  public PdfDesignApplied getPdfDesign() {
+    return pdfDesign;
+  }
+
+  public void setPdfDesign(@javax.annotation.Nullable PdfDesignApplied pdfDesign) {
+    this.pdfDesign = pdfDesign;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -878,13 +927,15 @@ public class EquivalentDocumentAdjustment {
         Objects.equals(this.noteType, equivalentDocumentAdjustment.noteType) &&
         Objects.equals(this.concept, equivalentDocumentAdjustment.concept) &&
         Objects.equals(this.description, equivalentDocumentAdjustment.description) &&
-        Objects.equals(this.equivalentDocument, equivalentDocumentAdjustment.equivalentDocument)&&
+        Objects.equals(this.equivalentDocument, equivalentDocumentAdjustment.equivalentDocument) &&
+        Objects.equals(this.pdfDesignId, equivalentDocumentAdjustment.pdfDesignId) &&
+        Objects.equals(this.pdfDesign, equivalentDocumentAdjustment.pdfDesign)&&
         Objects.equals(this.additionalProperties, equivalentDocumentAdjustment.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, environment, status, number, prefix, externalId, origin, cude, qr, issuedAt, customer, items, payment, totals, dian, delivery, createdAt, updatedAt, notes, period, references, allowanceCharges, prepayments, rounding, noteType, concept, description, equivalentDocument, additionalProperties);
+    return Objects.hash(id, _object, environment, status, number, prefix, externalId, origin, cude, qr, issuedAt, customer, items, payment, totals, dian, delivery, createdAt, updatedAt, notes, period, references, allowanceCharges, prepayments, rounding, noteType, concept, description, equivalentDocument, pdfDesignId, pdfDesign, additionalProperties);
   }
 
   @Override
@@ -920,6 +971,8 @@ public class EquivalentDocumentAdjustment {
     sb.append("    concept: ").append(toIndentedString(concept)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    equivalentDocument: ").append(toIndentedString(equivalentDocument)).append("\n");
+    sb.append("    pdfDesignId: ").append(toIndentedString(pdfDesignId)).append("\n");
+    sb.append("    pdfDesign: ").append(toIndentedString(pdfDesign)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -939,7 +992,7 @@ public class EquivalentDocumentAdjustment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "status", "number", "prefix", "external_id", "origin", "cude", "qr", "issued_at", "customer", "items", "payment", "totals", "dian", "delivery", "created_at", "updated_at", "notes", "period", "references", "allowance_charges", "prepayments", "rounding", "note_type", "concept", "description", "equivalent_document"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "status", "number", "prefix", "external_id", "origin", "cude", "qr", "issued_at", "customer", "items", "payment", "totals", "dian", "delivery", "created_at", "updated_at", "notes", "period", "references", "allowance_charges", "prepayments", "rounding", "note_type", "concept", "description", "equivalent_document", "pdf_design_id", "pdf_design"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1074,6 +1127,13 @@ public class EquivalentDocumentAdjustment {
       // validate the optional field `equivalent_document`
       if (jsonObj.get("equivalent_document") != null && !jsonObj.get("equivalent_document").isJsonNull()) {
         EquivalentDocumentReference.validateJsonElement(jsonObj.get("equivalent_document"));
+      }
+      if ((jsonObj.get("pdf_design_id") != null && !jsonObj.get("pdf_design_id").isJsonNull()) && !jsonObj.get("pdf_design_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pdf_design_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pdf_design_id").toString()));
+      }
+      // validate the optional field `pdf_design`
+      if (jsonObj.get("pdf_design") != null && !jsonObj.get("pdf_design").isJsonNull()) {
+        PdfDesignApplied.validateJsonElement(jsonObj.get("pdf_design"));
       }
   }
 

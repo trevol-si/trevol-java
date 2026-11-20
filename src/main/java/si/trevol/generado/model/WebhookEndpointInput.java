@@ -257,6 +257,11 @@ public class WebhookEndpointInput {
   @javax.annotation.Nonnull
   private List<EventsEnum> events;
 
+  public static final String SERIALIZED_NAME_FOLLOW_LATEST_CATALOG = "follow_latest_catalog";
+  @SerializedName(SERIALIZED_NAME_FOLLOW_LATEST_CATALOG)
+  @javax.annotation.Nullable
+  private Boolean followLatestCatalog;
+
   public WebhookEndpointInput() {
   }
 
@@ -324,6 +329,25 @@ public class WebhookEndpointInput {
     this.events = events;
   }
 
+
+  public WebhookEndpointInput followLatestCatalog(@javax.annotation.Nullable Boolean followLatestCatalog) {
+    this.followLatestCatalog = followLatestCatalog;
+    return this;
+  }
+
+  /**
+   * Solo con &#x60;events: [\&quot;*\&quot;]&#x60; (si no, 422 en &#x60;/follow_latest_catalog&#x60;): el endpoint sigue el catálogo más nuevo. Cambiar a una lista explícita lo apaga.
+   * @return followLatestCatalog
+   */
+  @javax.annotation.Nullable
+  public Boolean getFollowLatestCatalog() {
+    return followLatestCatalog;
+  }
+
+  public void setFollowLatestCatalog(@javax.annotation.Nullable Boolean followLatestCatalog) {
+    this.followLatestCatalog = followLatestCatalog;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -381,13 +405,14 @@ public class WebhookEndpointInput {
     WebhookEndpointInput webhookEndpointInput = (WebhookEndpointInput) o;
     return Objects.equals(this.url, webhookEndpointInput.url) &&
         Objects.equals(this.description, webhookEndpointInput.description) &&
-        Objects.equals(this.events, webhookEndpointInput.events)&&
+        Objects.equals(this.events, webhookEndpointInput.events) &&
+        Objects.equals(this.followLatestCatalog, webhookEndpointInput.followLatestCatalog)&&
         Objects.equals(this.additionalProperties, webhookEndpointInput.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, description, events, additionalProperties);
+    return Objects.hash(url, description, events, followLatestCatalog, additionalProperties);
   }
 
   @Override
@@ -397,6 +422,7 @@ public class WebhookEndpointInput {
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
+    sb.append("    followLatestCatalog: ").append(toIndentedString(followLatestCatalog)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -416,7 +442,7 @@ public class WebhookEndpointInput {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("url", "description", "events"));
+    openapiFields = new HashSet<String>(Arrays.asList("url", "description", "events", "follow_latest_catalog"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("url", "events"));

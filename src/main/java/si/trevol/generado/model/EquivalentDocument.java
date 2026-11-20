@@ -34,6 +34,7 @@ import si.trevol.generado.model.EquivalentItem;
 import si.trevol.generado.model.Extension;
 import si.trevol.generado.model.OriginNote;
 import si.trevol.generado.model.Payment;
+import si.trevol.generado.model.PdfDesignApplied;
 import si.trevol.generado.model.Period;
 import si.trevol.generado.model.Pos;
 import si.trevol.generado.model.Prepayment;
@@ -228,6 +229,16 @@ public class EquivalentDocument {
   @SerializedName(SERIALIZED_NAME_CONTINGENCY)
   @javax.annotation.Nullable
   private EquivalentDocumentContingency contingency;
+
+  public static final String SERIALIZED_NAME_PDF_DESIGN_ID = "pdf_design_id";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN_ID)
+  @javax.annotation.Nullable
+  private String pdfDesignId;
+
+  public static final String SERIALIZED_NAME_PDF_DESIGN = "pdf_design";
+  @SerializedName(SERIALIZED_NAME_PDF_DESIGN)
+  @javax.annotation.Nullable
+  private PdfDesignApplied pdfDesign;
 
   public EquivalentDocument() {
   }
@@ -879,6 +890,44 @@ public class EquivalentDocument {
     this.contingency = contingency;
   }
 
+
+  public EquivalentDocument pdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+    return this;
+  }
+
+  /**
+   * El que pidió el documento, o null.
+   * @return pdfDesignId
+   */
+  @javax.annotation.Nullable
+  public String getPdfDesignId() {
+    return pdfDesignId;
+  }
+
+  public void setPdfDesignId(@javax.annotation.Nullable String pdfDesignId) {
+    this.pdfDesignId = pdfDesignId;
+  }
+
+
+  public EquivalentDocument pdfDesign(@javax.annotation.Nullable PdfDesignApplied pdfDesign) {
+    this.pdfDesign = pdfDesign;
+    return this;
+  }
+
+  /**
+   * El diseño fijado al emitir; null mientras está pendiente.
+   * @return pdfDesign
+   */
+  @javax.annotation.Nullable
+  public PdfDesignApplied getPdfDesign() {
+    return pdfDesign;
+  }
+
+  public void setPdfDesign(@javax.annotation.Nullable PdfDesignApplied pdfDesign) {
+    this.pdfDesign = pdfDesign;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -965,13 +1014,15 @@ public class EquivalentDocument {
         Objects.equals(this.pos, equivalentDocument.pos) &&
         Objects.equals(this.extension, equivalentDocument.extension) &&
         Objects.equals(this.originNote, equivalentDocument.originNote) &&
-        Objects.equals(this.contingency, equivalentDocument.contingency)&&
+        Objects.equals(this.contingency, equivalentDocument.contingency) &&
+        Objects.equals(this.pdfDesignId, equivalentDocument.pdfDesignId) &&
+        Objects.equals(this.pdfDesign, equivalentDocument.pdfDesign)&&
         Objects.equals(this.additionalProperties, equivalentDocument.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, environment, status, number, prefix, externalId, origin, cude, qr, issuedAt, customer, items, payment, documentType, operationType, totals, dian, delivery, createdAt, updatedAt, notes, period, references, allowanceCharges, prepayments, rounding, withholdings, pos, extension, originNote, contingency, additionalProperties);
+    return Objects.hash(id, _object, environment, status, number, prefix, externalId, origin, cude, qr, issuedAt, customer, items, payment, documentType, operationType, totals, dian, delivery, createdAt, updatedAt, notes, period, references, allowanceCharges, prepayments, rounding, withholdings, pos, extension, originNote, contingency, pdfDesignId, pdfDesign, additionalProperties);
   }
 
   @Override
@@ -1010,6 +1061,8 @@ public class EquivalentDocument {
     sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
     sb.append("    originNote: ").append(toIndentedString(originNote)).append("\n");
     sb.append("    contingency: ").append(toIndentedString(contingency)).append("\n");
+    sb.append("    pdfDesignId: ").append(toIndentedString(pdfDesignId)).append("\n");
+    sb.append("    pdfDesign: ").append(toIndentedString(pdfDesign)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1029,7 +1082,7 @@ public class EquivalentDocument {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "status", "number", "prefix", "external_id", "origin", "cude", "qr", "issued_at", "customer", "items", "payment", "document_type", "operation_type", "totals", "dian", "delivery", "created_at", "updated_at", "notes", "period", "references", "allowance_charges", "prepayments", "rounding", "withholdings", "pos", "extension", "origin_note", "contingency"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "status", "number", "prefix", "external_id", "origin", "cude", "qr", "issued_at", "customer", "items", "payment", "document_type", "operation_type", "totals", "dian", "delivery", "created_at", "updated_at", "notes", "period", "references", "allowance_charges", "prepayments", "rounding", "withholdings", "pos", "extension", "origin_note", "contingency", "pdf_design_id", "pdf_design"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1187,6 +1240,13 @@ public class EquivalentDocument {
       // validate the optional field `contingency`
       if (jsonObj.get("contingency") != null && !jsonObj.get("contingency").isJsonNull()) {
         EquivalentDocumentContingency.validateJsonElement(jsonObj.get("contingency"));
+      }
+      if ((jsonObj.get("pdf_design_id") != null && !jsonObj.get("pdf_design_id").isJsonNull()) && !jsonObj.get("pdf_design_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pdf_design_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pdf_design_id").toString()));
+      }
+      // validate the optional field `pdf_design`
+      if (jsonObj.get("pdf_design") != null && !jsonObj.get("pdf_design").isJsonNull()) {
+        PdfDesignApplied.validateJsonElement(jsonObj.get("pdf_design"));
       }
   }
 

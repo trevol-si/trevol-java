@@ -29,6 +29,7 @@ import si.trevol.generado.model.AccountCompany;
 import si.trevol.generado.model.Document;
 import si.trevol.generado.model.ProblemCurrentSoftware;
 import si.trevol.generado.model.ProblemError;
+import si.trevol.generado.model.ProblemFinding;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -179,6 +180,16 @@ public class Problem {
   @javax.annotation.Nullable
   private AccountCompany company;
 
+  public static final String SERIALIZED_NAME_FINDINGS = "findings";
+  @SerializedName(SERIALIZED_NAME_FINDINGS)
+  @javax.annotation.Nullable
+  private List<ProblemFinding> findings;
+
+  public static final String SERIALIZED_NAME_CURRENT_VERSION = "current_version";
+  @SerializedName(SERIALIZED_NAME_CURRENT_VERSION)
+  @javax.annotation.Nullable
+  private Integer currentVersion;
+
   public static final String SERIALIZED_NAME_ROWS = "rows";
   @SerializedName(SERIALIZED_NAME_ROWS)
   @javax.annotation.Nullable
@@ -255,7 +266,7 @@ public class Problem {
   }
 
   /**
-   * Valores conocidos: &#x60;authentication_required&#x60;, &#x60;automatic_mode_unavailable&#x60;, &#x60;certificate_problem&#x60;, &#x60;company_busy&#x60;, &#x60;company_exists&#x60;, &#x60;company_limit_reached&#x60;, &#x60;company_not_enabled&#x60;, &#x60;confirmation_required&#x60;, &#x60;dian_rejected&#x60;, &#x60;dian_unavailable&#x60;, &#x60;duplicate_customer&#x60;, &#x60;duplicate_document&#x60;, &#x60;duplicate_product&#x60;, &#x60;external_id_in_use&#x60;, &#x60;file_unavailable&#x60;, &#x60;idempotency_key_required&#x60;, &#x60;idempotency_key_reused&#x60;, &#x60;insufficient_balance&#x60;, &#x60;internal_error&#x60;, &#x60;invalid_api_key&#x60;, &#x60;invalid_json&#x60;, &#x60;invalid_request&#x60;, &#x60;invalid_state&#x60;, &#x60;key_limit_reached&#x60;, &#x60;method_not_allowed&#x60;, &#x60;not_found&#x60;, &#x60;numbering_request_in_progress&#x60;, &#x60;numbering_unavailable&#x60;, &#x60;paper_numbering_limit_reached&#x60;, &#x60;permission_denied&#x60;, &#x60;portal_read_required&#x60;, &#x60;previous_event_pending&#x60;, &#x60;range_protected&#x60;, &#x60;rate_limited&#x60;, &#x60;report_too_large&#x60;, &#x60;request_in_progress&#x60;, &#x60;tacit_acceptance_not_due&#x60;, &#x60;top_up_above_maximum&#x60;, &#x60;top_up_below_minimum&#x60;, &#x60;top_ups_unavailable&#x60;, &#x60;unsupported_version&#x60;, &#x60;validation_error&#x60;, &#x60;webhook_limit_reached&#x60;.
+   * Valores conocidos: &#x60;authentication_required&#x60;, &#x60;automatic_mode_unavailable&#x60;, &#x60;certificate_problem&#x60;, &#x60;company_busy&#x60;, &#x60;company_exists&#x60;, &#x60;company_limit_reached&#x60;, &#x60;company_not_enabled&#x60;, &#x60;confirmation_required&#x60;, &#x60;dian_rejected&#x60;, &#x60;dian_unavailable&#x60;, &#x60;duplicate_customer&#x60;, &#x60;duplicate_document&#x60;, &#x60;duplicate_product&#x60;, &#x60;external_id_in_use&#x60;, &#x60;file_unavailable&#x60;, &#x60;idempotency_key_required&#x60;, &#x60;idempotency_key_reused&#x60;, &#x60;insufficient_balance&#x60;, &#x60;internal_error&#x60;, &#x60;invalid_api_key&#x60;, &#x60;invalid_json&#x60;, &#x60;invalid_request&#x60;, &#x60;invalid_state&#x60;, &#x60;key_limit_reached&#x60;, &#x60;logo_invalid&#x60;, &#x60;method_not_allowed&#x60;, &#x60;not_found&#x60;, &#x60;numbering_request_in_progress&#x60;, &#x60;numbering_unavailable&#x60;, &#x60;paper_numbering_limit_reached&#x60;, &#x60;pdf_design_archived&#x60;, &#x60;pdf_design_in_use&#x60;, &#x60;pdf_design_invalid&#x60;, &#x60;pdf_design_limit_reached&#x60;, &#x60;pdf_design_outdated&#x60;, &#x60;permission_denied&#x60;, &#x60;portal_read_required&#x60;, &#x60;previous_event_pending&#x60;, &#x60;range_protected&#x60;, &#x60;rate_limited&#x60;, &#x60;report_too_large&#x60;, &#x60;request_in_progress&#x60;, &#x60;tacit_acceptance_not_due&#x60;, &#x60;top_up_above_maximum&#x60;, &#x60;top_up_below_minimum&#x60;, &#x60;top_ups_unavailable&#x60;, &#x60;unsupported_version&#x60;, &#x60;validation_error&#x60;, &#x60;webhook_limit_reached&#x60;.
    * @return code
    */
   @javax.annotation.Nullable
@@ -415,7 +426,7 @@ public class Problem {
   }
 
   /**
-   * En &#x60;company_not_enabled&#x60; (&#x60;missing_legal_representative&#x60;, &#x60;missing_pin&#x60;, &#x60;missing_software&#x60;, &#x60;payroll_not_enabled&#x60;) y en &#x60;numbering_unavailable&#x60; (&#x60;missing_technical_key&#x60;, &#x60;no_contingency_numbering&#x60;, &#x60;no_resolution&#x60;, &#x60;prefix_in_use&#x60;, &#x60;resolution_exhausted&#x60;, &#x60;resolution_expired&#x60;, &#x60;resolution_not_yet_valid&#x60;): por qué. En &#x60;automatic_mode_unavailable&#x60; (&#x60;credentials_missing&#x60;, &#x60;mandate_required&#x60;: falta el mandato para integraciones que se acepta en la app, &#x60;disabled&#x60;) y en &#x60;permission_denied&#x60; de una ruta que solo existe en producción (&#x60;live_mode_required&#x60;). En &#x60;permission_denied&#x60; de una llave de administración: &#x60;environment_mismatch&#x60; (&#x60;Trevol-Environment&#x60; no es el ambiente de la llave), &#x60;live_mode_required&#x60; (el alta de empresas pide una llave de producción) y &#x60;scope_list&#x60; (una llave con alcance de lista no da de alta empresas; como esa llave no puede tener &#x60;companies:write&#x60;, lo que llega en la práctica es el 403 con &#x60;required_permission: companies:write&#x60;). Valores conocidos: &#x60;credentials_missing&#x60;, &#x60;disabled&#x60;, &#x60;environment_mismatch&#x60;, &#x60;live_mode_required&#x60;, &#x60;mandate_required&#x60;, &#x60;missing_legal_representative&#x60;, &#x60;missing_pin&#x60;, &#x60;missing_software&#x60;, &#x60;missing_technical_key&#x60;, &#x60;no_contingency_numbering&#x60;, &#x60;no_resolution&#x60;, &#x60;payroll_not_enabled&#x60;, &#x60;prefix_in_use&#x60;, &#x60;resolution_exhausted&#x60;, &#x60;resolution_expired&#x60;, &#x60;resolution_not_yet_valid&#x60;, &#x60;scope_list&#x60;.
+   * En &#x60;company_not_enabled&#x60; (&#x60;missing_legal_representative&#x60;, &#x60;missing_pin&#x60;, &#x60;missing_software&#x60;, &#x60;payroll_not_enabled&#x60;), en &#x60;numbering_unavailable&#x60; (&#x60;missing_technical_key&#x60;, &#x60;no_contingency_numbering&#x60;, &#x60;no_resolution&#x60;, &#x60;prefix_in_use&#x60;, &#x60;resolution_exhausted&#x60;, &#x60;resolution_expired&#x60;, &#x60;resolution_not_yet_valid&#x60;) y en &#x60;invalid_state&#x60; al reenviar el correo (&#x60;delivery_incomplete&#x60;, &#x60;delivery_pending&#x60;, &#x60;email_suppressed&#x60;, &#x60;no_recipient&#x60;, &#x60;not_accepted&#x60;): por qué. En &#x60;automatic_mode_unavailable&#x60; (&#x60;credentials_missing&#x60;, &#x60;mandate_required&#x60;: falta el mandato para integraciones que se acepta en la app, &#x60;disabled&#x60;) y en &#x60;permission_denied&#x60; de una ruta que solo existe en producción (&#x60;live_mode_required&#x60;). En &#x60;permission_denied&#x60; de una llave de administración: &#x60;environment_mismatch&#x60; (&#x60;Trevol-Environment&#x60; no es el ambiente de la llave), &#x60;live_mode_required&#x60; (el alta de empresas pide una llave de producción) y &#x60;scope_list&#x60; (una llave con alcance de lista no da de alta empresas; como esa llave no puede tener &#x60;companies:write&#x60;, lo que llega en la práctica es el 403 con &#x60;required_permission: companies:write&#x60;). En &#x60;logo_invalid&#x60; (&#x60;animated&#x60;, &#x60;empty&#x60;, &#x60;svg_not_supported&#x60;, &#x60;too_large&#x60;, &#x60;too_many_pixels&#x60;, &#x60;too_small&#x60;, &#x60;unreadable&#x60;, &#x60;unsupported_format&#x60;) y en &#x60;permission_denied&#x60; del diseño del PDF (&#x60;pdf_design_writes_disabled&#x60;: el titular no permitió en la app que la API lo cambie). En &#x60;permission_denied&#x60; de una llave de la empresa simulada: &#x60;simulated_not_supported&#x60; (eso no existe en el entorno simulado: el adquiriente en la DIAN, RADIAN, el saldo y las recargas, el XML de un documento de la DIAN, el documento equivalente y la nómina; o el entorno simulado está apagado). Valores conocidos: &#x60;animated&#x60;, &#x60;credentials_missing&#x60;, &#x60;delivery_incomplete&#x60;, &#x60;delivery_pending&#x60;, &#x60;disabled&#x60;, &#x60;email_suppressed&#x60;, &#x60;empty&#x60;, &#x60;environment_mismatch&#x60;, &#x60;live_mode_required&#x60;, &#x60;mandate_required&#x60;, &#x60;missing_legal_representative&#x60;, &#x60;missing_pin&#x60;, &#x60;missing_software&#x60;, &#x60;missing_technical_key&#x60;, &#x60;no_contingency_numbering&#x60;, &#x60;no_recipient&#x60;, &#x60;no_resolution&#x60;, &#x60;not_accepted&#x60;, &#x60;payroll_not_enabled&#x60;, &#x60;pdf_design_writes_disabled&#x60;, &#x60;prefix_in_use&#x60;, &#x60;resolution_exhausted&#x60;, &#x60;resolution_expired&#x60;, &#x60;resolution_not_yet_valid&#x60;, &#x60;scope_list&#x60;, &#x60;simulated_not_supported&#x60;, &#x60;svg_not_supported&#x60;, &#x60;too_large&#x60;, &#x60;too_many_pixels&#x60;, &#x60;too_small&#x60;, &#x60;unreadable&#x60;, &#x60;unsupported_format&#x60;.
    * @return reason
    */
   @javax.annotation.Nullable
@@ -529,7 +540,7 @@ public class Problem {
   }
 
   /**
-   * En &#x60;rate_limited&#x60;: qué límite se pasó. Con una llave de administración: &#x60;lecturas&#x60; (600 peticiones por minuto de la llave en &#x60;/v1/account&#x60;), &#x60;account_key&#x60; (el mismo contador, visto desde una ruta de empresa), &#x60;api_keys&#x60; (60 llaves de empresa creadas o revocadas por hora) y &#x60;account_queries&#x60; (60 consultas de documentos o eventos por minuto, sumando las llaves de la cuenta). En &#x60;company_limit_reached&#x60;: &#x60;hour&#x60; (20 altas por hora) o &#x60;day&#x60; (100 por día).
+   * En &#x60;rate_limited&#x60;: qué límite se pasó (&#x60;email_resend&#x60;: los reenvíos del correo de un documento o de la empresa en el día). Con una llave de administración: &#x60;lecturas&#x60; (600 peticiones por minuto de la llave en &#x60;/v1/account&#x60;), &#x60;account_key&#x60; (el mismo contador, visto desde una ruta de empresa), &#x60;api_keys&#x60; (60 llaves de empresa creadas o revocadas por hora) y &#x60;account_queries&#x60; (60 consultas de documentos o eventos por minuto, sumando las llaves de la cuenta). En &#x60;company_limit_reached&#x60;: &#x60;hour&#x60; (20 altas por hora) o &#x60;day&#x60; (100 por día). &#x60;simulated&#x60;: un tope del entorno simulado (los envíos por hora de todas las cuentas, o demasiados documentos o webhooks por procesar en tu empresa simulada o en todo el entorno).
    * @return limit
    */
   @javax.annotation.Nullable
@@ -664,6 +675,52 @@ public class Problem {
   }
 
 
+  public Problem findings(@javax.annotation.Nullable List<ProblemFinding> findings) {
+    this.findings = findings;
+    return this;
+  }
+
+  public Problem addFindingsItem(ProblemFinding findingsItem) {
+    if (this.findings == null) {
+      this.findings = new ArrayList<>();
+    }
+    this.findings.add(findingsItem);
+    return this;
+  }
+
+  /**
+   * En &#x60;pdf_design_invalid&#x60;: qué no cabe y en qué tipos de documento.
+   * @return findings
+   */
+  @javax.annotation.Nullable
+  public List<ProblemFinding> getFindings() {
+    return findings;
+  }
+
+  public void setFindings(@javax.annotation.Nullable List<ProblemFinding> findings) {
+    this.findings = findings;
+  }
+
+
+  public Problem currentVersion(@javax.annotation.Nullable Integer currentVersion) {
+    this.currentVersion = currentVersion;
+    return this;
+  }
+
+  /**
+   * En &#x60;pdf_design_outdated&#x60;: la versión actual del diseño.
+   * @return currentVersion
+   */
+  @javax.annotation.Nullable
+  public Integer getCurrentVersion() {
+    return currentVersion;
+  }
+
+  public void setCurrentVersion(@javax.annotation.Nullable Integer currentVersion) {
+    this.currentVersion = currentVersion;
+  }
+
+
   public Problem rows(@javax.annotation.Nullable Integer rows) {
     this.rows = rows;
     return this;
@@ -780,6 +837,8 @@ public class Problem {
         Objects.equals(this.existingActive, problem.existingActive) &&
         Objects.equals(this.requiredPermission, problem.requiredPermission) &&
         Objects.equals(this.company, problem.company) &&
+        Objects.equals(this.findings, problem.findings) &&
+        Objects.equals(this.currentVersion, problem.currentVersion) &&
         Objects.equals(this.rows, problem.rows) &&
         Objects.equals(this.maxRows, problem.maxRows)&&
         Objects.equals(this.additionalProperties, problem.additionalProperties);
@@ -787,7 +846,7 @@ public class Problem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, title, status, code, detail, retryable, retryAfter, requestId, errors, document, existingId, reason, previous, minimumCop, maximumCop, balanceCop, priceCop, limit, availableFrom, rules, currentSoftware, existingActive, requiredPermission, company, rows, maxRows, additionalProperties);
+    return Objects.hash(type, title, status, code, detail, retryable, retryAfter, requestId, errors, document, existingId, reason, previous, minimumCop, maximumCop, balanceCop, priceCop, limit, availableFrom, rules, currentSoftware, existingActive, requiredPermission, company, findings, currentVersion, rows, maxRows, additionalProperties);
   }
 
   @Override
@@ -818,6 +877,8 @@ public class Problem {
     sb.append("    existingActive: ").append(toIndentedString(existingActive)).append("\n");
     sb.append("    requiredPermission: ").append(toIndentedString(requiredPermission)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
+    sb.append("    findings: ").append(toIndentedString(findings)).append("\n");
+    sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
     sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
     sb.append("    maxRows: ").append(toIndentedString(maxRows)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -839,7 +900,7 @@ public class Problem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("type", "title", "status", "code", "detail", "retryable", "retry_after", "request_id", "errors", "document", "existing_id", "reason", "previous", "minimum_cop", "maximum_cop", "balance_cop", "price_cop", "limit", "available_from", "rules", "current_software", "existing_active", "required_permission", "company", "rows", "max_rows"));
+    openapiFields = new HashSet<String>(Arrays.asList("type", "title", "status", "code", "detail", "retryable", "retry_after", "request_id", "errors", "document", "existing_id", "reason", "previous", "minimum_cop", "maximum_cop", "balance_cop", "price_cop", "limit", "available_from", "rules", "current_software", "existing_active", "required_permission", "company", "findings", "current_version", "rows", "max_rows"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -917,6 +978,20 @@ public class Problem {
       // validate the optional field `company`
       if (jsonObj.get("company") != null && !jsonObj.get("company").isJsonNull()) {
         AccountCompany.validateJsonElement(jsonObj.get("company"));
+      }
+      if (jsonObj.get("findings") != null && !jsonObj.get("findings").isJsonNull()) {
+        JsonArray jsonArrayfindings = jsonObj.getAsJsonArray("findings");
+        if (jsonArrayfindings != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("findings").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `findings` to be an array in the JSON string but got `%s`", jsonObj.get("findings").toString()));
+          }
+
+          // validate the optional field `findings` (array)
+          for (int i = 0; i < jsonArrayfindings.size(); i++) {
+            ProblemFinding.validateJsonElement(jsonArrayfindings.get(i));
+          };
+        }
       }
   }
 
