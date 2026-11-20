@@ -128,6 +128,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.AlternativeCurrency.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.Balance.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.BalanceEventData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.BalanceKeyOwner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.BalanceOperationPrices.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.BalanceTransaction.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.BalanceTransactionCompany.CustomTypeAdapterFactory());
