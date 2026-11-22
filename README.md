@@ -10,7 +10,7 @@ RADIAN ante la DIAN (Colombia). Documentación: <https://platform.trevol.si/docs
 > (admin) keys `tva_test_`/`tva_live_` with `account()` and a per-company client (`company(…)`, `withCompany(…)`), pinned `Trevol-Version`, Standard Webhooks signature verification, cursor pagination with `Iterable` and PDF/XML/ZIP downloads. Docs are in Spanish
 > like the API.
 
-**Versión 0.4.0** — API `2026-11-18`. Licencia MIT.
+**Versión 0.5.0** — API `2026-11-18`. Licencia MIT.
 
 ## Instalación
 
@@ -18,12 +18,12 @@ RADIAN ante la DIAN (Colombia). Documentación: <https://platform.trevol.si/docs
 <dependency>
   <groupId>si.trevol</groupId>
   <artifactId>trevol-java</artifactId>
-  <version>0.4.0</version>
+  <version>0.5.0</version>
 </dependency>
 ```
 
 ```kotlin
-implementation("si.trevol:trevol-java:0.4.0")   // Gradle
+implementation("si.trevol:trevol-java:0.5.0")   // Gradle
 ```
 
 Necesita Java 11 o más nuevo. Depende de OkHttp 4, Gson y de la biblioteca abierta
