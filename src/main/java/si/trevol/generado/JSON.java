@@ -184,6 +184,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.DianDocument.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.DianDocumentEventData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.DianDocumentList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.DianDocumentPdf.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.DianDocumentPdfError.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.DianResult.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.DianRule.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new si.trevol.generado.model.DianSync.CustomTypeAdapterFactory());

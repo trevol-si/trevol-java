@@ -50,7 +50,7 @@ import java.util.Set;
 import si.trevol.generado.JSON;
 
 /**
- * Un documento de la empresa ante la DIAN (emitido con Trevol o con otro sistema, o recibido de un proveedor), tal como lo trajo la sincronización o el buzón. Es de solo lectura: no tiene PDF ni acciones aquí; su XML se le pide a la DIAN (&#x60;xml_available&#x60;).
+ * Un documento de la empresa ante la DIAN (emitido con Trevol o con otro sistema, o recibido de un proveedor), tal como lo trajo la sincronización o el buzón. Es de solo lectura: su XML se le pide a la DIAN (&#x60;xml_available&#x60;) y también el PDF oficial que genera la DIAN (&#x60;pdf_available&#x60;, &#x60;pdf_status&#x60;).
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.26.0")
 public class DianDocument {
@@ -143,6 +143,16 @@ public class DianDocument {
   @SerializedName(SERIALIZED_NAME_XML_AVAILABLE)
   @javax.annotation.Nullable
   private Boolean xmlAvailable;
+
+  public static final String SERIALIZED_NAME_PDF_AVAILABLE = "pdf_available";
+  @SerializedName(SERIALIZED_NAME_PDF_AVAILABLE)
+  @javax.annotation.Nullable
+  private Boolean pdfAvailable;
+
+  public static final String SERIALIZED_NAME_PDF_STATUS = "pdf_status";
+  @SerializedName(SERIALIZED_NAME_PDF_STATUS)
+  @javax.annotation.Nullable
+  private String pdfStatus;
 
   public DianDocument() {
   }
@@ -488,6 +498,44 @@ public class DianDocument {
     this.xmlAvailable = xmlAvailable;
   }
 
+
+  public DianDocument pdfAvailable(@javax.annotation.Nullable Boolean pdfAvailable) {
+    this.pdfAvailable = pdfAvailable;
+    return this;
+  }
+
+  /**
+   * Si se le puede pedir a la DIAN el PDF oficial del documento con POST /v1/dian_documents/{id}/pdf: solo en producción, con CUFE y verificado por la DIAN. En lo emitido, además, si la llave tiene el permiso customers:read.
+   * @return pdfAvailable
+   */
+  @javax.annotation.Nullable
+  public Boolean getPdfAvailable() {
+    return pdfAvailable;
+  }
+
+  public void setPdfAvailable(@javax.annotation.Nullable Boolean pdfAvailable) {
+    this.pdfAvailable = pdfAvailable;
+  }
+
+
+  public DianDocument pdfStatus(@javax.annotation.Nullable String pdfStatus) {
+    this.pdfStatus = pdfStatus;
+    return this;
+  }
+
+  /**
+   * Cómo va el PDF de la DIAN: &#x60;not_requested&#x60; (nunca se pidió, o el que se pidió venció a los 90 días), &#x60;pending&#x60; (Trevol lo está pidiendo a la DIAN), &#x60;ready&#x60; (se baja con GET /v1/dian_documents/{id}/pdf) o &#x60;failed&#x60; (la DIAN no lo entregó; no se cobró: se puede pedir otra vez).
+   * @return pdfStatus
+   */
+  @javax.annotation.Nullable
+  public String getPdfStatus() {
+    return pdfStatus;
+  }
+
+  public void setPdfStatus(@javax.annotation.Nullable String pdfStatus) {
+    this.pdfStatus = pdfStatus;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -560,13 +608,15 @@ public class DianDocument {
         Objects.equals(this.direction, dianDocument.direction) &&
         Objects.equals(this.receivedOn, dianDocument.receivedOn) &&
         Objects.equals(this.source, dianDocument.source) &&
-        Objects.equals(this.xmlAvailable, dianDocument.xmlAvailable)&&
+        Objects.equals(this.xmlAvailable, dianDocument.xmlAvailable) &&
+        Objects.equals(this.pdfAvailable, dianDocument.pdfAvailable) &&
+        Objects.equals(this.pdfStatus, dianDocument.pdfStatus)&&
         Objects.equals(this.additionalProperties, dianDocument.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, _object, environment, type, dianType, number, prefix, cufe, issuedOn, counterpart, currency, total, taxTotal, dianStatus, direction, receivedOn, source, xmlAvailable, additionalProperties);
+    return Objects.hash(id, _object, environment, type, dianType, number, prefix, cufe, issuedOn, counterpart, currency, total, taxTotal, dianStatus, direction, receivedOn, source, xmlAvailable, pdfAvailable, pdfStatus, additionalProperties);
   }
 
   @Override
@@ -591,6 +641,8 @@ public class DianDocument {
     sb.append("    receivedOn: ").append(toIndentedString(receivedOn)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    xmlAvailable: ").append(toIndentedString(xmlAvailable)).append("\n");
+    sb.append("    pdfAvailable: ").append(toIndentedString(pdfAvailable)).append("\n");
+    sb.append("    pdfStatus: ").append(toIndentedString(pdfStatus)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -610,7 +662,7 @@ public class DianDocument {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "type", "dian_type", "number", "prefix", "cufe", "issued_on", "counterpart", "currency", "total", "tax_total", "dian_status", "direction", "received_on", "source", "xml_available"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "object", "environment", "type", "dian_type", "number", "prefix", "cufe", "issued_on", "counterpart", "currency", "total", "tax_total", "dian_status", "direction", "received_on", "source", "xml_available", "pdf_available", "pdf_status"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -668,6 +720,9 @@ public class DianDocument {
       }
       if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
+      }
+      if ((jsonObj.get("pdf_status") != null && !jsonObj.get("pdf_status").isJsonNull()) && !jsonObj.get("pdf_status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `pdf_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pdf_status").toString()));
       }
   }
 

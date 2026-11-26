@@ -139,6 +139,11 @@ public class DianDocumentEventData {
   @javax.annotation.Nullable
   private Boolean xmlAvailable;
 
+  public static final String SERIALIZED_NAME_PDF_AVAILABLE = "pdf_available";
+  @SerializedName(SERIALIZED_NAME_PDF_AVAILABLE)
+  @javax.annotation.Nullable
+  private Boolean pdfAvailable;
+
   public DianDocumentEventData() {
   }
 
@@ -464,6 +469,25 @@ public class DianDocumentEventData {
     this.xmlAvailable = xmlAvailable;
   }
 
+
+  public DianDocumentEventData pdfAvailable(@javax.annotation.Nullable Boolean pdfAvailable) {
+    this.pdfAvailable = pdfAvailable;
+    return this;
+  }
+
+  /**
+   * Si se le puede pedir el PDF oficial de la DIAN con POST /v1/dian_documents/{id}/pdf (además, solo en producción).
+   * @return pdfAvailable
+   */
+  @javax.annotation.Nullable
+  public Boolean getPdfAvailable() {
+    return pdfAvailable;
+  }
+
+  public void setPdfAvailable(@javax.annotation.Nullable Boolean pdfAvailable) {
+    this.pdfAvailable = pdfAvailable;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -535,13 +559,14 @@ public class DianDocumentEventData {
         Objects.equals(this.taxTotal, dianDocumentEventData.taxTotal) &&
         Objects.equals(this.counterpart, dianDocumentEventData.counterpart) &&
         Objects.equals(this.source, dianDocumentEventData.source) &&
-        Objects.equals(this.xmlAvailable, dianDocumentEventData.xmlAvailable)&&
+        Objects.equals(this.xmlAvailable, dianDocumentEventData.xmlAvailable) &&
+        Objects.equals(this.pdfAvailable, dianDocumentEventData.pdfAvailable)&&
         Objects.equals(this.additionalProperties, dianDocumentEventData.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_object, id, direction, environment, type, dianType, number, prefix, cufe, issuedOn, receivedOn, currency, total, taxTotal, counterpart, source, xmlAvailable, additionalProperties);
+    return Objects.hash(_object, id, direction, environment, type, dianType, number, prefix, cufe, issuedOn, receivedOn, currency, total, taxTotal, counterpart, source, xmlAvailable, pdfAvailable, additionalProperties);
   }
 
   @Override
@@ -565,6 +590,7 @@ public class DianDocumentEventData {
     sb.append("    counterpart: ").append(toIndentedString(counterpart)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    xmlAvailable: ").append(toIndentedString(xmlAvailable)).append("\n");
+    sb.append("    pdfAvailable: ").append(toIndentedString(pdfAvailable)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -584,7 +610,7 @@ public class DianDocumentEventData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("object", "id", "direction", "environment", "type", "dian_type", "number", "prefix", "cufe", "issued_on", "received_on", "currency", "total", "tax_total", "counterpart", "source", "xml_available"));
+    openapiFields = new HashSet<String>(Arrays.asList("object", "id", "direction", "environment", "type", "dian_type", "number", "prefix", "cufe", "issued_on", "received_on", "currency", "total", "tax_total", "counterpart", "source", "xml_available", "pdf_available"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

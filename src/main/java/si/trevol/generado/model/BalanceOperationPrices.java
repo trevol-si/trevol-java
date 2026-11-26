@@ -47,7 +47,7 @@ import java.util.Set;
 import si.trevol.generado.JSON;
 
 /**
- * El precio en pesos de cada operación que Trevol hace por la empresa en el portal de la DIAN y que se cobra del saldo (0 es gratis). Solo en producción.
+ * El precio en pesos de cada operación de la API que Trevol hace por la empresa ante la DIAN y que se cobra del saldo (0 es gratis). Solo en producción.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.26.0")
 public class BalanceOperationPrices {
@@ -70,6 +70,11 @@ public class BalanceOperationPrices {
   @SerializedName(SERIALIZED_NAME_NUMBERING_REQUEST)
   @javax.annotation.Nullable
   private Integer numberingRequest;
+
+  public static final String SERIALIZED_NAME_DIAN_DOCUMENT_PDF = "dian_document_pdf";
+  @SerializedName(SERIALIZED_NAME_DIAN_DOCUMENT_PDF)
+  @javax.annotation.Nullable
+  private Integer dianDocumentPdf;
 
   public BalanceOperationPrices() {
   }
@@ -149,6 +154,25 @@ public class BalanceOperationPrices {
     this.numberingRequest = numberingRequest;
   }
 
+
+  public BalanceOperationPrices dianDocumentPdf(@javax.annotation.Nullable Integer dianDocumentPdf) {
+    this.dianDocumentPdf = dianDocumentPdf;
+    return this;
+  }
+
+  /**
+   * Get dianDocumentPdf
+   * @return dianDocumentPdf
+   */
+  @javax.annotation.Nullable
+  public Integer getDianDocumentPdf() {
+    return dianDocumentPdf;
+  }
+
+  public void setDianDocumentPdf(@javax.annotation.Nullable Integer dianDocumentPdf) {
+    this.dianDocumentPdf = dianDocumentPdf;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -207,13 +231,14 @@ public class BalanceOperationPrices {
     return Objects.equals(this.dianSync, balanceOperationPrices.dianSync) &&
         Objects.equals(this.numberingRefresh, balanceOperationPrices.numberingRefresh) &&
         Objects.equals(this.numberingAssociation, balanceOperationPrices.numberingAssociation) &&
-        Objects.equals(this.numberingRequest, balanceOperationPrices.numberingRequest)&&
+        Objects.equals(this.numberingRequest, balanceOperationPrices.numberingRequest) &&
+        Objects.equals(this.dianDocumentPdf, balanceOperationPrices.dianDocumentPdf)&&
         Objects.equals(this.additionalProperties, balanceOperationPrices.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dianSync, numberingRefresh, numberingAssociation, numberingRequest, additionalProperties);
+    return Objects.hash(dianSync, numberingRefresh, numberingAssociation, numberingRequest, dianDocumentPdf, additionalProperties);
   }
 
   @Override
@@ -224,6 +249,7 @@ public class BalanceOperationPrices {
     sb.append("    numberingRefresh: ").append(toIndentedString(numberingRefresh)).append("\n");
     sb.append("    numberingAssociation: ").append(toIndentedString(numberingAssociation)).append("\n");
     sb.append("    numberingRequest: ").append(toIndentedString(numberingRequest)).append("\n");
+    sb.append("    dianDocumentPdf: ").append(toIndentedString(dianDocumentPdf)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -243,7 +269,7 @@ public class BalanceOperationPrices {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("dian_sync", "numbering_refresh", "numbering_association", "numbering_request"));
+    openapiFields = new HashSet<String>(Arrays.asList("dian_sync", "numbering_refresh", "numbering_association", "numbering_request", "dian_document_pdf"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

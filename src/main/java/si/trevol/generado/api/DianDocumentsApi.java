@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import si.trevol.generado.model.DianDocument;
 import si.trevol.generado.model.DianDocumentList;
+import si.trevol.generado.model.DianDocumentPdf;
 import java.io.File;
 import si.trevol.generado.model.Problem;
 
@@ -75,6 +76,195 @@ public class DianDocumentsApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    private okhttp3.Call downloadDianDocumentPdfCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/dian_documents/{id}/pdf"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/pdf",
+            "application/problem+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "llave" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call downloadDianDocumentPdfValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling downloadDianDocumentPdf(Async)");
+        }
+
+        return downloadDianDocumentPdfCall(id, _callback);
+
+    }
+
+
+    private ApiResponse<File> downloadDianDocumentPdfWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+        okhttp3.Call localVarCall = downloadDianDocumentPdfValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    private okhttp3.Call downloadDianDocumentPdfAsync(@javax.annotation.Nonnull String id, final ApiCallback<File> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = downloadDianDocumentPdfValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class APIdownloadDianDocumentPdfRequest {
+        @javax.annotation.Nonnull
+        private final String id;
+
+        private APIdownloadDianDocumentPdfRequest(@javax.annotation.Nonnull String id) {
+            this.id = id;
+        }
+
+        /**
+         * Build call for downloadDianDocumentPdf
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> El PDF oficial de la DIAN </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return downloadDianDocumentPdfCall(id, _callback);
+        }
+
+        /**
+         * Execute downloadDianDocumentPdf request
+         * @return File
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> El PDF oficial de la DIAN </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public File execute() throws ApiException {
+            ApiResponse<File> localVarResp = downloadDianDocumentPdfWithHttpInfo(id);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute downloadDianDocumentPdf request with HTTP info returned
+         * @return ApiResponse&lt;File&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> El PDF oficial de la DIAN </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<File> executeWithHttpInfo() throws ApiException {
+            return downloadDianDocumentPdfWithHttpInfo(id);
+        }
+
+        /**
+         * Execute downloadDianDocumentPdf request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> El PDF oficial de la DIAN </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<File> _callback) throws ApiException {
+            return downloadDianDocumentPdfAsync(id, _callback);
+        }
+    }
+
+    /**
+     * Bajar el PDF de la DIAN de un documento
+     * El PDF oficial de la DIAN de un documento, cuando está listo (200 &#x60;application/pdf&#x60;). Bajarlo no se cobra. Si todavía viene en camino: 409 &#x60;file_unavailable&#x60; reintentable con &#x60;reason: pending&#x60; y &#x60;Retry-After&#x60; (o mira &#x60;pdf_status&#x60;). Si no se ha pedido (o venció a los 90 días): 409 &#x60;file_unavailable&#x60; con &#x60;reason: not_requested&#x60;; pídelo con POST /v1/dian_documents/{id}/pdf. Si la DIAN no lo entregó: 503 &#x60;dian_unavailable&#x60; (pídelo otra vez) o 409 &#x60;file_unavailable&#x60; con &#x60;reason: dian_failed&#x60; (la DIAN no tiene el PDF de ese documento); en los dos casos no se cobró. Solo producción; lo emitido exige &#x60;customers:read&#x60;.
+     * @param id  (required)
+     * @return APIdownloadDianDocumentPdfRequest
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> El PDF oficial de la DIAN </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 503 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+     </table>
+     */
+    public APIdownloadDianDocumentPdfRequest downloadDianDocumentPdf(@javax.annotation.Nonnull String id) {
+        return new APIdownloadDianDocumentPdfRequest(id);
+    }
     private okhttp3.Call downloadDianDocumentXmlCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -734,5 +924,199 @@ public class DianDocumentsApi {
      */
     public APIlistDianDocumentsRequest listDianDocuments() {
         return new APIlistDianDocumentsRequest();
+    }
+    private okhttp3.Call requestDianDocumentPdfCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/dian_documents/{id}/pdf"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json",
+            "application/problem+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "llave" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call requestDianDocumentPdfValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling requestDianDocumentPdf(Async)");
+        }
+
+        return requestDianDocumentPdfCall(id, _callback);
+
+    }
+
+
+    private ApiResponse<DianDocumentPdf> requestDianDocumentPdfWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+        okhttp3.Call localVarCall = requestDianDocumentPdfValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<DianDocumentPdf>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    private okhttp3.Call requestDianDocumentPdfAsync(@javax.annotation.Nonnull String id, final ApiCallback<DianDocumentPdf> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = requestDianDocumentPdfValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<DianDocumentPdf>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+
+    public class APIrequestDianDocumentPdfRequest {
+        @javax.annotation.Nonnull
+        private final String id;
+
+        private APIrequestDianDocumentPdfRequest(@javax.annotation.Nonnull String id) {
+            this.id = id;
+        }
+
+        /**
+         * Build call for requestDianDocumentPdf
+         * @param _callback ApiCallback API callback
+         * @return Call to execute
+         * @throws ApiException If fail to serialize the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Ya estaba listo (no se cobra otra vez) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Pedido: Trevol lo está pidiendo a la DIAN </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call buildCall(final ApiCallback _callback) throws ApiException {
+            return requestDianDocumentPdfCall(id, _callback);
+        }
+
+        /**
+         * Execute requestDianDocumentPdf request
+         * @return DianDocumentPdf
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Ya estaba listo (no se cobra otra vez) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Pedido: Trevol lo está pidiendo a la DIAN </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public DianDocumentPdf execute() throws ApiException {
+            ApiResponse<DianDocumentPdf> localVarResp = requestDianDocumentPdfWithHttpInfo(id);
+            return localVarResp.getData();
+        }
+
+        /**
+         * Execute requestDianDocumentPdf request with HTTP info returned
+         * @return ApiResponse&lt;DianDocumentPdf&gt;
+         * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Ya estaba listo (no se cobra otra vez) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Pedido: Trevol lo está pidiendo a la DIAN </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public ApiResponse<DianDocumentPdf> executeWithHttpInfo() throws ApiException {
+            return requestDianDocumentPdfWithHttpInfo(id);
+        }
+
+        /**
+         * Execute requestDianDocumentPdf request (asynchronously)
+         * @param _callback The callback to be executed when the API call finishes
+         * @return The request call
+         * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+         * @http.response.details
+         <table border="1">
+       <caption>Response Details</caption>
+            <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+            <tr><td> 200 </td><td> Ya estaba listo (no se cobra otra vez) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 202 </td><td> Pedido: Trevol lo está pidiendo a la DIAN </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+            <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+         </table>
+         */
+        public okhttp3.Call executeAsync(final ApiCallback<DianDocumentPdf> _callback) throws ApiException {
+            return requestDianDocumentPdfAsync(id, _callback);
+        }
+    }
+
+    /**
+     * Pedir el PDF de la DIAN de un documento
+     * Pide el PDF oficial que genera la DIAN de un documento de la empresa de la llave (emitido o recibido): la representación gráfica de la DIAN, la misma que ofrece su portal. Trevol lo pide a la DIAN y puede tardar unos segundos o minutos: responde 202 con el objeto &#x60;dian_document_pdf&#x60; (&#x60;status: pending&#x60;), &#x60;Location&#x60; y &#x60;Retry-After&#x60;; cuando está listo, bájalo con GET /v1/dian_documents/{id}/pdf (o mira &#x60;pdf_status&#x60; en el documento). Si ya hay uno en camino o listo, lo devuelve sin pedir otro ni cobrar (200 si ya está listo): repetir la petición es seguro y no necesita &#x60;Idempotency-Key&#x60;. Se cobra del saldo cuando llega (&#x60;dian_document_pdf&#x60; en &#x60;operation_prices&#x60; de GET /v1/balance); si la DIAN no lo entrega, no se cobra. Se guarda 90 días: bajarlo otra vez no se cobra; después vence y pedirlo es un pedido nuevo. Solo producción (con una llave de prueba, 403 &#x60;live_mode_required&#x60;) y con una llave de escritura. Lo emitido trae los datos personales del cliente: exige el permiso &#x60;customers:read&#x60; de la llave. Errores: 404 (otra empresa u otro ambiente), 409 &#x60;file_unavailable&#x60; (sin CUFE: mira &#x60;pdf_available&#x60;), 402 &#x60;insufficient_balance&#x60; (no se pidió nada) y 429 con &#x60;limit: dian_document_pdf&#x60;.
+     * @param id  (required)
+     * @return APIrequestDianDocumentPdfRequest
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Ya estaba listo (no se cobra otra vez) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 202 </td><td> Pedido: Trevol lo está pidiendo a la DIAN </td><td>  * Location -  <br>  * Retry-After -  <br>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 402 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 404 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 409 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * Retry-After -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+        <tr><td> 0 </td><td> Error (application/problem+json) </td><td>  * Request-Id -  <br>  * Trevol-Version -  <br>  * RateLimit-Policy -  <br>  * RateLimit -  <br>  * Trevol-Simulated -  <br>  </td></tr>
+     </table>
+     */
+    public APIrequestDianDocumentPdfRequest requestDianDocumentPdf(@javax.annotation.Nonnull String id) {
+        return new APIrequestDianDocumentPdfRequest(id);
     }
 }

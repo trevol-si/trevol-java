@@ -12,7 +12,7 @@ additionalProperties:
   modelPackage: si.trevol.generado.model
   groupId: si.trevol
   artifactId: trevol-java-generado
-  artifactVersion: 0.5.0
+  artifactVersion: 0.6.0
   dateLibrary: java8
   openApiNullable: false
   useBeanValidation: false

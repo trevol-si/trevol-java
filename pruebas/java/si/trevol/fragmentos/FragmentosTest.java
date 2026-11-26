@@ -45,7 +45,7 @@ class FragmentosTest {
     @Test
     void laEstructura() throws IOException {
         List<String> ops = operaciones();
-        assertEquals(178, ops.size()); // 0.4.0: + 19
+        assertEquals(180, ops.size()); // 0.4.0: + 19; 0.6.0: + 2 (el PDF de la DIAN)
         try (Stream<Path> s = Files.list(programas())) {
             List<String> archivos = s.map(p -> p.getFileName().toString()).filter(n -> n.endsWith(".java")).sorted().collect(Collectors.toList());
             assertEquals(ops.stream().map(o -> "Ejemplo" + Character.toUpperCase(o.charAt(0)) + o.substring(1) + ".java").sorted().collect(Collectors.toList()), archivos);

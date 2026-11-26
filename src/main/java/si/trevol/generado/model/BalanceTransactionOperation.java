@@ -70,7 +70,7 @@ public class BalanceTransactionOperation {
   }
 
   /**
-   * Valores conocidos: &#x60;dian_sync&#x60;, &#x60;numbering_refresh&#x60;, &#x60;numbering_association&#x60;, &#x60;numbering_request&#x60;.
+   * Valores conocidos: &#x60;dian_sync&#x60;, &#x60;numbering_refresh&#x60;, &#x60;numbering_association&#x60;, &#x60;numbering_request&#x60;, &#x60;dian_document_pdf&#x60;.
    * @return type
    */
   @javax.annotation.Nullable
@@ -89,7 +89,7 @@ public class BalanceTransactionOperation {
   }
 
   /**
-   * dsync_… (sincronización), nas_… (asociación) o nreq_… (solicitud); null en una lectura de numeraciones.
+   * dsync_… (sincronización), nas_… (asociación), nreq_… (solicitud) o ddoc_… (el documento del PDF de la DIAN); null en una lectura de numeraciones.
    * @return id
    */
   @javax.annotation.Nullable

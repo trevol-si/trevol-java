@@ -52,7 +52,7 @@ import java.util.Set;
 import si.trevol.generado.JSON;
 
 /**
- * Un documento de una empresa de tu cuenta ante la DIAN, emitido o recibido, tal como lo trajo la sincronización (el mismo &#x60;dian_document&#x60; de &#x60;GET /v1/dian_documents&#x60;, sin &#x60;xml_available&#x60;), con la empresa y, en las facturas, el resumen RADIAN. Lo que llegó al buzón y la sincronización todavía no vio no aparece.
+ * Un documento de una empresa de tu cuenta ante la DIAN, emitido o recibido, tal como lo trajo la sincronización (el mismo &#x60;dian_document&#x60; de &#x60;GET /v1/dian_documents&#x60;, sin &#x60;xml_available&#x60; ni el PDF), con la empresa y, en las facturas, el resumen RADIAN. Lo que llegó al buzón y la sincronización todavía no vio no aparece.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.26.0")
 public class AccountDianDocument {
